@@ -123,7 +123,7 @@ if(isset($_POST['next'])){
     <section class="flex">
         
         <div class="back">
-            <a href="#"><i class="fa-solid fa-arrow-left"></i></a>
+            <a href="job_create.php"><i class="fa-solid fa-arrow-left"></i></a>
         </div>
         <div class="icon">
             
