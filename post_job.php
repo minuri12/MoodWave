@@ -86,7 +86,7 @@ if(isset($_POST['next'])){
 
 
 
-    $job_query = mysqli_query($conn, "SELECT * FROM `jobs` WHERE song_name = '$song_name' ") or die('query failed-45');
+    $job_query = mysqli_query($conn, "SELECT * FROM `jobs` WHERE song_name = '$song_name' ") or die(mysqli_error($conn));
 
    if(mysqli_num_rows($job_query) > 0){
         $message[] = 'Job placed already!';
@@ -95,7 +95,12 @@ if(isset($_POST['next'])){
         mysqli_query($conn, "INSERT INTO `jobs`(creater_id,song_name,song_writter,singers,music,workers_need,workers_earn,placed_on) VALUES('$creator_id', '$song_name', '$song_writter', '$singers', '$new_audio_name', '$workers_need', '$workers_earn','$placed_on')") or die(mysqli_error($conn));
 
         $message[] = 'job placed successfully!';
-        header("location:post_job_payment.php");
+
+        $job_id_query = mysqli_query($conn, "SELECT * FROM `jobs` WHERE song_name = '$song_name' && creater_id='$creator_id' && placed_on='$placed_on' ") or die(mysqli_error($conn));
+        $fetch_job_id = mysqli_fetch_assoc($job_id_query);
+        $job_id=$fetch_job_id['job_id'];
+        
+        header("location:post_job_payment.php?job_id='$job_id'");
         
     }
 }else{
@@ -122,7 +127,7 @@ if(isset($_POST['next'])){
         </div>
         <div class="icon">
             
-            <img src="images/Logo.png">
+            <img src="images/Logo_k.png">
         </div>
 
         <nav class="navbar">
