@@ -9,7 +9,7 @@
   display: inline;
   align-items: center;
   justify-content: space-between;
-  width: 850px;
+
   margin-top: 500px;
   padding: 15px 30px;
   border: 1px solid hsla(0, 0%, 100%, 0);
@@ -73,4 +73,53 @@
   background-color: #8eb5e6;
   transition: all 0.5s ease-in-out;
   cursor: pointer;
+}
+
+.icon_head {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+.icon_head img {
+  width: 250px;
+}
+
+.Shadow {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: -1;
+  align-items: center;
+  margin-top: 0px;
+  padding-top: 0px;
+
+  position: sticky;
+}
+
+.Main_topic {
+  text-align: center;
+  color: white;
+  font-weight: 700;
+  font-size: 129px;
+  margin-top: 25px;
+  position: relative;
+  align-items: center;
+}
+
+.Land {
+  z-index: -1;
+  background: url(/Images/Shadow.png) no-repeat 50%;
+  background-size: contain;
+  position: absolute;
+  width: 99%;
+  height: 100%;
+  background-size: contain;
+  align-items: center;
+}
+.arrow img {
+  margin-top: 70px;
+  width: 30px;
+  height: auto;
 }
