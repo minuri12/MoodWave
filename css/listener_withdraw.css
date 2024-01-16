@@ -1,0 +1,256 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Knewave&family=Lato:wght@700&family=Pacifico&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root{
+    --main-colur:#0C070F;
+    --white:#FFFFFF;
+    --btn-colour:#026EEE;
+    --btn-text:#0C070F;
+    --input-box:#A5EFFF;
+    --next-bar:#183787;
+ }
+ *{
+    margin-top: 1rem;
+    font-family: "Roboto", sans-serif;
+ }
+
+ body{
+    background-color: var(--main-colur);
+    background-image: url("../images/gradient.png");
+    background-repeat: no-repeat;
+    background-position: center;
+ }
+ 
+ .header{
+    position: sticky;
+    top:0; left:0; right:0;
+    z-index: 1;
+    height:6rem;
+    background-color: var(--main-colur);
+}
+.header .flex{
+    display: flex;
+    align-items: top;
+    justify-content: center;
+    position:relative;
+}
+.header .flex .back a i{
+    color: var(--white);
+    margin-left: -10rem;
+    margin-top: 2rem;
+    font-size: 1.5rem;
+}
+.header .flex .navbar{
+    display: flex;
+    margin-top: 1.2rem;
+
+}
+.header .flex .navbar a{
+    margin: 0 1rem;
+    padding: 1rem;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color:var(--white);
+    text-decoration: none;
+    align-items: center;
+}
+.header .flex .navbar a:hover{
+   
+    text-decoration: underline;
+}
+.header .flex .logout_button{
+    display: flex;
+    margin-top: -0.5rem;
+}
+.header .flex .logout_button button{
+    padding: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
+    border-radius: 10px;
+    background-color: var(--btn-colour);
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.middle {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.content .title{
+    margin: 0;
+}
+.content .title h1{
+    color: var(--white);
+    font-weight: bold;
+    font-size: 2.5rem;
+}
+.content form .form-group{
+    display: flex;
+    margin-top: 0;
+    
+}
+.content form .form-group .row1{
+    
+    margin-right: 30px;
+    width: 400px;
+    padding: 30px;
+    background-color: black;
+    background-image: url("../images/input-box.png");
+    background-position: center; 
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 20px;
+    border: #BFC2FF solid 1px;
+
+    
+}
+.content form .form-group .row1 .description{ 
+    
+    display: flex;
+    flex-direction: column;
+    
+}
+.content form .form-group .row1 .description h1{ 
+    
+    color: var(--white);
+    font-size: 2rem;
+    
+}
+.content form .form-group .row1 .description p{ 
+    
+    color: var(--white);
+    font-size: 1.5rem;
+    line-height: 30px;
+}
+
+
+.content form .form-group label{
+    color: var(--white);
+    font-size: 1.3rem;
+    
+}
+.content form .form-group input{
+    background-color: black;
+    background-image: url("../images/input-box.png");
+    background-position: center; 
+    background-repeat: no-repeat;
+    width:400px;
+    height: 45px;
+    border: none;
+    border-radius: 8px;
+    color: var(--white);
+    font-size: 1rem;
+    
+}
+.content form .form-group .row2 .sub-row{
+    display: flex;
+}
+.content form .form-group .row2 .sub-row .sub-input{
+    margin-right: 10px;
+    width:200px;
+    height: 45px;
+    background-color: black;
+    background-image: url("../images/input-box-r.png");
+    
+}
+.content form .form-group .row2 .lines{
+    display: flex;
+    justify-content: center;
+}
+.content form .form-group .row2  .lines .box{
+    width:50px;
+    height:10px;
+    background-color: black;
+    background-image: url("../images/input-box-r.png");
+    background-position: left;
+}
+.content form .form-group .row2  .lines .box1{
+    background-color: var(--next-bar);
+}
+.content form .form-group .row2 .lines .box1{
+    margin-right: 5px;
+}
+
+.content form .form-group .row2 .buttons{
+    display: flex;
+    justify-content: center;
+}
+.content form .form-group .row2 .buttons .button{
+    width: 250px;
+    height: 50px;
+    padding: 10px;
+    padding-left: 35px;
+    padding-right: 35px;
+    border-radius: 25px;
+    font-size: 1.7rem;
+    background-color: var(--btn-colour);
+    color: var(--btn-text);
+    font-weight: 500;
+}
+.content form .form-group .row2  .buttons .button:hover{
+    background-color: var(--white);
+    
+}
+
+
+@media(max-width:991px){
+    html{
+        font-size:65%;
+    }
+    .content form .form-group{
+        display: flex;
+        flex-direction: column;
+        
+    }
+}
+@media(max-width:768px){
+    .content form .form-group{
+        display: flex;
+        flex-direction: column;
+        
+    }
+    .header .flex .back i{
+        margin-left: -5rem;
+
+    }
+    
+}
+@media(max-width:450px){
+    html{
+        font-size: 60%;
+    }
+    .content{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .content form .form-group{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        
+    }
+    .content form .form-group input{
+
+        width:200px;
+        height: 45px;   
+    }
+    .content form .form-group .row2 .sub-row{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    
+}
+
