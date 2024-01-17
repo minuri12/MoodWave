@@ -6,11 +6,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
+
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="/CSS/glass-menu.css" />
+
     <link rel="icon" href="../images/icon.ico" type="image/x-icon" />
     <title>MoodWave</title>
   </head>
@@ -26,12 +29,72 @@
       </nav>
     </center>
     <center>
+
       <section class="Land">
         <div class="icon_head">
           <img src="/Images/Icon_head.png" alt="Play_icon" class="icon_set" />
         </div>
         <div class="Main_topic">MOODWAVE</div>
         <div class="arrow"><img src="/Images/Arrow.png" alt="arrow" /></div>
+        <div class="head">Why Use MoodWave?</div>
+
+        <!-- card start-->
+
+        <div class="container">
+          <div class="card">
+            <div class="content">
+              <h2>🎧</h2>
+              <h3>MUSIC + AI</h3>
+            
+              <ul>
+                <li>
+                  Music creators can upload their compositions to our platform and
+                  leverage a user-friendly feature that analyzes and identifies the
+                  emotional nuances embedded their music or songs.
+                </li>
+              </ul>
+              
+            </div>
+          </div>
+          
+          <div class="card">
+            <div class="content">
+              <h2>🎼</h2>
+              <h3>TASKS</h3>
+    
+              <ul>
+                <li>
+                  Music creators have the ability to generate a task for listeners, wherein they can request an analysis of the emotions in their music by engaging the perspectives of actual listeners.
+                </li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="card">
+            <div class="content">
+              <h2>🎙️</h2>
+              <h3>PAYMENTS</h3>
+    
+              <ul>
+                <li>
+                  The creators of the Music pay for  listeners based on the they assigned tasks, ensuring a fair and rewarding exchange for their valuable input on emotion analysis.
+                </li>
+              </ul>
+              
+            </div>
+            
+          </div>
+          <img  src="/Images/Shadow.png" alt="" class="card_image" style="  left: 220px;top: -120px; z-index: -1;">
+        <script src="/JS/vanilla-tilt.min.js"></script>
+        <script>
+          VanillaTilt.init(document.querySelectorAll(".card"), {
+            max: 25,
+            speed: 400,
+            glare: true,
+            "max-glare": 1,
+          });
+        </script>
+
       </section>
     </center>
   </body>
