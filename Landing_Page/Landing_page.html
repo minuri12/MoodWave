@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 
     <link
@@ -18,28 +19,35 @@
     <title>MoodWave</title>
   </head>
   <body bgcolor="#0C070F">
-    <center>
-      <nav class="Navigation_Bar">
-        <ul>
-          <li><img src="../images/Logo.png" alt="MoodWave_logo" /></li>
-          <li class="features"><a href="#">FEATURES</a></li>
-          <li><a href="#" class="ABOUT">ABOUT US</a></li>
-          <li><button>Join</button></li>
-        </ul>
-      </nav>
-    </center>
+   
+
+    <!--Navigation bar start-->
+    <section class="navigation_section">
+        <nav class="Navigation_Bar">
+          <ul>
+            <li><img src="../images/Logo.png" alt="MoodWave_logo" /></li>
+            <li class="features"><a href="#">FEATURES</a></li>
+            <li><a href="#" class="ABOUT">ABOUT US</a></li>
+            <li><button>Join</button></li>
+          </ul>
+        </nav>
+    </section>
+    <!--Navigation bar end-->
+
+
     <center>
 
+      <!--Main image start-->
       <section class="Land">
         <div class="icon_head">
           <img src="/Images/Icon_head.png" alt="Play_icon" class="icon_set" />
         </div>
         <div class="Main_topic">MOODWAVE</div>
         <div class="arrow"><img src="/Images/Arrow.png" alt="arrow" /></div>
-        <div class="head">Why Use MoodWave?</div>
+        <!--Main image end-->
 
-        <!-- card start-->
-
+<!-- card start-->
+  <div class="head">Why Use MoodWave?</div>
         <div class="container">
           <div class="card">
             <div class="content">
@@ -84,8 +92,48 @@
             </div>
             
           </div>
-          <img  src="/Images/Shadow.png" alt="" class="card_image" style="  left: 220px;top: -120px; z-index: -1;">
+          <img  src="/Images/Shadow.png" alt="" class="card_image" style="  left: 90px;top: -120px; z-index: -1;">
+
+
+<!-- card end-->
+
+<!--why MoodWave start-->
+<div class="How">How It Works ?</div>
+<img src="/Images/Card.png" class="how_work">
+<!--why MoodWave End-->
+
+  <img  src="/Images/Shadow.png" alt="" class="card_image" >
+</div>
+
+
+
+<!-- Footer start-->
+<div class="container_footer">
+
+  <footer> 
+    <div class="Icon_bar">
+    <a href="#"></a><i class="fab fa-facebook-square"></i></a>
+  <a href="#"></a><i class="fab fa-instagram"></i></a>
+  <a href="#"></a><i class="fab fa-twitter"></i></a>
+
+  </div>
+  </footer>
+</div>
+<div class="box">Copyright | FOC - SUSL</div>
+<!-- Footer end-->
+</section>
+
+
+
+
+
+
+
+
         <script src="/JS/vanilla-tilt.min.js"></script>
+
+
+
         <script>
           VanillaTilt.init(document.querySelectorAll(".card"), {
             max: 25,
@@ -94,6 +142,8 @@
             "max-glare": 1,
           });
         </script>
+
+
 
       </section>
     </center>
