@@ -140,6 +140,46 @@
     
 }
 
+.my-jobs{
+    margin-top: 110px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+.my-jobs h1{
+    font-size: 2.5rem;
+    color: var(--white);   
+}
+.my-jobs table{
+    font-size: 1.3rem;
+    color: var(--white); 
+    width:80%;
+    border-radius: 10px;
+    background-color: black;
+    background-image: url("../images/input-box-r.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-collapse: collapse;
+   
+}
+.my-jobs table th{
+    padding: 50px 2px 50px ;
+  }
+.my-jobs table th, td {
+    border-bottom: 1px solid #ddd;
+  }
+.my-jobs table tr td {
+    text-align: center;
+}
+.my-jobs table tr td .cbox{
+    justify-content: center;
+}
+
+
+
+
 
 @media(max-width:991px){
     html{
