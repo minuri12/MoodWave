@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Jan 20, 2024 at 01:59 PM
+-- Generation Time: Jan 20, 2024 at 08:17 PM
 -- Server version: 5.7.36
 -- PHP Version: 7.4.26
 
@@ -40,7 +40,7 @@ CREATE TABLE IF NOT EXISTS `jobs` (
   `completed` int(11) NOT NULL DEFAULT '0',
   `placed_on` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`job_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=20 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=23 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `jobs`
@@ -64,7 +64,10 @@ INSERT INTO `jobs` (`job_id`, `creater_id`, `song_name`, `song_writter`, `singer
 (16, 1, 'Nice Memories', 'lkdkd', 'kdkd', 'Meowing-noise.mp3', 100, 20, 40, '15-Jan-2024'),
 (17, 2, 'Eat and Drink', 'kxcs', 'kkxc', 'Meowing-noise.mp3', 100, 10, 10, '15-Jan-2024'),
 (18, 2, 'Nice Place', 'kmk', 'kk', 'Meowing-noise.mp3', 100, 20, 35, '15-Jan-2024'),
-(19, 1, 'I with You', 'skjs', 'lksks', 'Meowing-noise.mp3', 100, 20, 85, '15-Jan-2024');
+(19, 1, 'I with You', 'skjs', 'lksks', 'Meowing-noise.mp3', 100, 20, 85, '15-Jan-2024'),
+(20, 10, ',cdmc', 'kmdm', 'kmvkm', '', 1, 1, 0, '20-Jan-2024'),
+(21, 10, 'kkl', 'lmlml', 'llml', '', 2, 4, 0, '20-Jan-2024'),
+(22, 10, ',,,.', '.,,', ',.', '', 1, 1, 0, '20-Jan-2024');
 
 -- --------------------------------------------------------
 
@@ -83,7 +86,7 @@ CREATE TABLE IF NOT EXISTS `payment` (
   `cvv` int(11) NOT NULL,
   `placed_on` varchar(1000) NOT NULL,
   PRIMARY KEY (`payment_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `payment`
@@ -94,7 +97,8 @@ INSERT INTO `payment` (`payment_id`, `job_id`, `creater_id`, `name_on_card`, `ca
 (2, '0', 1, 'akaj', 'aka', '2024-01-24', 990, '15-Jan-2024'),
 (3, '0', 1, 'jaa', 'oakao', '2024-01-11', 900, '15-Jan-2024'),
 (6, '0', 1, 'amama', 'ls,s', '2024-01-17', 222, '15-Jan-2024'),
-(7, '\'19\'', 1, 'mmm', 'kmkmk', '2024-01-23', 555, '15-Jan-2024');
+(7, '\'19\'', 1, 'mmm', 'kmkmk', '2024-01-23', 555, '15-Jan-2024'),
+(8, '\'22\'', 10, ',la,', 'al', '2024-01-23', 222, '20-Jan-2024');
 
 -- --------------------------------------------------------
 
@@ -111,7 +115,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `user_type` varchar(1000) NOT NULL,
   `placed_on` varchar(1000) NOT NULL,
   PRIMARY KEY (`user_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `users`
@@ -123,7 +127,11 @@ INSERT INTO `users` (`user_id`, `username`, `email`, `password`, `user_type`, `p
 (3, 'dfd', 'kushan3@gmail.com', '123', 'Listener', '16-Jan-2024'),
 (4, 'kushan@gmail.com', 'aka', 'aka', '', '20-Jan-2024'),
 (5, '', '', '', '', '20-Jan-2024'),
-(6, '', 'kma@hmail.com', '', 'Listener', '20-Jan-2024');
+(6, '', 'kma@hmail.com', '', 'Listener', '20-Jan-2024'),
+(7, '', 'sd', '', 'Listener', '20-Jan-2024'),
+(8, 'kma', 'kush@gmail.com', '123', 'Creator', '20-Jan-2024'),
+(9, 'listner', 'listener@test.com', '123', 'Listener', '20-Jan-2024'),
+(10, 'creator', 'creator@test.com', '123', 'Creator', '20-Jan-2024');
 
 -- --------------------------------------------------------
 
@@ -145,7 +153,7 @@ CREATE TABLE IF NOT EXISTS `withdraw` (
   `cvv` int(11) NOT NULL,
   `placed_on` varchar(1000) NOT NULL,
   PRIMARY KEY (`withdraw_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `withdraw`
@@ -153,7 +161,9 @@ CREATE TABLE IF NOT EXISTS `withdraw` (
 
 INSERT INTO `withdraw` (`withdraw_id`, `job_id`, `listener_id`, `annotate`, `comments`, `name_on_card`, `amount`, `card_details`, `expiary`, `cvv`, `placed_on`) VALUES
 (1, '1', 1, '', '', 'dsdds', 50, 'gfsdfsdfds', '2024-01-17', 333, '16-Jan-2024'),
-(2, '2', 1, 'sad-calm', 'nice song', 'visa', 78, '9888 687 809', '2024-01-17', 900, '20-Jan-2024');
+(2, '2', 1, 'sad-calm', 'nice song', 'visa', 78, '9888 687 809', '2024-01-17', 900, '20-Jan-2024'),
+(3, '2', 1, 'calm-chiled', '', 's', 2, 'sc', '2024-02-07', 2, '20-Jan-2024'),
+(4, '2', 1, 'uplifting-energtic', '', 'new', 100, 'neww', '2024-01-30', 100, '20-Jan-2024');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
