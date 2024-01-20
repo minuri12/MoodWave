@@ -14,6 +14,46 @@
     margin:0;
     font-family: "Roboto", sans-serif;
  }
+ *::-webkit-scrollbar {
+    height: 0.5rem;
+    width: 0.5rem;
+  }
+  
+  *::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    background-color: #026eee;
+  }
+  .message{
+    position: fixed;
+    top:0;
+    margin:0 auto;
+    width: 100%;
+    background-color: var(--next-bar);
+    display: flex;
+    align-items: center;
+    padding:1rem;
+    gap:1.5rem;
+    z-index: 10;
+    justify-content: space-around;
+ }
+ 
+ .message span{
+    color:var(--white);
+    font-size: 1.5rem;
+ }
+ 
+ .message i{
+    font-size: 2rem;
+    color:red;
+    cursor: pointer;
+ }
+ 
+ .message i:hover{
+    transform: rotate(60deg);
+ }  
 
  body{
     background-color: var(--main-colur);
@@ -22,7 +62,7 @@
 
  .content .back{
     position: fixed;
-    top:50px;
+    top:70px;
     left:50px;
 
 }

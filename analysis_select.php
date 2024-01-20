@@ -49,6 +49,7 @@ if(isset($_POST['dynamic_start'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Analysis Select</title>
     <link rel="stylesheet" href="css/analysis_select.css">
+    <link rel="icon" href="images/icon.ico" type="image/x-icon" />
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"> -->
 </head>
 <body>
@@ -57,7 +58,7 @@ if(isset($_POST['dynamic_start'])){
     <section class="flex">
         
         <div class="back">
-            <a href="post_job.php"><i class="fa-solid fa-arrow-left"></i></a>
+            <a href="creator_main.php"><i class="fa-solid fa-arrow-left"></i></a>
         </div>
         <div class="icon">
             

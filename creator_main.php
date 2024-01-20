@@ -17,6 +17,9 @@ if(isset($message)){
 
 session_start();
 
+//testing
+$user_id = 1;
+
 //=====We have to give this in the final========
 
 // $user_id = $_SESSION['user_id'];
@@ -29,48 +32,13 @@ session_start();
 //==================================================
 
 
-if(isset($_POST['analyse'])){
+if(isset($_POST['projects'])){
 
-    $targetDirectory = "uploads-analysis/";
-    $targetFile = $targetDirectory . basename($_FILES["mp3File"]["name"]);
-    $uploadOk = 1;
-    $mp3FileType = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
+    header('location:analysis_select.php');
+}
+if(isset($_POST['jobs'])){
 
-    
-
-    // Check file size (you can adjust this limit)
-    if ($_FILES["mp3File"]["size"] > 5000000) {
-        echo "Sorry, your file is too large.";
-        $uploadOk = 0;
-    }
-
-    // Allow only specific file formats
-    if ($mp3FileType != "mp3") {
-        echo "Sorry, only MP3 files are allowed.";
-        $uploadOk = 0;
-    }
-
-    // Check if $uploadOk is set to 0 by an error
-    if ($uploadOk == 0) {
-        echo "Sorry, your file was not uploaded.";
-    } else {
-        // Move the file to the specified directory
-        if (move_uploaded_file($_FILES["mp3File"]["tmp_name"], $targetFile)) {
-            echo "The file " . htmlspecialchars(basename($_FILES["mp3File"]["name"])) . " has been uploaded.";
-        } else {
-            
-            echo "Sorry, there was an error uploading your file.";
-            echo "Error: " . $_FILES["mp3File"]["error"];
-
-        }
-    }
-    $new_audio_name=htmlspecialchars(basename($_FILES["mp3File"]["name"])) ;
-
-
-
-    //=====================================================
-                    //Machine Learning Part
-    //=====================================================
+    header('location:job_create.php');
 }
 ?>
 
@@ -79,8 +47,8 @@ if(isset($_POST['analyse'])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Track Mood Analysis</title>
-    <link rel="stylesheet" href="css/track_mood_analysis.css">
+    <title>Crator Main</title>
+    <link rel="stylesheet" href="css/creator_main.css">
     <link rel="icon" href="images/icon.ico" type="image/x-icon" />
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"> -->
 </head>
@@ -90,7 +58,7 @@ if(isset($_POST['analyse'])){
     <section class="flex">
         
         <div class="back">
-            <a href="analysis_select.php"><i class="fa-solid fa-arrow-left"></i></a>
+            <a href="post_job.php"><i class="fa-solid fa-arrow-left"></i></a>
         </div>
         <div class="icon">
             
@@ -114,16 +82,10 @@ if(isset($_POST['analyse'])){
     <form action="" method="POST" enctype="multipart/form-data">
         <div class="form-group">
                 <div class="title">
-                    <h1>Track Mood Analysis</h1>
+                    <h1>Let The Waves of Emotion Begin!</h1>
                 </div>
-                <div class="input-container">
-                    
-                    <!-- <input type="file" name="music" class="input music-input" /> -->
-                    <label for="mp3File" class="drop-container" id="dropcontainer">
-                    <span class="drop-title">Browse File to Upload ( Mp3)</span>
-                    
-                    <input type="file" id="mp3File" name="mp3File" class="uploading">
-                    </label>
+                <div class="desc">
+                    <p>They can analyze the emotions by using projects. First, they need to create a project.Select the type of the project .Click the Submit button to analyze the music.Click the Job button.Add the Job Details and the music or song.</p>
                 </div>
                 <div class="dots">
                     <img src="images/dots.png">
@@ -131,14 +93,16 @@ if(isset($_POST['analyse'])){
                
                <div class="buttons">
                     <!-- <a href="post_job.php" class="button">POST JOB</a> -->
-                    <input type="submit" name="analyse" value="ANALYSE" class="button">
+                    <input type="submit" name="projects" value="PROJECTS" class="button">
+                    <input type="submit" name="jobs" value="JOBS" class="button">
                </div>
             
         </div>
-        
+        <img src="images/Creator_Main.png">
     </form>
 
 </section>
+
     <script src="https://kit.fontawesome.com/f05855486d.js" crossorigin="anonymous"></script>
     <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script> -->
 </body>
