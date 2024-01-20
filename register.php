@@ -1,42 +1,40 @@
 <?php
 
-if(isset($message)){
-   foreach($message as $message){
-      echo '
-      <div class="message">
-         <span>'.$message.'</span>
-         <i class="fas fa-times" onclick="this.parentElement.remove();"></i>
-      </div>
-      ';
-   }
-}
-?>
-<?php
-
 @include 'config.php';
 
 session_start();
 
 if(isset($_POST['register'])){
 
+    if(!isset($_POST['select_type'])){
+        $message[] = 'Plaese select user type';
+    }elseif(!isset($_POST['username'])){
+        $message[] = 'Plaese enter Username';
+    }elseif(!isset($_POST['email'])){
+        $message[] = 'Plaese enter Email';
+    }elseif(!isset($_POST['password'])){
+        $message[] = 'Plaese enter Password';
+    }else{
+        $user_type = $_POST['select_type'];
+        $username = $_POST['username'];
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+        $placed_on = date('d-M-Y');
 
-    $user_type = $_POST['select_type'];
-    $username = $_POST['username'];
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-    $placed_on = date('d-M-Y');
 
+        $select_users = mysqli_query($conn, "SELECT * FROM `users` WHERE email = '$email'") or die('query failed');
 
-    $select_users = mysqli_query($conn, "SELECT * FROM `users` WHERE email = '$email'") or die('query failed');
+        if(mysqli_num_rows($select_users) > 0){
+            $message[] = 'user already exist!';
+        }else{
+                mysqli_query($conn, "INSERT INTO `users`(username,email,password,user_type,placed_on) VALUES('$username', '$email', '$password', '$user_type', '$placed_on')") or die(mysqli_error($conn));
+                $message[] = 'Login successfully!';
+                header("location:login.php");
+                
+        }
+    }
 
-   if(mysqli_num_rows($select_users) > 0){
-      $message[] = 'user already exist!';
-   }else{
-        mysqli_query($conn, "INSERT INTO `users`(username,email,password,user_type,placed_on) VALUES('$username', '$email', '$password', '$user_type', '$placed_on')") or die(mysqli_error($conn));
-        $message[] = 'Login successfully!';
-        header("location:login.php");
-        
-   }
+    
 
 }
 ?>
@@ -48,9 +46,25 @@ if(isset($_POST['register'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
     <link rel="stylesheet" href="css/register.css">
+    <link rel="icon" href="images/icon.ico" type="image/x-icon" />
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"> -->
 </head>
 <body>
+
+<?php
+
+if(isset($message)){
+   foreach($message as $message){
+      echo '
+      <div class="message">
+         <span>'.$message.'</span>
+         <i class="fas fa-times" onclick="this.parentElement.remove();"></i>
+      </div>
+      ';
+   }
+}
+?>
+
 <section class="images">
     <img src="images/gradient.png" class="img1">
     <img src="images/gradient.png" class="img2">
@@ -63,7 +77,7 @@ if(isset($_POST['register'])){
             
             <div class="row">
                 <div class="back">
-                    <a href="#"><i class="fa-solid fa-arrow-left"></i></a>
+                    <a href="index.php"><i class="fa-solid fa-arrow-left"></i></a>
                 </div>
                 <div class="row1">
                     <div class="logo">

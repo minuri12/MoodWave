@@ -12,10 +12,10 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="../css/style.css" />
-    <link rel="stylesheet" href="/CSS/glass-menu.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/glass-menu.css" />
 
-    <link rel="icon" href="../images/icon.ico" type="image/x-icon" />
+    <link rel="icon" href="images/icon.ico" type="image/x-icon" />
     <title>MoodWave</title>
   </head>
   <body bgcolor="#0C070F">
@@ -25,10 +25,10 @@
     <section class="navigation_section">
         <nav class="Navigation_Bar">
           <ul>
-            <li><img src="../images/Logo.png" alt="MoodWave_logo" /></li>
+            <li><img src="images/Logo.png" alt="MoodWave_logo" /></li>
             <li class="features"><a href="#">FEATURES</a></li>
             <li><a href="#" class="ABOUT">ABOUT US</a></li>
-            <li><button>Join</button></li>
+            <li><button onclick="window.location.href = 'register.php'">Join</button></li>
           </ul>
         </nav>
     </section>
@@ -40,10 +40,10 @@
       <!--Main image start-->
       <section class="Land">
         <div class="icon_head">
-          <img src="/Images/Icon_head.png" alt="Play_icon" class="icon_set" />
+          <img src="images/Icon_head.png" alt="Play_icon" class="icon_set" />
         </div>
         <div class="Main_topic">MOODWAVE</div>
-        <div class="arrow"><img src="/Images/Arrow.png" alt="arrow" /></div>
+        <div class="arrow"><img src="images/Arrow.png" alt="arrow" /></div>
         <!--Main image end-->
 
 <!-- card start-->
@@ -92,17 +92,17 @@
             </div>
             
           </div>
-          <img  src="/Images/Shadow.png" alt="" class="card_image" style="  left: 90px;top: -120px; z-index: -1;">
+          <img  src="images/Shadow.png" alt="" class="card_image" style="  left: 90px;top: -120px; z-index: -1;">
 
 
 <!-- card end-->
 
 <!--why MoodWave start-->
 <div class="How">How It Works ?</div>
-<img src="/Images/Card.png" class="how_work">
+<img src="images/Card.png" class="how_work">
 <!--why MoodWave End-->
 
-  <img  src="/Images/Shadow.png" alt="" class="card_image" >
+  <img  src="images/Shadow.png" alt="" class="card_image" >
 </div>
 
 
@@ -130,7 +130,7 @@
 
 
 
-        <script src="/JS/vanilla-tilt.min.js"></script>
+        <script src="JS/vanilla-tilt.min.js"></script>
 
 
 

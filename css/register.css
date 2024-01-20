@@ -15,6 +15,19 @@
     font-family: "Roboto", sans-serif;
  }
 
+ *::-webkit-scrollbar {
+    height: 0.5rem;
+    width: 0.5rem;
+  }
+  
+  *::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    background-color: #026eee;
+  }
+  
  body{
     background-color: var(--main-colur);
     /* background-image: url("../images/gradient.png");
@@ -23,11 +36,40 @@
     background-position: left; */
     
  }
+ .message{
+    position: fixed;
+    top:0;
+    margin:0;
+    width: 100%;
+    background-color: var(--next-bar);
+    display: flex;
+    align-items: flex-start;
+    padding:0.5rem;
+    gap:1.5rem;
+    z-index: 10;
+    justify-content: space-around;
+ }
+ 
+ .message span{
+    color:var(--white);
+    font-size: 1.5rem;
+ }
+ 
+ .message i{
+    font-size: 2rem;
+    color:red;
+    cursor: pointer;
+ }
+ 
+ .message i:hover{
+    transform: rotate(60deg);
+ }  
 
  .images .img1{
     position: fixed;
-    left:-200px;
-    top:-50px;
+    height: 400px;
+    left:100px;
+    top:100px;
     
  }
  .images .img2{
