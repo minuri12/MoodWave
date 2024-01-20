@@ -25,9 +25,9 @@
     <section class="navigation_section">
         <nav class="Navigation_Bar">
           <ul>
-            <li><img src="images/Logo.png" alt="MoodWave_logo" /></li>
-            <li class="features"><a href="#">FEATURES</a></li>
-            <li><a href="#" class="ABOUT">ABOUT US</a></li>
+            <li><a href="index.php"><img src="images/Logo.png" alt="MoodWave_logo" /></a></li>
+            <li class="features"><a href="#test">FEATURES</a></li>
+            <li><a href="About_us.php" class="ABOUT">ABOUT US</a></li>
             <li><button onclick="window.location.href = 'register.php'">Join</button></li>
           </ul>
         </nav>
@@ -47,7 +47,7 @@
         <!--Main image end-->
 
 <!-- card start-->
-  <div class="head">Why Use MoodWave?</div>
+  <div class="head" id="test">Why Use MoodWave?</div>
         <div class="container">
           <div class="card">
             <div class="content">

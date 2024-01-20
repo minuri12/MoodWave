@@ -1,22 +1,8 @@
 <?php
 
-if(isset($message)){
-   foreach($message as $message){
-      echo '
-      <div class="message">
-         <span>'.$message.'</span>
-         <i class="fas fa-times" onclick="this.parentElement.remove();"></i>
-      </div>
-      ';
-   }
-}
-?>
-<?php
-
 @include 'config.php';
 
 session_start();
-
 
 
 if(isset($_POST['login'])){
@@ -38,22 +24,16 @@ if(isset($_POST['login'])){
           $_SESSION['user_email'] = $row['email'];
           $_SESSION['user_id'] = $row['user_id'];
 
-
-          //===============================
-          //we have to change later
-          //================================
-          header('location:main.php');
+          header('location:jobs.php');
  
        }elseif($row['user_type'] == 'Creator'){
  
           $_SESSION['user_name'] = $row['name'];
           $_SESSION['user_email'] = $row['email'];
-          $_SESSION['user_id'] = $row['user_id '];
+          $_SESSION['user_id'] = $row['user_id'];
 
-          //===============================
-          //we have to change later
-          //================================
-          header('location:main.php');
+         $tid= $_SESSION['user_id'];
+          header("location:creator_main.php");
  
        }else{
           $message[] = 'no user found!';

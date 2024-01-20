@@ -12,11 +12,11 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="../css/style.css" />
-    <link rel="stylesheet" href="../css/footer.css" />
-    <link rel="stylesheet" href="../css/glass-menu.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+    <link rel="stylesheet" href="css/glass-menu.css" />
 
-    <link rel="icon" href="../images/icon.ico" type="image/x-icon" />
+    <link rel="icon" href="images/icon.ico" type="image/x-icon" />
     <title>MoodWave</title>
   </head>
   <body style="margin: 0; padding: 0; height: 100%; display: flex; flex-direction: column;">
@@ -25,15 +25,15 @@
   <div class="about">
     <div class="About_header">
         <ul>
-            <li><i class="fas fa-arrow-left" style="color: aliceblue;"></i></li>
+            <li><a href="index.php"><i class="fas fa-arrow-left" style="color: aliceblue;"></i></a></li>
             <li >About Us</li>
         </ul>
     </div>
-      <img  src="../images/Shadow.png" alt="" class="card_image" style="width:700px ;z-index: -1;">
+      <img  src="images/Shadow.png" alt="" class="card_image" style="width:700px ;z-index: -1;">
     <!-- partial:index.partial.html -->
     <div class="container_card">
         <div class="card_What_Mood" style="height: 532px;">
-          <h1 class="title"><img src="../images/Logo.png" alt="" /></h1>
+          <h1 class="title"><img src="images/Logo.png" alt="" /></h1>
        
           <p class="subtitle">
             Welcome to MoodWave, where emotion meets music in a harmonious blend of innovation and creativity. Our platform is more than just a music streaming service; it's an immersive journey through the intricate landscapes of emotions embedded in every note.<br><br>
