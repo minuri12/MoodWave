@@ -438,3 +438,51 @@ footer {
   background-image: url(/Images/Shadow.png);
   background-size: 1000px;
 }
+
+.grit_card_section_create {
+  display: grid;
+  grid-template-columns: auto auto;
+  column-gap: 20px;
+  align-items: center;
+  justify-content: center;
+  margin-left: 270px;
+  margin-right: 270px;
+  background-image: url(/Images/Shadow.png);
+  background-size: 400px;
+  background-repeat: no-repeat;
+}
+
+.Project_name {
+  align-items: center;
+  text-align: center;
+  font-size: 20px;
+  width: 790px;
+  position: relative;
+  align-items: center;
+  border-radius: 10px;
+  border: none;
+  height: 40px;
+}
+
+.Middle_button_start {
+  width: 160px;
+  height: 50px;
+  border-radius: 25px;
+  background-color: #026eee;
+  color: #0c070f;
+  border: none;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 15px;
+  margin-left: 10px;
+
+  transition: all 0.5s ease-in-out;
+}
+
+.Middle_button_start:hover {
+  width: 165px;
+  border-radius: 25px;
+  background-color: #8ebbf1;
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+}
