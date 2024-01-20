@@ -327,3 +327,114 @@ footer {
   align-items: center;
   padding: 20px;
 }
+
+.Main_topic_sides {
+  text-align: center;
+  color: white;
+  font-weight: 700;
+  font-size: 55px;
+  margin-top: 100px;
+  position: relative;
+  align-items: center;
+}
+
+.Small_topic_sides {
+  text-align: center;
+  color: white;
+  font-weight: 200;
+  font-size: 20px;
+  margin-top: 20px;
+  position: relative;
+  align-items: center;
+  margin-left: 270px;
+  margin-right: 270px;
+}
+
+.button_holder {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.Middle_button {
+  width: 160px;
+  height: 50px;
+  border-radius: 25px;
+  background-color: #026eee;
+  color: #0c070f;
+  border: none;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 15px;
+  margin-left: 10px;
+
+  transition: all 0.5s ease-in-out;
+}
+
+.Middle_button:hover {
+  width: 170px;
+  border-radius: 25px;
+  background-color: #3a8aec;
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+.description {
+  padding-top: 50px;
+  display: flex;
+  overflow: hidden;
+  justify-content: center;
+}
+
+.sub_topic_sides {
+  text-align: center;
+  color: white;
+  font-weight: 300;
+  font-size: 30px;
+  margin-top: 100px;
+  position: relative;
+  align-items: center;
+}
+
+.card_section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  min-height: 280px;
+  padding: 35px;
+  background: linear-gradient(
+    326.21deg,
+    rgba(83, 83, 83, 0.03) 4.14%,
+    hsla(0, 0%, 74%, 0.08)
+  );
+  border: 1px solid hsla(0, 0%, 100%, 0.03);
+  border-radius: 7px;
+  text-align: left;
+  transition: border 0.3s ease-in-out;
+  cursor: default;
+  font-size: 17px;
+  line-height: 25px;
+  letter-spacing: -0.36px;
+  color: white;
+  height: auto;
+}
+
+.card_section:hover {
+  border: 1px solid hsla(240, 2%, 25%, 0.836);
+  cursor: pointer;
+}
+.grit_card_section {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 10px;
+  margin: 10px;
+  align-items: center;
+  justify-content: center;
+  margin-left: 80px;
+  margin-right: 80px;
+  background-image: url(/Images/Shadow.png);
+  background-size: 1000px;
+}
