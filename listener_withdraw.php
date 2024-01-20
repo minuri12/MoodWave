@@ -38,7 +38,15 @@ if(isset($_POST['submit'])){
    if(isset($_GET['job_id'])){
       // $job_id = $_GET['job_id'];
       $job_id = mysqli_real_escape_string($conn, $_GET['job_id']);
-      echo $job_id;
+      //echo $job_id;
+    }
+   if(isset($_GET['comments'])){
+      $comments = mysqli_real_escape_string($conn, $_GET['comments']);
+      
+    }
+   if(isset($_GET['annotate'])){
+      $annotate = mysqli_real_escape_string($conn, $_GET['annotate']);
+      
     }
 
     $name_on_card = $_POST['name_on_card'];
@@ -49,7 +57,7 @@ if(isset($_POST['submit'])){
     $placed_on = date('d-M-Y');
 
 
-   mysqli_query($conn, "INSERT INTO `withdraw`(job_id,listener_id,name_on_card,amount,card_details,expiary,cvv,placed_on) VALUES('$job_id', '$listener_id', '$name_on_card','$amount', '$card_details', '$expiary', '$cvv','$placed_on')") or die(mysqli_error($conn));
+   mysqli_query($conn, "INSERT INTO `withdraw`(job_id,listener_id,comments,annotate,name_on_card,amount,card_details,expiary,cvv,placed_on) VALUES('$job_id', '$listener_id','$comments','$annotate', '$name_on_card','$amount', '$card_details', '$expiary', '$cvv','$placed_on')") or die(mysqli_error($conn));
 
    $message[] = 'payement done successfully!';
 
