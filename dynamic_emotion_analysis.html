@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/glass-menu.css" />
+
+    <link rel="icon" href="images/icon.ico" type="image/x-icon" />
+    <title>MoodWave</title>
+  </head>
+  <body bgcolor="#0C070F">
+<?php
+  if(isset($message)){
+   foreach($message as $message){
+      echo '
+      <div class="message">
+         <span>'.$message.'</span>
+         <i class="fas fa-times" onclick="this.parentElement.remove();"></i>
+      </div>
+      ';
+   }
+}
+?>
+    <!-- Navigation bar start -->
+    <section class="navigation_section">
+      <nav class="Navigation_Bar">
+        <ul>
+          <li><a href="index.php"><img src="images/Logo.png" alt="MoodWave_logo" /></a></li>
+          <li class="features"><a href="#">HELP</a></li>
+          <li><a href="#" class="ABOUT">ABOUT US</a></li>
+          <li><form method="POST"><input type="submit" name="logout" class="logout" value="LOG OUT"></form></li>
+        </ul>
+      </nav>
+    </section>
+    <!-- Navigation bar end -->
+
+    <section class="Land">
+      <div class="Main_topic_sides" style="margin-top: 70px;">Dynamic Emotion Analysis</div><br>
+      <div class="Small_topic_sides" style="margin-left: 285px;margin-right: 285px;">
+      
+
+        <input type="file" onchange="previewFile()" accept="audio/*" class="audio_input">
+        <div style="font-size: 15px; font-weight: 100; opacity: 20%; padding-top: 10px;"><i>Click here for choose file</i></div>
+
+        <br>
+        
+
+
+<audio controls src=""></audio>
+<div id="result"></div>
+
+<div class="button_holder">
+
+  <li style="list-style-type: none;"><form method="POST"><input type="submit" name="jobs" class="Middle_button" value="ANALYSIS"></form></li>
+  
+  </div>
+
+
+
+      </div>
+      
+      <div class="description">
+        <div class="sub_topic_sides">
+          Analysis
+        </div>
+      </div>
+      <br /><br />
+      <footer style="position: relative; bottom: 0">
+        <div class="Icon_bar">
+          <a href="#"><i class="fab fa-facebook-square"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+        <div class="box" style="text-align: center; margin-top: 20px">
+          Copyright | FOC - SUSL
+        </div>
+      </footer>
+
+       
+    </section>
+    <script>
+      function previewFile() {
+        var preview = document.querySelector('audio');
+        var fileInput = document.querySelector('input[type=file]');
+        var file = fileInput.files[0];
+        var reader = new FileReader();
+    
+        reader.addEventListener("load", function () {
+          preview.src = reader.result;
+        }, false);
+    
+        if (file) {
+          reader.readAsDataURL(file);
+          updateButtonAppearance();
+        }
+      }
+    
+      function updateButtonAppearance() {
+        var fileInput = document.querySelector('input[type=file]');
+        fileInput.classList.add('file-uploaded');
+      }
+    </script>
+
+  </body>
+</html>
