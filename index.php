@@ -38,12 +38,14 @@
     <center>
 
       <!--Main image start-->
+      <img  src="images/Shadow.png" alt="" class="card_image" style="  top:-5px ;z-index: -1;">
       <section class="Land">
         <div class="icon_head">
           <img src="images/Icon_head.png" alt="Play_icon" class="icon_set" />
         </div>
         <div class="Main_topic">MOODWAVE</div>
-        <div class="arrow"><img src="images/Arrow.png" alt="arrow" /></div>
+        <div class="arrow"><img src="images/Arrow.png" alt="arrow" /></div><br>
+
         <!--Main image end-->
 
 <!-- card start-->

@@ -21,6 +21,22 @@
   </head>
   <body style="margin: 0; padding: 0; height: 100%; display: flex; flex-direction: column;">
 
+    
+<?php
+
+if(isset($message)){
+   foreach($message as $message){
+      echo '
+      <div class="message">
+         <span>'.$message.'</span>
+         <i class="fas fa-times" onclick="this.parentElement.remove();"></i>
+      </div>
+      ';
+   }
+}
+?>
+
+
 
   <div class="about">
     <div class="About_header">

@@ -100,7 +100,7 @@ if(isset($message)){
             
             <div class="row">
                 
-                <img src="images/login.png">
+                <img src="images/login.png" >
             </div>
             
             <div class="row2">

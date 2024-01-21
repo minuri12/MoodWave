@@ -129,6 +129,7 @@ body {
   background-size: contain;
   align-items: center;
 }
+
 .arrow img {
   margin-top: 70px;
   width: 30px;
@@ -485,4 +486,100 @@ footer {
   background-color: #8ebbf1;
   transition: all 0.5s ease-in-out;
   cursor: pointer;
+}
+
+.Loading {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  display: none;
+  transition: opacity 0.5s ease;
+}
+
+.Main_topic_Loading {
+  color: white;
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.sub {
+  color: white;
+  font-weight: 300;
+  font-size: 15px;
+  padding-top: 10px;
+}
+
+.title h1 {
+  color: white;
+  font-weight: 400;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.radio-btn {
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.input-container {
+  color: white;
+  padding-bottom: 20px;
+}
+
+.input {
+  width: 370px;
+  padding: 8px;
+  margin-top: 5px;
+  background-color: #49474bad;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 15px;
+}
+
+.last_text {
+  color: rgba(255, 255, 255, 0.74);
+  font-weight: 300;
+}
+
+.last_text a {
+  color: white;
+}
+
+.Login_card {
+  background: rgba(255, 255, 255, 0.15);
+  align-items: center;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  color: whitesmoke;
+  margin-right: 50px;
+  width: 50%;
+  height: 598px;
+  padding: 40px;
+  padding-left: 150px;
+}
+
+.container_card_Login {
+  min-height: 80vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+}
+
+.Mood_text {
+  opacity: 10%;
+  width: 350px;
+  z-index: -1;
+  align-items: flex-start;
+  padding-bottom: 50px;
 }
