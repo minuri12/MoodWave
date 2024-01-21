@@ -8,11 +8,11 @@ if(isset($_POST['register'])){
 
     if(!isset($_POST['select_type'])){
         $message[] = 'Plaese select user type';
-    }elseif(!isset($_POST['username'])){
+    }elseif($_POST['username']==""){
         $message[] = 'Plaese enter Username';
-    }elseif(!isset($_POST['email'])){
+    }elseif($_POST['email']==""){
         $message[] = 'Plaese enter Email';
-    }elseif(!isset($_POST['password'])){
+    }elseif($_POST['password']==""){
         $message[] = 'Plaese enter Password';
     }else{
         $user_type = $_POST['select_type'];
@@ -106,15 +106,15 @@ if(isset($message)){
                     <label for="Creator">Creator</label>
                 </div>
                <div class="input-container">
-                    <label for="" >Username</label><br>
+                    <label for="username" >Username</label><br>
                     <input type="text" name="username" class="input" />
                 </div>
                <div class="input-container">
-                    <label for="" >Email</label><br>
+                    <label for="email" >Email</label><br>
                     <input type="text" name="email" class="input" />
                 </div>
                <div class="input-container">
-                    <label for="" >Password</label><br>
+                    <label for="password" >Password</label><br>
                     <input type="password" name="password" class="input" />
                 </div>
 

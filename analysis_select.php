@@ -1,43 +1,48 @@
-<?php
 
-if(isset($message)){
-   foreach($message as $message){
-      echo '
-      <div class="message">
-         <span>'.$message.'</span>
-         <i class="fas fa-times" onclick="this.parentElement.remove();"></i>
-      </div>
-      ';
-   }
-}
-?>
 <?php
 
 @include 'config.php';
 
 session_start();
 
-//=====We have to give this in the final========
 
-// $user_id = $_SESSION['user_id'];
+$user_id = $_SESSION['user_id'];
 
 
-// if(!isset($user_id)){
-//    header('location:login.php');
-// };
+if(!isset($user_id)){
+   header('location:login.php');
+};
 
-//==================================================
+if(isset($_POST['logout'])){
+
+    session_unset();
+    session_destroy();
+
+    header('location:index.php');
+}
+
 
 
 if(isset($_POST['track_start'])){
-    $project_name=$_POST['project_name'];
-
-    header("location:track_mood_analysis.php?project_name=$project_name");
+    if($_POST['project_name']==""){
+        $message[] = 'Enter Project Name';
+       
+    }else{
+        $project_name=$_POST['project_name'];
+        header("location:track_mood_analysis.php?project_name=$project_name");
+    }
+    
 }
 if(isset($_POST['dynamic_start'])){
-    $project_name=$_POST['project_name'];
 
-    header("location:dynamic_emotion_analysis.php?project_name=$project_name");
+    if($_POST['project_name']==""){
+        $message[] = 'Enter Project Name';
+       
+    }else{
+        $project_name=$_POST['project_name'];
+        header("location:dynamic_emotion_analysis.php?project_name=$project_name");
+    }
+    
 }
 
 ?>
@@ -53,29 +58,32 @@ if(isset($_POST['dynamic_start'])){
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"> -->
 </head>
 <body>
-<header class="header">
-    
-    <section class="flex">
-        
-        <div class="back">
-            <a href="creator_main.php"><i class="fa-solid fa-arrow-left"></i></a>
-        </div>
-        <div class="icon">
-            
-            <img src="images/Logo_k.png">
-        </div>
+<?php
 
-        <nav class="navbar">
-            <a href="#">HELP</a>
-            <a href="#">ABOUT US<a>
+if(isset($message)){
+   foreach($message as $message){
+      echo '
+      <div class="message">
+         <span>'.$message.'</span>
+         <i class="fas fa-times" onclick="this.parentElement.remove();"></i>
+      </div>
+      ';
+   }
+}
+?>
+    <!--Navigation bar start-->
+    <section class="navigation_section">
+        <nav class="Navigation_Bar">
+          <ul>
+            <li><a href="creator_main.php" style="margin-left:-100px;"><i class="fa-solid fa-arrow-left"></i></a></li>
+            <li><a href="index.php"><img src="images/Logo.png" alt="MoodWave_logo" /></a></li>
+            <li class="features"><a href="Need_Help.php">HELP</a></li>
+            <li><a href="About_us.php" class="ABOUT">ABOUT US</a></li>
+            <li><form method="POST"><input type="submit" name="logout" class="logout" value="LOG OUT"></form></li>
+          </ul>
         </nav>
-
-        <div class="logout_button">
-            <button>LOG OUT</button>
-        </div>
-        
     </section>
-</header>
+    <!--Navigation bar end-->
 
 <section class="content">
     
@@ -120,6 +128,7 @@ if(isset($_POST['dynamic_start'])){
         <i class="fa-brands fa-square-facebook"></i>
         <i class="fa-brands fa-twitter"></i>
     </div>
+    <div class="box">Copyright | FOC - SUSL</div>
 
 </section>
     <script src="https://kit.fontawesome.com/f05855486d.js" crossorigin="anonymous"></script>

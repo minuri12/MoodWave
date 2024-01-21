@@ -12,11 +12,11 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="../css/style.css" />
-    <link rel="stylesheet" href="../css/footer.css" />
-    <link rel="stylesheet" href="../css/glass-menu.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+    <link rel="stylesheet" href="css/glass-menu.css" />
 
-    <link rel="icon" href="../images/icon.ico" type="image/x-icon" />
+    <link rel="icon" href="images/icon.ico" type="image/x-icon" />
     <title>MoodWave</title>
   </head>
   <body style="margin: 0; padding: 0; height: 100%; display: flex; flex-direction: column;">
@@ -25,15 +25,15 @@
   <div class="about">
     <div class="About_header">
         <ul>
-            <li><i class="fas fa-arrow-left" style="color: aliceblue;"></i></li>
-            <li >Need Help?</li>
+            <li><a href="creator_main.php"><i class="fas fa-arrow-left" style="color: aliceblue;"></i></a></li>
+            <li>Need Help?</li>
         </ul>
     </div>
-      <img  src="../images/Shadow.png" alt="" class="card_image" style="width:700px ;z-index: -1; left: 350px; top: 5px;">
+      <img  src="images/Shadow.png" alt="" class="card_image" style="width:700px ;z-index: -1; left: 350px; top: 5px;">
     <!-- partial:index.partial.html -->
     <div class="container_card">
         <div class="card_What_Mood" style="height: 400px; width: 900px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
-          <h1 class="title" ><img style="justify-content: center;" src="../images/Logo.png" alt="" /></h1>
+          <h1 class="title" ><img style="justify-content: center;" src="images/Logo.png" alt="" /></h1>
        
           <p class="subtitle"  style="text-align: center;">
             <b>Music  Creator</b><br>
