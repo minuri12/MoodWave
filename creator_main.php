@@ -87,8 +87,8 @@ if(isset($_POST['jobs'])){
         <img src="images/dots.png" alt="" />
       </div>
       <div class="button_holder">
-      <li><form method="POST"><input type="submit" name="projects" class="Middle_button" value="PROJECTS"></form></li>
-      <li><form method="POST"><input type="submit" name="jobs" class="Middle_button" value="JOBS"></form></li>
+      <li style="list-style-type: none;"><form method="POST"><input type="submit" name="projects" class="Middle_button" value="PROJECTS"></form></li>
+      <li style="list-style-type: none;"><form method="POST"><input type="submit" name="jobs" class="Middle_button" value="JOBS"></form></li>
       </div>
 
       <div class="description">

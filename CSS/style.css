@@ -601,3 +601,59 @@ footer {
   transition: all 0.5s ease-in-out;
   cursor: pointer;
 }
+
+.container_card_register {
+  min-height: 80vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+}
+
+table {
+  border-spacing: 1;
+  border-collapse: collapse;
+  border-radius: 6px;
+  overflow: hidden;
+
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+table tr {
+  border-bottom: 1px solid rgb(255, 255, 255);
+  height: 60px;
+}
+
+.colorcode {
+  background-color: green;
+  width: 30px;
+  height: 10px;
+  border-radius: 3px;
+  display: inline-block;
+}
+
+.percentage {
+  display: inline-block;
+  margin-right: 5px;
+  margin-right: 10px;
+}
+
+.colorcode_red {
+  background-color: rgb(228, 15, 15);
+  width: 30px;
+  height: 10px;
+  border-radius: 3px;
+  display: inline-block;
+}
+
+.colorcode_yellow {
+  background-color: rgb(215, 238, 8);
+  width: 30px;
+  height: 10px;
+  border-radius: 3px;
+  display: inline-block;
+}
