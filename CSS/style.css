@@ -2,6 +2,37 @@
   font-family: "Roboto", sans-serif;
 }
 
+
+.message{
+  position: sticky;
+  top:0;
+  margin:0;
+  width: 100%;
+  background-color: #183787;
+  display: flex;
+  align-items: flex-start;
+  padding:0.5rem;
+  gap:1.5rem;
+  z-index: 10;
+  justify-content: space-around;
+}
+
+.message span{
+  color:white;
+  font-size: 1.5rem;
+}
+
+.message i{
+  font-size: 2rem;
+  color:red;
+  cursor: pointer;
+}
+
+.message i:hover{
+  transform: rotate(60deg);
+}  
+
+
 body {
   margin: 0;
   padding: 0;
@@ -121,7 +152,7 @@ body {
 
 .Land {
   z-index: -1;
-  background: url(/Images/Shadow.png) no-repeat 50%;
+  background: url(../images/Shadow.png) no-repeat 50%;
   background-size: contain;
   position: absolute;
   width: 99%;
@@ -436,7 +467,7 @@ footer {
   justify-content: center;
   margin-left: 80px;
   margin-right: 80px;
-  background-image: url(/Images/Shadow.png);
+  background-image: url(../images/Shadow.png);
   background-size: 1000px;
 }
 
@@ -448,7 +479,7 @@ footer {
   justify-content: center;
   margin-left: 270px;
   margin-right: 270px;
-  background-image: url(/Images/Shadow.png);
+  background-image: url(../images/Shadow.png);
   background-size: 400px;
   background-repeat: no-repeat;
 }

@@ -1,3 +1,72 @@
+
+<?php
+
+@include 'config.php';
+
+session_start();
+
+
+
+$user_id = $_SESSION['user_id'];
+
+
+if(!isset($user_id)){
+   header('location:login.php');
+};
+
+
+if(isset($_POST['logout'])){
+
+    session_unset();
+    session_destroy();
+
+    header('location:index.php');
+}
+
+
+if(isset($_POST['analyse'])){
+
+    $targetDirectory = "uploads-analysis/";
+    $targetFile = $targetDirectory . basename($_FILES["mp3File"]["name"]);
+    $uploadOk = 1;
+    $mp3FileType = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
+
+    
+
+    // Check file size (you can adjust this limit)
+    if ($_FILES["mp3File"]["size"] > 5000000) {
+        $message[] = 'Sorry, your file is too large.';
+        $uploadOk = 0;
+    }
+
+    // Allow only specific file formats
+    if ($mp3FileType != "mp3") {
+        $message[] = 'Sorry, only MP3 files are allowed.';
+        $uploadOk = 0;
+    }
+
+    // Check if $uploadOk is set to 0 by an error
+    if ($uploadOk == 0) {
+        $message[] = 'Sorry, your file was not uploaded.';
+    } else {
+        // Move the file to the specified directory
+        if (move_uploaded_file($_FILES["mp3File"]["tmp_name"], $targetFile)) {
+            //$message[] = "The file " . htmlspecialchars(basename($_FILES["mp3File"]["name"])) . " has been uploaded.";
+            $message[] = "Analyse part will comming soon";
+            
+        } else {
+            $message[] = "Error: " . $_FILES["mp3File"]["error"];
+        }
+    }
+    $new_audio_name=htmlspecialchars(basename($_FILES["mp3File"]["name"])) ;
+
+
+
+    //=====================================================
+                    //Machine Learning Part
+    //=====================================================
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -40,18 +109,18 @@
           <li><a href="index.php"><img src="images/Logo.png" alt="MoodWave_logo" /></a></li>
           <li class="features"><a href="#">HELP</a></li>
           <li><a href="#" class="ABOUT">ABOUT US</a></li>
-          <li><form method="POST"><input type="submit" name="logout" class="logout" value="LOG OUT"></form></li>
+          <li><form action="" method="POST" enctype="multipart/form-data"><input type="submit" name="logout" class="logout" value="LOG OUT"></li>
         </ul>
       </nav>
     </section>
     <!-- Navigation bar end -->
 
     <section class="Land">
-      <div class="Main_topic_sides" style="margin-top: 70px;">Dynamic Emotion Analysis</div><br>
+      <div class="Main_topic_sides" style="margin-top: 70px;">Track Mood Analysis</div><br>
       <div class="Small_topic_sides" style="margin-left: 285px;margin-right: 285px;">
       
 
-        <input type="file" onchange="previewFile()" accept="audio/*" class="audio_input">
+        <input type="file" onchange="previewFile()" name="mp3File" accept="audio/*" class="audio_input">
         <div style="font-size: 15px; font-weight: 100; opacity: 20%; padding-top: 10px;"><i>Click here for choose file(mp3)</i></div>
 
         <br>
@@ -63,8 +132,8 @@
 
 <div class="button_holder">
 
-  <li style="list-style-type: none;"><form method="POST"><input type="submit" name="jobs" class="Middle_button" value="ANALYSIS"></form></li>
-  
+  <li style="list-style-type: none;"><input type="submit" name="analyse" class="Middle_button" value="ANALYSIS"></li>
+  </form>
   </div>
 
 
