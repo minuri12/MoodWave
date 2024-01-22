@@ -1,3 +1,52 @@
+
+<?php
+
+@include 'config.php';
+
+session_start();
+
+
+$user_id = $_SESSION['user_id'];
+
+
+if(!isset($user_id)){
+   header('location:login.php');
+};
+
+if(isset($_POST['logout'])){
+
+    session_unset();
+    session_destroy();
+
+    header('location:index.php');
+}
+
+
+
+if(isset($_POST['track_start'])){
+    if($_POST['project_name']==""){
+        $message[] = 'Enter Project Name';
+       
+    }else{
+        $project_name=$_POST['project_name'];
+        header("location:Track Mood Analysis.php?project_name=$project_name");
+    }
+    
+}
+if(isset($_POST['dynamic_start'])){
+
+    if($_POST['project_name']==""){
+        $message[] = 'Enter Project Name';
+       
+    }else{
+        $project_name=$_POST['project_name'];
+        header("location:dynamic_emotion_analysis.php?project_name=$project_name");
+    }
+    
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -14,18 +63,30 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="../css/style.css" />
-    <link rel="stylesheet" href="/CSS/glass-menu.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="cSS/glass-menu.css" />
 
-    <link rel="icon" href="../images/icon.ico" type="image/x-icon" />
+    <link rel="icon" href="images/icon.ico" type="image/x-icon" />
     <title>MoodWave</title>
   </head>
   <body bgcolor="#0C070F">
+  <?php
+if(isset($message)){
+   foreach($message as $message){
+      echo '
+      <div class="message">
+         <span>'.$message.'</span>
+         <i class="fas fa-times" onclick="this.parentElement.remove();"></i>
+      </div>
+      ';
+   }
+}
+?>
     <!-- Navigation bar start -->
     <section class="navigation_section">
       <nav class="Navigation_Bar">
         <ul>
-          <li><img src="../images/Logo.png" alt="MoodWave_logo" /></li>
+          <li><img src="images/Logo.png" alt="MoodWave_logo" /></li>
           <li class="features"><a href="#">HELP</a></li>
           <li><a href="#" class="ABOUT">ABOUT US</a></li>
           <li><button>Log Out</button></li>
@@ -33,12 +94,13 @@
       </nav>
     </section>
     <!-- Navigation bar end -->
-
+  <form action="" method="POST" enctype="multipart/form-data">
     <section class="Land">
       <div class="Main_topic_sides">
         LET’S START ANALYSIS!<br />
         <input
           type="text"
+          name="project_name" 
           class="Project_name"
           placeholder="Enter Your Project Name Here.."
         />
@@ -53,7 +115,8 @@
             want to represent.
           </p>
           <div class="button_holder">
-            <button class="Middle_button_start">START</button>
+            <input type="submit" name="track_start" value="START" class="Middle_button_start">
+            <!-- <button class="Middle_button_start">START</button> -->
           </div>
         </div>
 
@@ -63,7 +126,8 @@
             Upload any audio and get a second-by-second emotion analysis.
           </p>
           <div class="button_holder">
-            <button class="Middle_button_start">START</button>
+            <!-- <button class="Middle_button_start">START</button> -->
+            <input type="submit" name="dynamic_start" value="START" class="Middle_button_start">
           </div>
         </div>
       </div>
@@ -80,8 +144,9 @@
         </div>
       </footer>
     </section>
+</form>
 
-    <script src="/JS/vanilla-tilt.min.js"></script>
+    <script src="JS/vanilla-tilt.min.js"></script>
     <script>
       VanillaTilt.init(document.querySelectorAll(".card"), {
         max: 25,

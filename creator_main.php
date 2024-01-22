@@ -22,11 +22,11 @@ if(isset($_POST['logout'])){
 
 if(isset($_POST['projects'])){
 
-    header('location:analysis_select.php');
+    header('location:Create_Project.php');
 }
 if(isset($_POST['jobs'])){
 
-    header('location:job_create.php');
+    header('location:Create_New_Job.php');
 }
 ?>
 <!DOCTYPE html>

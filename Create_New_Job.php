@@ -1,3 +1,47 @@
+<?php
+
+if(isset($message)){
+   foreach($message as $message){
+      echo '
+      <div class="message">
+         <span>'.$message.'</span>
+         <i class="fas fa-times" onclick="this.parentElement.remove();"></i>
+      </div>
+      ';
+   }
+}
+?>
+<?php
+
+@include 'config.php';
+
+session_start();
+
+
+$creator_id = $_SESSION['user_id'];
+
+
+if(!isset($creator_id)){
+   header('location:login.php');
+};
+
+
+if(isset($_POST['logout'])){
+
+    session_unset();
+    session_destroy();
+
+    header('location:index.php');
+}
+
+
+if(isset($_POST['post_job'])){
+
+    header('location:post_job.php');
+}else{
+   
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -75,7 +119,7 @@
                    
                 </th>
             </tr>
-            <tr>
+            <!-- <tr>
                 <td>You Belong with Me</td>
                 <td>100</td>
                 <td> <span class="percentage">40%</span><div class="colorcode"></div>
@@ -98,7 +142,38 @@
                 <td>145</td>
                 <td> <span class="percentage">40%</span><div class="colorcode"></div>
                 </td>
+            </tr> -->
+            <?php
+            
+            $select_jobs = mysqli_query($conn, "SELECT * FROM `jobs` WHERE creater_id='$creator_id'") or die('query failed');
+            if(mysqli_num_rows($select_jobs) > 0){
+                while($fetch_jobs = mysqli_fetch_assoc($select_jobs)){
+            ?>
+            <tr>
+                <td> <?php echo $fetch_jobs['song_name']; ?></td>
+                <td> <?php echo $fetch_jobs['workers_need']; ?></td>
+                
+                <td> <?php 
+                $complete_no=$fetch_jobs['completed']; 
+                $works=$fetch_jobs['workers_need'];
+                $persontage=$complete_no/$works *100;
+
+                if($persontage>75){
+                    echo '<span class="percentage">'.intval($persontage).'% </span><div class="colorcode_red"></div>';
+                    // echo  '<div class="cbox" style="display:flex;">'.intval($persontage).'% <div style="background-color:green;width:30px;height:10px;border-radius: 3px;margin-top:8px;margin-left:10px"></div></div>';
+                }elseif($persontage>45){
+                    echo '<span class="percentage">'.intval($persontage).'% </span><div class="colorcode_yellow"></div>';
+                    //echo  '<div class="cbox" style="display:flex;">'.intval($persontage).'% <div style="background-color:yellow;width:30px;height:10px;border-radius: 3px;margin-top:8px;margin-left:10px"></div></div>';
+                }else{
+                    echo '<span class="percentage">'.intval($persontage).'% </span><div class="colorcode"></div>';
+                    // echo  '<div class="cbox" style="display:flex;">'.intval($persontage).'% <div style="background-color:red;width:30px;height:10px;border-radius: 3px;margin-top:8px;margin-left:10px"></div></div>';
+                }
+                ?></td>
             </tr>
+            <?php
+                }
+            }
+            ?>
           </table>
 
 

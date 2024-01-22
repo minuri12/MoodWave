@@ -15,9 +15,9 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="/CSS/glass-menu.css" />
+    <link rel="stylesheet" href="css/glass-menu.css" />
 
-    <link rel="icon" href="../images/icon.ico" type="image/x-icon" />
+    <link rel="icon" href="images/icon.ico" type="image/x-icon" />
     <title>MoodWave</title>
     
   </head>
