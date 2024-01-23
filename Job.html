@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/glass-menu.css" />
+
+    <link rel="icon" href="images/icon.ico" type="image/x-icon" />
+    <title>MoodWave</title>
+  </head>
+  <body bgcolor="#0C070F">
+    <!-- Navigation bar start -->
+    <section class="navigation_section">
+      <nav class="Navigation_Bar">
+        <ul>
+          <li>
+            <a href="index.php"
+              ><img src="images/Logo.png" alt="MoodWave_logo"
+            /></a>
+          </li>
+          <li class="features"><a href="#">HELP</a></li>
+          <li><a href="#" class="ABOUT">ABOUT US</a></li>
+          <li>
+            <form method="POST">
+              <input
+                type="submit"
+                name="logout"
+                class="logout"
+                value="LOG OUT"
+              />
+            </form>
+          </li>
+        </ul>
+      </nav>
+    </section>
+    <!-- Navigation bar end -->
+
+    <section class="Land">
+      <div class="Main_topic_sides">JOBS</div>
+      <div class="Small_topic_sides">
+        Complete the task with honesty, and rest assured that we will initiate
+        payment once we have verified the thoroughness and accuracy of your
+        work. Your commitment to quality is greatly appreciated, and our payment
+        process is designed to ensure fair compensation for your dedicated
+        efforts.<br /><br />
+      </div>
+      <br />
+      <center>
+        <form
+          onsubmit="event.preventDefault();"
+          role="search"
+          class="search_form"
+        >
+          <label for="search">Search for stuff</label>
+          <input
+            id="search"
+            type="search"
+            placeholder="Search the Artist or Song"
+            autofocus
+            required
+          />
+          <button type="submit" class="search_btn">Go</button>
+        </form>
+      </center>
+
+      <div class="description" style="padding-top: 0">
+        <div class="sub_topic_sides">Available Jobs</div>
+      </div>
+      <br /><br />
+
+      <div class="grit_card_section">
+        <div
+          class="card_section"
+          style="
+            width: 850px;
+            min-height: 0;
+            padding-top: 10px;
+            padding-bottom: 10px;
+          "
+        >
+          <table>
+            <button style="opacity: 0">
+              <tr style="border: none">
+                <td>Fearless<br />Taylor Swift</td>
+                <td>
+                  7 of 25 remaining<br />
+                  <progress id="file" value="32" max="100">32%</progress>
+                </td>
+                <td>
+                  <span class="percentage">LKR 30.00</span>
+                </td>
+              </tr>
+            </button>
+          </table>
+        </div>
+      </div>
+
+      <div class="grit_card_section">
+        <div
+          class="card_section"
+          style="
+            width: 850px;
+            min-height: 0;
+            padding-top: 10px;
+            padding-bottom: 10px;
+          "
+        >
+          <table>
+            <button style="opacity: 0">
+              <tr style="border: none">
+                <td>Hope<br />Ed Sheeran</td>
+                <td>
+                  20 of 25 remaining<br />
+                  <progress id="file" value="75" max="100">75%</progress>
+                </td>
+                <td>
+                  <span class="percentage">LKR 22.00</span>
+                </td>
+              </tr>
+            </button>
+          </table>
+        </div>
+      </div>
+
+      <div class="grit_card_section">
+        <div
+          class="card_section"
+          style="
+            width: 850px;
+            min-height: 0;
+            padding-top: 10px;
+            padding-bottom: 10px;
+          "
+        >
+          <table>
+            <button style="opacity: 0">
+              <tr style="border: none">
+                <td>Perfect<br />Ed Sheeran</td>
+                <td>
+                  20 of 25 remaining<br />
+                  <progress id="file" value="90" max="100">90%</progress>
+                </td>
+                <td>
+                  <span class="percentage">LKR 35.00</span>
+                </td>
+              </tr>
+            </button>
+          </table>
+        </div>
+      </div>
+
+      <div class="grit_card_section" class="job_vard">
+        <div
+          class="card_section"
+          style="
+            width: 850px;
+            min-height: 0;
+            padding-top: 10px;
+            padding-bottom: 10px;
+          "
+        >
+          <table>
+            <button style="opacity: 0">
+              <tr style="border: none">
+                <td>Perfect<br />Ed Sheeran</td>
+                <td>
+                  20 of 25 remaining<br />
+                  <progress id="file" value="99" max="100">99%</progress>
+                </td>
+                <td>
+                  <span class="percentage">LKR 75.00</span>
+                </td>
+              </tr>
+            </button>
+          </table>
+        </div>
+      </div>
+
+      <br /><br />
+      <footer style="position: relative; bottom: 0">
+        <div class="Icon_bar">
+          <a href="#"><i class="fab fa-facebook-square"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+        <div class="box" style="text-align: center; margin-top: 20px">
+          Copyright | FOC - SUSL
+        </div>
+      </footer>
+    </section>
+
+    <script src="/JS/vanilla-tilt.min.js"></script>
+    <script>
+      VanillaTilt.init(document.querySelectorAll(".card"), {
+        max: 25,
+        speed: 400,
+        glare: true,
+        "max-glare": 1,
+      });
+    </script>
+  </body>
+</html>

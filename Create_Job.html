@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/footer.css" />
+    <link rel="stylesheet" href="../css/glass-menu.css" />
+   
+    
+
+    <link rel="icon" href="../images/icon.ico" type="image/x-icon" />
+    <title>MoodWave</title>
+  </head>
+  <body style="margin: 0; padding: 0; height: 100%; display: flex; flex-direction: column;">
+    <!-- Navigation bar start -->
+    <section class="navigation_section">
+      <nav class="Navigation_Bar">
+        <ul>
+          <li><i class="fas fa-arrow-left" style="color: aliceblue; margin-right: 60px;"></i></li>
+          <li><a href="index.php"><img src="images/Logo.png" alt="MoodWave_logo" /></a></li>
+          <li class="features"><a href="#">HELP</a></li>
+          <li><a href="#" class="ABOUT">ABOUT US</a></li>
+          <li><form method="POST"><input type="submit" name="logout" class="logout" value="LOG OUT"></form></li>
+        </ul>
+      </nav>
+    </section>
+    <!-- Navigation bar end -->
+
+  <div class="about">
+
+    <!-- partial:index.partial.html -->
+
+
+    <section class="Land" style="text-align: justify; margin-bottom: 0%; height: auto;" >
+      <div class="Main_topic_sides" style="font-size: 30px; margin-top: 60px; margin-bottom: 0%;"> 
+        CREATE NEW JOB<br />
+      </div>
+
+
+
+    <div class="container_card_register" style="text-align: justify; margin-bottom: 0%; height: auto;" >
+       
+      <div class="container" style="margin-top: 0px; padding-top: 0%;">
+
+        <form action="#" >
+          <div class="user__details">
+            <div class="input__box">
+              <span class="details">Song Name</span>
+              <input type="text" placeholder="Your song name" >
+            </div>
+            <div class="input__box">
+              <span class="details">Song(mp3)</span>
+              <input type="file" required style="padding: 0;padding-top: 5px;">
+            </div>
+            <div class="input__box">
+              <span class="details">Song Writer Name</span>
+              <input type="text" placeholder="Ex:Dewa" >
+            </div>
+            <div class="input__box">
+              <span class="details">Singer(s)</span>
+              <input type="tel"  placeholder="Ex:Arith">
+            </div>
+
+            <div class="input__box">
+              <span class="details">Workers needed</span>
+              <input type="number"  placeholder="0" min="1" max="200">
+            </div>
+
+
+            <div class="input__box">
+              <span class="details">Workers Will earn ( LKR )</span>
+  <select id="pay" name="pay">
+ 
+      <option value="50" style="margin-top: 20px;">50</option>
+      <option value="75">75</option>
+      <option value="100">100</option>
+      <option value="150">150</option>
+
+
+  </select>
+  <!--<button class="Middle_button" >Submit</button>-->
+            </div>
+            
+              <button class="Middle_button"  style="margin-left: 43% ;border-radius: 10px;"  >Submit</button></div>
+             
+            
+             </div>
+             
+           
+            </form>
+            
+           
+        </div>
+
+        <script>
+          let counter = 0;
+
+function increment() {
+  counter++;
+}
+
+function decrement() {
+  counter--;
+}
+
+function get() {
+  return counter;
+}
+
+const inc = document.getElementById("increment");
+const input = document.getElementById("input");
+const dec = document.getElementById("decrement");
+
+inc.addEventListener("click", () => {
+  increment();
+  input.value = get();
+});
+
+dec.addEventListener("click", () => {
+  if (input.value > 0) {
+    decrement();
+  }
+  input.value = get();
+});
+        </script>
+
+
+</html>
