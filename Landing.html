@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/glass-menu.css" />
+
+    <link rel="icon" href="images/icon.ico" type="image/x-icon" />
+    <title>MoodWave</title>
+  </head>
+  <body bgcolor="#0C070F">
+
+      <!--PreLoad start-->
+
+      <div id="preloader"></div>
+      <!--PreLoad End-->
+   
+
+    <!--Navigation bar start-->
+    <center>
+      <section class="navigation_section">
+        <nav class="Navigation_Bar">
+          <ul>
+            <li><a href="index.php"><img src="images/Logo.png" alt="MoodWave_logo" /></a></li>
+            <li class="features"><a href="#test">FEATURES</a></li>
+            <li><a href="About_us.html" class="ABOUT">ABOUT US</a></li>
+            <li><a href="register.html"><button >Join</button></a></li>
+          </ul>
+        </nav>
+    </section>
+    </center>
+
+    <!--Navigation bar end-->
+
+
+    <center>
+
+      <!--Main image start-->
+      <img  src="images/Shadow.png" alt="" class="card_image" style="  top:-5px ;z-index: -1;">
+      <section class="Land">
+        <div class="icon_head">
+          <img src="images/Icon_head.png" alt="Play_icon" class="icon_set" />
+        </div>
+        <div class="Main_topic_mood">MOODWAVE</div><br>
+        <!--Scroll start-->
+        <Div class="scroll" style="width: 1em; height: 1em;  
+        bottom: 205px; border-width: 0 0.2em 0.2em 0; border-style: solid; 
+        border-color: rgba(250, 235, 215, 0.26); animation: scrolldown 1.5s ease-in-out infinite;"></Div>
+    <Div class="scroll" style="width: 1.2em; height: 1.2em;  
+        bottom: 200px;  border-width: 0 0.2em 0.2em 0; border-style: solid; 
+        border-color: rgba(250, 235, 215, 0.26); animation: scrolldown 1.5s ease-in-out infinite;"></Div>
+<!--scroll end-->
+        <br><br><br>
+
+        <!--Main image end-->
+
+<!-- card start-->
+  <div class="head_Why" id="test" data-aos="zoom-in" >Why Use MoodWave?</div><br>
+  <div class="spacer"></div>
+        <div class="container">
+          <div class="card" data-aos="zoom-in-right" data-aos-duration="1500">
+            <div class="content">
+              <h2>🎧</h2>
+              <h3>MUSIC + AI</h3>
+            
+              <ul>
+                <li>
+                  Music creators can upload their compositions to our platform and
+                  leverage a user-friendly feature that analyzes and identifies the
+                  emotional nuances embedded their music or songs.
+                </li>
+              </ul>
+              
+            </div>
+          </div>
+          
+          <div class="card" data-aos="zoom-in" data-aos-duration="1500">
+            <div class="content">
+              <h2>🎼</h2>
+              <h3>TASKS</h3>
+    
+              <ul>
+                <li>
+                  Music creators have the ability to generate a task for listeners, wherein they can request an analysis of the emotions in their music by engaging the perspectives of actual listeners.
+                </li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="card"  data-aos="zoom-in-left" data-aos-duration="1500">
+            <div class="content">
+              <h2>🎙️</h2>
+              <h3>PAYMENTS</h3>
+    
+              <ul>
+                <li>
+                  The creators of the Music pay for  listeners based on the they assigned tasks, ensuring a fair and rewarding exchange for their valuable input on emotion analysis.
+                </li>
+              </ul>
+              
+            </div>
+            
+          </div>
+          <img  src="images/Shadow.png" alt="" class="card_image" style="  left: 90px;top: -120px; z-index: -1;">
+
+
+<!-- card end-->
+
+<!--why MoodWave start-->
+<div class="How" data-aos="zoom-in">How It Works ?</div>
+<img src="images/Card.png" class="how_work" data-aos="fade-up"
+data-aos-duration="2000">
+
+<!--why MoodWave End-->
+
+  <img  src="images/Shadow.png" alt="" class="card_image" >
+</div>
+
+
+
+<!-- Footer start-->
+<div class="container_footer">
+
+  <footer> 
+    <div class="Icon_bar">
+    <a href="#"></a><i class="fab fa-facebook-square"></i></a>
+  <a href="#"></a><i class="fab fa-instagram"></i></a>
+  <a href="#"></a><i class="fab fa-twitter"></i></a>
+
+  </div>
+  </footer>
+</div>
+<div class="box">Copyright | FOC - SUSL</div>
+<!-- Footer end-->
+</section>
+
+
+
+
+
+
+
+
+        <script src="JS/vanilla-tilt.min.js"></script>
+
+
+
+        <script>
+          VanillaTilt.init(document.querySelectorAll(".card"), {
+            max: 25,
+            speed: 400,
+            glare: true,
+            "max-glare": 1,
+          });
+        </script>
+
+<!--Loader script start-->
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    
+    setTimeout(function () {
+      var loader = document.getElementById("preloader");
+      loader.classList.add("hidden");
+      document.querySelector(".Main_topic_mood").classList.add("animate");
+      document.querySelector(".icon_head").classList.add("animate");
+      
+    }, 4000); 
+  });
+</script>
+
+<script>
+  window.addEventListener("scroll", function() {
+    var navigationSection = document.querySelector(".navigation_section");
+
+    if (window.scrollY > 50) {
+      navigationSection.classList.add("show");
+    } else {
+      navigationSection.classList.remove("show");
+    }
+  });
+</script>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var featuresLink = document.querySelector('.features');
+    
+    featuresLink.addEventListener('click', function (event) {
+      event.preventDefault();
+
+      
+      featuresLink.classList.add('active');
+
+      
+      var targetSection = document.getElementById('test');
+      targetSection.scrollIntoView({
+        behavior: 'smooth'
+      });
+
+      
+      setTimeout(function () {
+        featuresLink.classList.remove('active');
+      }, 3000);
+    });
+  });
+</script>
+
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+
+<!--Loader script end-->
+
+
+      </section>
+    </center>
+  </body>
+</html>
