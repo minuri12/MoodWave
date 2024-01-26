@@ -1342,3 +1342,185 @@ progress[value]::-moz-progress-bar {
   margin-bottom: 10px;
 }
 /*Available Job end*/
+
+/*Mp3 Upload*/
+.container_mp3 {
+  height: auto;
+  width: 100%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.card_mp3 {
+  border-radius: 10px;
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.3);
+  width: 600px;
+  height: 210px;
+  background-color: #00000052;
+  padding: 10px 30px 40px;
+  border: rgba(255, 255, 255, 0.062) solid 0.5px;
+}
+
+.card_mp3 h3 {
+  font-size: 15px;
+  font-weight: 400;
+  align-items: center;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.342);
+}
+
+.drop_box {
+  margin: 10px 0;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border: 2px dotted #a3a3a365;
+  border-radius: 5px;
+}
+
+.drop_box h4 {
+  font-size: 16px;
+  font-weight: 400;
+  color: #ffffff;
+}
+
+.drop_box p {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-size: 12px;
+  color: #ffffff;
+}
+
+.btn {
+  text-decoration: none;
+  background-color: #005af0;
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  outline: none;
+  transition: 1s;
+  border-radius: 10px;
+}
+
+.btn:hover {
+  text-decoration: none;
+  background-color: #ffffff;
+  color: #005af0;
+  padding: 10px 20px;
+  border: none;
+  outline: 1px solid #010101;
+  border-radius: 10px;
+}
+.form input {
+  margin: 10px 0;
+  width: 100%;
+  background-color: #e2e2e2;
+  border: none;
+  outline: none;
+  padding: 12px 20px;
+  border-radius: 4px;
+}
+
+/*Mp3 Upload end*/
+
+/*input-container_job start*/
+.create_job_form-field {
+  margin-bottom: 6px;
+  position: relative;
+  width: 600px;
+  height: 92px;
+  background-color: #00000077; /* Set background color */
+  padding-top: 10px;
+  border-radius: 8px; /* Add border radius */
+  border: 0.05px solid #dddddd13;
+  opacity: 100%;
+  /* Add border */
+}
+
+.create_job_input-label {
+  position: absolute;
+  top: 20px;
+  left: 30px;
+  color: #888;
+  font-size: 12px;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.create_job_input-field {
+  width: calc(100% - 24px); /* Adjust width to accommodate padding and border */
+  padding: 12px;
+  padding-left: 18px;
+  padding-top: 30px;
+  border: none;
+
+  border-bottom: 2px solid transparent;
+  border-radius: 0;
+  font-size: 14px;
+  transition: border-color 0.3s ease;
+  background-color: transparent;
+}
+
+.create_job_input-field:focus {
+  outline: none;
+  border-color: #026eee;
+}
+
+.create_job_input-field:focus + .create_job_input-label,
+.create_job_input-field:not(:placeholder-shown) + .create_job_input-label {
+  top: -10px;
+  font-size: 14px;
+  color: #026eee;
+}
+
+.create_job_form-field {
+  position: relative; /* Ensure relative positioning */
+}
+
+/* Workers needed */
+
+.radio-btn_worker {
+  display: flex;
+  align-items: center;
+  color: #4b4949;
+  font-weight: 700;
+}
+
+.radio-btn_worker input[type="radio"] {
+  display: none;
+
+  /* Hide the actual radio buttons */
+}
+
+.radio-btn_worker input[type="radio"] + label {
+  cursor: pointer;
+  padding: 8px 12px; /* Adjust padding to create space around the labels */
+  border: 1px solid #494646;
+  border-radius: 5px;
+  margin-right: 10px; /* Add margin between each radio button and label */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+}
+
+.radio-btn_worker input[type="radio"]:last-of-type + label {
+  margin-right: 0;
+}
+
+.radio-btn_worker input[type="radio"]:checked + label {
+  border-color: #39bffe;
+  color: #000000;
+  border-width: 0.5px;
+
+  left: 30px;
+  background-color: #39bffe;
+}
+
+/* Style the arrow buttons - for WebKit (Chrome, Safari) */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  margin: 0;
+  color: rgb(255, 255, 255); /* Change arrow color for WebKit browsers */
+}
