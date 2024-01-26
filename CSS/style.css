@@ -19,7 +19,14 @@
 /*Preloader end*/
 
 /* common details start */
-
+html.is-changing .transition-fade {
+  transition: opacity 0.5s;
+  opacity: 1;
+}
+/* Define the styles for the unloaded pages */
+html.is-animating .transition-fade {
+  opacity: 0;
+}
 * {
   font-family: "Roboto", sans-serif;
 }
@@ -285,10 +292,9 @@ body {
 }
 
 .card_how {
-  width: 970px;
   height: auto;
-  display: inline;
   margin-top: 10px;
+  z-index: 20000;
 }
 
 .social-icons a {
@@ -397,7 +403,6 @@ footer {
   align-items: center;
   justify-content: center;
   display: flex;
-  gap: 30px;
   margin-top: 50px;
   margin-bottom: 0;
 }
@@ -409,7 +414,7 @@ footer {
   font-size: 25px;
   text-decoration: none;
   font-weight: 400;
-  margin-right: 480px;
+  margin-right: 400px;
 }
 
 .about img {
@@ -429,28 +434,39 @@ footer {
   overflow: hidden;
   justify-content: center;
   align-items: center;
-  padding-top: 80px;
+  padding-top: 40px;
 }
 
 .card_What_Mood {
-  width: 600px;
-  min-height: 400px;
-  background: rgba(255, 255, 255, 0.15);
+  max-height: 400px;
+  max-width: 600px;
+  color: white;
   align-items: center;
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  background-color: #282c34;
+  background: linear-gradient(
+    0deg,
+    rgba(40, 44, 52, 0.1) 0%,
+    rgba(17, 0, 32, 0.3) 100%
+  );
+  box-shadow: 0 7px 20px 5px rgba(0, 0, 0, 0.4);
+  border-radius: 0.7rem;
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+  overflow: hidden;
+  transition: 0.5s all;
   border-radius: 1rem;
+  border: rgba(255, 255, 255, 0.048) solid 0.008px;
   padding: 1.5rem;
   z-index: 10;
-  color: whitesmoke;
-  margin-left: 20px;
-  margin-right: 20px;
+
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 .card_What_Mood .title {
-  font-size: 2.2rem;
+  font-size: 2rem;
   padding: 20px;
+  padding-left: 0;
 }
 
 .card_What_Mood .subtitle {
@@ -458,7 +474,6 @@ footer {
   line-height: 1.5;
   align-content: center;
   align-items: center;
-  padding: 20px;
 }
 
 .Main_topic_sides {

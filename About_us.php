@@ -67,19 +67,19 @@ if(isset($message)){
             <p class="subtitle" >
                 M.S Hewage <br>
                 Email: minurisenara@gmail.com<br>
-                Phone Number: 0787531133<br>
+                
                 <br>
                  K.Sathursana <br>
                 Email: sathusabapathy@gmail.com<br>
-                Phone Number: 0767180183<br>
+                
                 <br>
                 H.A.I.J.Perera<br>
                 Email: jayaru234@gmail.com<br>
-                Phone Number: 0712904410<br>
+                
                 <br>
                 K.M.Andarawewa<br>
                 Email:kushanandarawewa1@gmail.com<br>
-                Phone Number: 0714249784 
+                
 
             </p>
           </div>
