@@ -798,21 +798,70 @@ footer {
 .last_text a {
   color: white;
   font-weight: 200;
+  transition: color 0.5s ease-in-out;
+  font-weight: 700;
+}
+
+.last_text a:hover {
+  color: #0274fa;
+  font-weight: 700;
 }
 
 .Login_card {
-  background: rgba(255, 255, 255, 0.15);
-  align-items: center;
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  color: whitesmoke;
-  margin-right: 50px;
   width: 50%;
   height: 598px;
   padding: 40px;
   padding-left: 150px;
+
+  /*New part*/
+  max-height: 598px;
+  max-width: 50%;
+  color: white;
+  align-items: center;
+  background-color: #282c343a;
+  background: linear-gradient(
+    0deg,
+    rgba(40, 44, 52, 0.1) 0%,
+    rgba(17, 0, 32, 0.3) 100%
+  );
+
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+  overflow: hidden;
+  transition: 0.5s all;
+
+  padding: 1.5rem;
+  z-index: 10;
+
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
+.Login_card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    -45deg,
+    transparent,
+    rgba(26, 8, 189, 0.486),
+    transparent
+  );
+  animation: shimmer 3s infinite alternate ease-in-out;
+  opacity: 0.5;
+}
+
+@keyframes shimmer {
+  0% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .container_card_Login {
   min-height: 80vh;
   width: 100%;
@@ -823,12 +872,17 @@ footer {
   height: 100%;
 }
 
+.registerform_login {
+  margin-left: 60px;
+}
 .Mood_text {
-  opacity: 10%;
-  width: 350px;
+  opacity: 4%;
+  width: 390px;
   z-index: -1;
   align-items: flex-start;
   padding-bottom: 50px;
+  align-items: center;
+  margin-left: 100px;
 }
 
 .Navigation_Bar li form .logout {
@@ -1200,3 +1254,40 @@ progress[value]::-moz-progress-bar {
   border-radius: 10em;
   background: var(--color);
 }
+
+/*creator_main start*/
+.creator_main {
+  z-index: -1;
+  background: url(/Images/Shadow.png) no-repeat 50%;
+  background-size: contain;
+  position: absolute;
+  width: 99%;
+  height: 100%;
+  background-size: contain;
+  align-items: center;
+  margin-top: 100px;
+}
+/*creator_main end*/
+
+/*creator_main button main start*/
+.middle_button_Creator_main {
+  border: none;
+  background-color: #0173f9;
+  border-radius: 25px;
+  margin: 0;
+  height: 50px;
+  width: 150px;
+  font-size: 15px;
+  font-weight: 700;
+  box-shadow: none;
+  transition: box-shadow 2s ease;
+}
+
+.middle_button_Creator_main:hover {
+  box-shadow: 0px 4px #39bffe;
+  transition: 0.3s;
+  color: white;
+  opacity: 100%;
+}
+
+/*creator_main button main stop*/
