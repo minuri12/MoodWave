@@ -1291,3 +1291,12 @@ progress[value]::-moz-progress-bar {
 }
 
 /*creator_main button main stop*/
+
+/*Need_help_back start*/
+#Need_help_back {
+  color: white;
+  cursor: pointer;
+  margin-left: 0%;
+}
+
+/*Need_help_back stop*/

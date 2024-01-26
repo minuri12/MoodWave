@@ -19,17 +19,17 @@
     <link rel="icon" href="images/icon.ico" type="image/x-icon" />
     <title>MoodWave</title>
   </head>
-  <body style="margin: 0; padding: 0; height: 100%; display: flex; flex-direction: column;">
+  <body style="margin: 0; padding: 0; height: 100%; display: flex; flex-direction: column;" id="swup" class="transition-fade">
 
 
   <div class="about">
-    <div class="About_header">
-        <ul>
-            <li><a href="creator_main.php"><i class="fas fa-arrow-left" style="color: aliceblue;"></i></a></li>
-            <li>Need Help?</li>
+    <div >
+        <ul class="Need_help" >
+            <li style="margin-right: 227px;"><a onclick="history.back()"><i class="fas fa-arrow-left"  id="Need_help_back"></i></a></i></a></li>
+            <li style="margin-right: 227px;">Need Help?</li>
         </ul>
     </div>
-      <img  src="images/Shadow.png" alt="" class="card_image" style="width:700px ;z-index: -1; left: 350px; top: 5px;">
+      <img  src="images/Shadow.png" alt="" class="card_image" style="width:700px ;z-index: -1; left: 350px; top: 5px; height: 550px;">
     <!-- partial:index.partial.html -->
     <div class="container_card">
         <div class="card_What_Mood" style="height: 400px; width: 900px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
@@ -46,21 +46,20 @@
             
           </p>
         </div>
-
-  
-       
-      </div><br><br>
-      <footer style="margin-top: auto;">
-        <div class="Icon_bar">
-          <a href="#"><i class="fab fa-facebook-square"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
-          <div class="box" style="margin-top: 20px; width: 100%; margin-bottom: 0;">Copyright | FOC - SUSL</div>
-        </div>
-      </footer>
+        <script src="JS/vanilla-tilt.min.js"></script>
+        <script src="JS/Script.js"></script>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+                AOS.init();
+        </script>
         
-      <!-- Footer start-->
+        <!--Loader script end-->
+        <script src="https://unpkg.com/swup@4"></script>
+        <script>
+          const swup = new Swup();
+        </script>
 
+      </body>
 
 
 </html>
