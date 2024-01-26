@@ -9,7 +9,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap"
       rel="stylesheet"
@@ -20,90 +20,100 @@
     <link rel="icon" href="images/icon.ico" type="image/x-icon" />
     <title>MoodWave</title>
   </head>
-  <body bgcolor="#0C070F">
-<?php
-  if(isset($message)){
-   foreach($message as $message){
-      echo '
-      <div class="message">
-         <span>'.$message.'</span>
-         <i class="fas fa-times" onclick="this.parentElement.remove();"></i>
-      </div>
-      ';
-   }
-}
-?>
-    <!-- Navigation bar start -->
-    <section class="navigation_section">
-      <nav class="Navigation_Bar">
-        <ul>
-          <li><a href="index.php"><img src="images/Logo.png" alt="MoodWave_logo" /></a></li>
-          <li class="features"><a href="#">HELP</a></li>
-          <li><a href="#" class="ABOUT">ABOUT US</a></li>
-          <li><form method="POST"><input type="submit" name="logout" class="logout" value="LOG OUT"></form></li>
-        </ul>
-      </nav>
-    </section>
-    <!-- Navigation bar end -->
+  <body bgcolor="#0C070F" id="swup" class="transition-fade">
+    <!--Navigation bar start-->
+    <center>
+      <section class="navigation_section">
+        <nav class="Navigation_Bar">
+          <ul>
+            <li>
+              <a href="index.php"
+                ><img src="images/Logo.png" alt="MoodWave_logo"
+              /></a>
+            </li>
+            <li class="features"><a href="Need_Help.html">HELP</a></li>
+            <li>
+              <a href="About_us.html" class="ABOUT transition-fade">ABOUT US</a>
+            </li>
+            <li>
+              <a href="Landing.html"><button>Logout</button></a>
+            </li>
+          </ul>
+        </nav>
+      </section>
+    </center>
+
+    <!--Navigation bar end-->
+    <br /><br /><br /><br /><br /><br />
 
     <section class="Land">
       <div class="Main_topic_sides">CREATE NEW JOB</div>
-      <div class="Small_topic_sides" style="margin-left: 285px;margin-right: 285px;">
-        Music creators have the ability to generate a task for listeners, wherein they can request an analysis of 
-        the emotions in their music by engaging the perspectives of actual listeners.<br /><br />
+      <div
+        class="Small_topic_sides"
+        style="margin-left: 285px; margin-right: 285px"
+      >
+        Music creators have the ability to generate a task for listeners,
+        wherein they can request an analysis of the emotions in their music by
+        engaging the perspectives of actual listeners.They can easily follow few
+        steps and create a new job without any problem.Let's start to create new
+        job and find the emotion of your music.<br /><br />
         <img src="images/dots.png" alt="" />
       </div>
+      <br /><br /><br />
       <div class="button_holder">
-
-      <li style="list-style-type: none;"><form method="POST"><input type="submit" name="jobs" class="Middle_button" value="POST JOB"></form></li>
+        <div>
+          <a href="Create_Job.html"
+            ><button class="middle_button_Creator_main">New Job</button></a
+          >
+        </div>
       </div>
 
       <div class="description">
-        <div class="sub_topic_sides">
-          My Jobs
-        </div>
+        <div class="sub_topic_sides">My Jobs</div>
       </div>
-      <br /><br />
+
       <div class="grit_card_section">
-        <div class="card_section" style="width: 1000px;">
-         
-          <table >
+        <div class="card_section" style="width: 800px">
+          <table>
             <tr>
-                <th>Job Name</th>
-                <th>Needed Listeners</th>
-                <th>Completed 
-                   
-                </th>
+              <th>Job Name</th>
+              <th>Needed Listeners</th>
+              <th>Completed</th>
             </tr>
             <tr>
-                <td>You Belong with Me</td>
-                <td>100</td>
-                <td> <span class="percentage">40%</span><div class="colorcode"></div>
-                </td>
+              <td>You Belong with Me</td>
+              <td>100</td>
+              <td>
+                <span class="percentage">40%</span>
+                <div class="colorcode"></div>
+              </td>
             </tr>
             <tr>
-                <td>Jocker and Queen</td>
-                <td>45</td>
-                <td> <span class="percentage">50%</span><div class="colorcode_yellow"></div>
-                </td>
+              <td>Jocker and Queen</td>
+              <td>45</td>
+              <td>
+                <span class="percentage">50%</span>
+                <div class="colorcode_yellow"></div>
+              </td>
             </tr>
             <tr>
-                <td>Perfect</td>
-                <td>300</td>
-                <td> <span class="percentage">90%</span><div class="colorcode_red"></div>
-                </td>
+              <td>Perfect</td>
+              <td>300</td>
+              <td>
+                <span class="percentage">90%</span>
+                <div class="colorcode_red"></div>
+              </td>
             </tr>
             <tr>
-                <td>Baby</td>
-                <td>145</td>
-                <td> <span class="percentage">40%</span><div class="colorcode"></div>
-                </td>
+              <td>Baby</td>
+              <td>145</td>
+              <td>
+                <span class="percentage">40%</span>
+                <div class="colorcode"></div>
+              </td>
             </tr>
           </table>
-
-
         </div>
-       
       </div>
       <br /><br />
       <footer style="position: relative; bottom: 0">
@@ -126,6 +136,19 @@
         glare: true,
         "max-glare": 1,
       });
+    </script>
+
+    <script src="/JS/Script.js"></script>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+
+    <!--Loader script end-->
+    <script src="https://unpkg.com/swup@4"></script>
+    <script>
+      const swup = new Swup();
     </script>
   </body>
 </html>

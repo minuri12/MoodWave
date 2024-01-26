@@ -505,30 +505,30 @@ footer {
 .Main_topic_sides {
   text-align: center;
   color: white;
-  font-weight: 700;
-  font-size: 55px;
-  margin-top: 100px;
+  font-weight: 500;
+  font-size: 40px;
+  margin-top: 130px;
   position: relative;
   align-items: center;
 }
 
 .Small_topic_sides {
   text-align: center;
-  color: white;
-  font-weight: 200;
-  font-size: 20px;
+  color: rgba(255, 255, 255, 0.418);
+  font-weight: 30;
+  font-size: 15px;
   margin-top: 20px;
   position: relative;
   align-items: center;
-  margin-left: 270px;
-  margin-right: 270px;
+  margin-left: 370px;
+  margin-right: 370px;
 }
 
 .button_holder {
   display: flex;
   justify-content: center;
   gap: 10px;
-  margin-top: 30px;
+  margin-top: -25px;
 }
 
 .Side_button_register {
@@ -580,7 +580,7 @@ footer {
 }
 
 .description {
-  padding-top: 50px;
+  padding-top: 11px;
   display: flex;
   overflow: hidden;
   justify-content: center;
@@ -594,6 +594,7 @@ footer {
   margin-top: 100px;
   position: relative;
   align-items: center;
+  margin-bottom: 40px;
 }
 
 .card_section {
@@ -1156,78 +1157,6 @@ select::-moz-focus-inner {
   border-radius: 10px;
 }
 
-/*input,
-.search_btn {
-  height: 3rem;
-  border: 0;
-  color: rgb(12, 12, 12);
-  font-size: 1.3rem;
-  font-weight: 300;
-}
-
-input[type="search"] {
-  outline: 0;
-  width: 100%;
-  background: #fff;
-  padding-left: 20px;
-  border-radius: 10px;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  transition: all 0.3s cubic-bezier(0, 0, 0.43, 1.49);
-  transition-property: width, border-radius;
-  z-index: 1;
-  position: relative;
-}
-
-.search_btn {
-  display: none;
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 4rem;
-  font-weight: bold;
-  background: rgb(75, 75, 77);
-  border-radius: 0 9px 9px 0;
-}
-
-input:not(:-moz-placeholder-shown) {
-  border-radius: 10px 0 0 10px;
-  width: calc(100% - 8rem);
-}
-
-input:not(:-ms-input-placeholder) {
-  border-radius: 10px 0 0 10px;
-  width: calc(100% - 4rem);
-}
-
-input:not(:placeholder-shown) {
-  border-radius: 10px 0 0 10px;
-  width: calc(100% - 8rem);
-}
-input:not(:-moz-placeholder-shown) + button {
-  display: block;
-}
-input:not(:-ms-input-placeholder) + button {
-  display: block;
-}
-input:not(:placeholder-shown) + button {
-  display: block;
-}
-
-label {
-  position: absolute;
-  clip: rect(1px, 1px, 1px, 1px);
-  padding: 0;
-  border: 0;
-  height: 1px;
-  width: 1px;
-  overflow: hidden;
-}
-
-
-*/
-
 progress[value] {
   --w: 150px;
   --color: linear-gradient(90deg, #1ecd1e, #ff6161) 0 / var(--w);
@@ -1300,3 +1229,116 @@ progress[value]::-moz-progress-bar {
 }
 
 /*Need_help_back stop*/
+
+/*Search bar start*/
+.search {
+  margin-top: 200px;
+  width: 100%;
+  display: flex;
+}
+
+.searchTerm {
+  width: 1000px;
+  border: 2px solid #026eee;
+  border-right: none;
+  padding: 10px;
+  height: 40px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: #ffffff;
+  transition: width 0.6s ease;
+  background-color: #0c070f60;
+}
+
+.searchTerm:focus {
+  color: #ffffff;
+  opacity: 100%;
+}
+
+.searchButton {
+  width: 100px;
+  height: 40px;
+  border: 0.5px solid #026eee;
+  background: #026eee;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+  opacity: 100%;
+  box-shadow: none;
+  transition: background-color 0.8s ease, color 0.8s ease;
+}
+
+.wrap {
+  width: 45%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/*Search bar End */
+
+/*Available Job*/
+.Available_Job {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  min-height: 280px;
+  padding: 35px;
+  background: linear-gradient(
+    326.21deg,
+    rgba(83, 83, 83, 0.03) 4.14%,
+    hsla(0, 0%, 74%, 0.08)
+  );
+  border: 1px solid hsla(0, 0%, 100%, 0.03);
+  border-radius: 7px;
+  text-align: left;
+  transition: border 0.3s ease-in-out;
+  cursor: default;
+  font-size: 17px;
+  line-height: 25px;
+  letter-spacing: -0.36px;
+  color: white;
+  height: auto;
+  width: 650px;
+  min-height: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  gap: 0;
+  position: relative; /* Add position relative to enable absolute positioning */
+}
+
+.Available_Job td {
+  font-weight: 200;
+  font-size: 15px;
+  width: 100px;
+}
+
+.Available_Job:hover {
+  border: 1px solid hsla(240, 2%, 25%, 0.836);
+  cursor: pointer;
+}
+
+/* Add arrow on hover */
+.Available_Job:hover::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -20px; /* Adjust as needed */
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid hsla(240, 2%, 25%, 0.836); /* Arrow color */
+  z-index: 1; /* Ensure the arrow is above the box */
+}
+
+.grit_card_section_available_job {
+  margin-bottom: 10px;
+}
+/*Available Job end*/
