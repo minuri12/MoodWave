@@ -1626,3 +1626,20 @@ audio::-webkit-media-controls-time-remaining-display {
 .input_text.invalid {
   border-color: red;
 }
+
+.Annotate_image {
+  width: 600px;
+  height: auto;
+}
+
+textarea {
+  width: 600px; /* Adjust width as needed */
+  height: 200px;
+  color: white;
+  padding: 10px;
+  background-color: #0101015d;
+  resize: none; /* Prevent resizing of the textarea */
+
+  border-radius: 5px; /* Optional: Add border radius */
+  box-sizing: border-box; /* Include padding and border in total width/height */
+}
