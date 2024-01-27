@@ -18,15 +18,15 @@
 }
 /*Preloader end*/
 
-/* common details start */
 html.is-changing .transition-fade {
-  transition: opacity 0.5s;
+  transition: opacity 0.3s ease-in-out;
   opacity: 1;
 }
-/* Define the styles for the unloaded pages */
+
 html.is-animating .transition-fade {
   opacity: 0;
 }
+
 * {
   font-family: "Roboto", sans-serif;
 }
