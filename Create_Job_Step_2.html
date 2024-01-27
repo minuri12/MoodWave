@@ -66,25 +66,33 @@
 <br>
   <div class="create_job_form-field">
     <label for="create_job_inputField" class="create_job_input-label">Workers Will earn ( LKR ) *</label>
-    <input type="text" id="create_job_inputField" class="create_job_input-field" placeholder="More than LKR.20.00..." />
+    <input type="number" min="20" id="create_job_inputField" class="create_job_input-field" placeholder="More than LKR.20.00..." />
 </div>
-
 
 <div class="create_job_form-field">
-  <label for="create_job_inputField" class="create_job_input-label">Workers Needed *</label>
-  <input type="number" id="create_job_inputField" class="create_job_input-field" max="1000" min="10" value="10" />
+  <label for="create_job_inputField" class="create_job_input-label">Workers needed *</label>
+  <div class="slider">
+  
+    <input type="range" min="5" max="1000" value="200" oninput="rangeValue.innerText = this.value">
+    <p id="rangeValue">200</p>
+    </div> 
 </div>
+
+
+
+
 <br /><br />
+
 <br>
 <div class="button_holder">
   <div>
     <a href="Create_Job.html"
-      ><button class="middle_button_Creator_main" style="border-radius: 10px;">NEXT</button></a
+      ><button class="middle_button_Creator_main" style="border-radius: 10px;"><i class="fa-solid fa-arrow-left"></i></button></a
     >
     </div>
     <br />
-    <a href="Create_Job.html"
-      ><button class="middle_button_Creator_main" style="border-radius: 10px;">NEXT</button></a
+    <a href="Payment.html"
+      ><button class="middle_button_Creator_main" style="border-radius: 10px;"><i class="fa-solid fa-arrow-right"></i></button></a
     >
   </div>
 
@@ -174,6 +182,25 @@ dec.addEventListener("click", () => {
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
   AOS.init();
+</script>
+
+<script>
+
+  var inputField = document.getElementById("create_job_inputField");
+
+ 
+  inputField.addEventListener("input", function() {
+
+    var value = parseFloat(inputField.value);
+
+    if (value < 20) {
+     
+      inputField.style.borderColor = "red";
+    } else {
+      
+      inputField.style.borderColor = "#026eee";
+    }
+  });
 </script>
 
 <!--Loader script end-->
