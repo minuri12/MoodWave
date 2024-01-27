@@ -65,8 +65,8 @@
               <h4>Upload Song</h4>
             </header>
             <p>Files Supported: mp3</p>
-            <input type="file" hidden accept=".mp3" id="fileID" style="display:none;">
-            <button class="btn">Choose File</button>
+            <input type="file" id="fileInput" style="display: none;" onchange="handleFileSelect(event)" accept=".mp3">
+            <label for="fileInput" class="btn">Choose File</label>
           </div>
       
         </div>
@@ -189,5 +189,17 @@ dec.addEventListener("click", () => {
 <script>
   const swup = new Swup();
 </script>
+
+<script>
+  function handleFileSelect(event) {
+    const fileInput = event.target; // Get the file input element
+    const fileName = fileInput.files[0].name; // Get the name of the selected file
+    const header = document.querySelector('.drop_box header h4'); // Get the h4 element
+
+    // Update the content of the h4 element with the file name
+    header.textContent = fileName;
+  }
+</script>
+  
 
 </html>
