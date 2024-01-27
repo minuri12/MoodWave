@@ -90,32 +90,6 @@
         </div>
       </footer>
     </section>
-    <script>
-      function previewFile() {
-        var preview = document.querySelector("audio");
-        var fileInput = document.querySelector("input[type=file]");
-        var file = fileInput.files[0];
-        var reader = new FileReader();
-
-        reader.addEventListener(
-          "load",
-          function () {
-            preview.src = reader.result;
-          },
-          false
-        );
-
-        if (file) {
-          reader.readAsDataURL(file);
-          updateButtonAppearance();
-        }
-      }
-
-      function updateButtonAppearance() {
-        var fileInput = document.querySelector("input[type=file]");
-        fileInput.classList.add("file-uploaded");
-      }
-    </script>
 
     <!--Needed-->
 
