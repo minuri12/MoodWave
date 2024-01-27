@@ -1534,3 +1534,13 @@ input[type="number"]::-webkit-outer-spin-button {
   appearance: none;
   margin: 0;
 }
+
+.Payment_Table tr {
+  border: none;
+  height: 50px;
+}
+
+.Payment_Table td {
+  padding: 0%;
+  height: 10px;
+}
