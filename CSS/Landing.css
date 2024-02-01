@@ -180,3 +180,28 @@ body {
   margin-bottom: 40px;
   text-align: center;
 }
+
+.card_image2 {
+  z-index: -1;
+  position: absolute;
+  width: 99%;
+  height: 100%;
+  display: block;
+  left: 90px;
+  top: -120px;
+  z-index: -1;
+}
+
+.How {
+  text-align: center;
+  color: white;
+  font-size: 30px;
+  margin-top: 125px;
+  margin-bottom: 40px;
+}
+
+.how_work {
+  width: 1000px;
+  height: auto;
+  margin-bottom: 100px;
+}

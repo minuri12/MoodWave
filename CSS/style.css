@@ -45,30 +45,6 @@ body {
 
 /* common details end */
 
-/*Scroll down animation*/
-
-.scroll {
-  left: 50%;
-  transform: translateY(0%) rotate(45deg);
-
-  opacity: 0;
-}
-@keyframes scrolldown {
-  0% {
-    transform: translateY(10%) rotate(45deg);
-    opacity: 0.5;
-  }
-  50% {
-    transform: translateY(0%) rotate(45deg);
-    opacity: 0.2;
-  }
-  100% {
-    transform: translateY(10%) rotate(45deg);
-    opacity: 0.5;
-  }
-}
-/*scroll down end*/
-
 /* Landing Head start */
 
 .icon_head {
@@ -142,6 +118,16 @@ body {
 }
 
 /*Main topic end*/
+.Land {
+  z-index: -1;
+  background: url(/Images/Shadow.png) no-repeat 50%;
+  background-size: contain;
+  position: absolute;
+  width: 99%;
+  height: 100%;
+  background-size: contain;
+  align-items: center;
+}
 
 .arrow img {
   margin-top: 70px;
@@ -219,57 +205,6 @@ body {
   font-size: 30px;
   margin-top: 125px;
   margin-bottom: 40px;
-}
-
-.Icon_bar I {
-  color: rgb(255, 255, 255);
-  cursor: pointer;
-  list-style-type: none;
-  padding: 0;
-  overflow: hidden;
-  align-items: center;
-  justify-content: center;
-  width: 60px;
-  font-size: 20px;
-}
-
-.Icon_bar {
-  width: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-footer {
-  color: white;
-  text-align: center;
-
-  margin: 0;
-  box-sizing: border-box;
-  width: 100%;
-  margin-left: 0%;
-  position: relative;
-  margin-top: auto;
-}
-
-.container_footer {
-  width: 105.5%;
-  margin-left: 0%;
-  margin-bottom: 20px;
-  width: 100%;
-}
-
-.box {
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: #112daa25;
-  color: rgba(240, 248, 255, 0.336);
-  padding: 10px;
-  padding-left: 0;
-  width: 100%;
-  z-index: 1000;
-  text-align: center;
-  width: 101%;
 }
 
 .about {

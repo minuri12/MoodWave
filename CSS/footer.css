@@ -1,0 +1,50 @@
+.container_footer {
+  width: 105.5%;
+  margin-left: 0%;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+footer {
+  color: white;
+  text-align: center;
+
+  margin: 0;
+  box-sizing: border-box;
+  width: 100%;
+  margin-left: 0%;
+  position: relative;
+  margin-top: auto;
+}
+
+.Icon_bar I {
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  list-style-type: none;
+  padding: 0;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  font-size: 20px;
+}
+
+.Icon_bar {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.box {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #112daa25;
+  color: rgba(240, 248, 255, 0.336);
+  padding: 10px;
+  padding-left: 0;
+  width: 100%;
+  z-index: 1000;
+  text-align: center;
+  width: 101%;
+}
