@@ -87,7 +87,7 @@ body {
 }
 /*Scroll down animation*/
 
-.scroll {
+.scroll1 {
   width: 1em;
   height: 1em;
   bottom: 205px;
@@ -100,6 +100,22 @@ body {
 
   opacity: 0;
 }
+
+.scroll2 {
+  width: 1.2em;
+  height: 1.2em;
+  bottom: 200px;
+  border-width: 0 0.2em 0.2em 0;
+  border-style: solid;
+  border-color: rgba(250, 235, 215, 0.26);
+
+  animation: scrolldown 1.5s ease-in-out infinite;
+  left: 50%;
+  transform: translateY(0%) rotate(45deg);
+
+  opacity: 0;
+}
+
 @keyframes scrolldown {
   0% {
     transform: translateY(10%) rotate(45deg);
