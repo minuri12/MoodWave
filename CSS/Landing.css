@@ -24,6 +24,26 @@ html.is-animating .transition-fade {
   font-family: "Roboto", sans-serif;
 }
 
+/*Preloader start*/
+#preloader {
+  background-color: #026eee;
+  width: 500px;
+  background: #0c070f url(/Images/Load.gif) no-repeat center;
+  background-size: 30%;
+  height: 150vh;
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+  top: -160px;
+  transition: opacity 0s ease-in-out;
+}
+
+#preloader.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+/*Preloader end*/
+
 body {
   margin: 0;
   padding: 0;
@@ -85,6 +105,27 @@ body {
   animation: in 5s ease-out forwards;
   animation-delay: 0.1s;
 }
+
+.icon_head.animate {
+  animation: in 5s ease-out forwards;
+  animation-delay: 0.1s;
+}
+
+@keyframes in {
+  0% {
+    letter-spacing: -30px;
+    opacity: 0;
+  }
+  30% {
+    letter-spacing: 3px;
+    opacity: 1;
+  }
+  100% {
+    letter-spacing: 3px;
+    opacity: 1;
+  }
+}
+
 /*Scroll down animation*/
 
 .scroll1 {
@@ -132,3 +173,10 @@ body {
 }
 
 /*scroll down end*/
+.head_Why {
+  color: white;
+  font-size: 30px;
+  margin-top: 125px;
+  margin-bottom: 40px;
+  text-align: center;
+}
