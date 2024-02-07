@@ -12,14 +12,16 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/style.css" />
+ 
     <link rel="stylesheet" href="css/footer.css" />
     <link rel="stylesheet" href="css/glass-menu.css" />
+    <link rel="stylesheet" href="css/About.css" />
+    <link rel="stylesheet" href="css/Common.css" />
 
     <link rel="icon" href="images/icon.ico" type="image/x-icon" />
     <title>MoodWave</title>
   </head>
-  <body style="margin: 0; padding: 0; height: 100%; display: flex; flex-direction: column;" id="swup" class="transition-fade" >
+  <body  id="swup" class="transition-fade" >
 
     
 
@@ -28,11 +30,13 @@
   <div class="about">
     <div class="About_header">
         <ul>
-            <li><a onclick="history.back()"><i class="fas fa-arrow-left" style="color:white;cursor: pointer;"></i></a></li>
+            <li><a onclick="history.back()"><i class="fas fa-arrow-left" id="back_arrow"></i></a></li>
             <li >About Us</li>
         </ul>
     </div>
-      <img  src="images/Shadow.png" alt="" class="card_image" style="width:700px ;z-index: -1; height: 80%;">
+      <img  src="images/Shadow.png" id="card_image_about" >
+
+      
     <!-- partial:index.partial.html -->
     <div class="container_card">
         <div class="card_What_Mood" >
@@ -71,7 +75,7 @@
 
             </p>
           </div>
-          <img  src="images/Shadow.png" alt="" class="card_image" style="width:600px ;z-index: -1; left: 1100px; opacity: 50%;">
+          <img  src="images/Shadow.png" alt="" id="card_image_about2" >
 <script src="https://unpkg.com/swup@4"></script>
 <script>
   const swup = new Swup();
