@@ -1,0 +1,150 @@
+.Land {
+  z-index: -1;
+  background: url(/Images/Shadow.png) no-repeat 50%;
+  background-size: contain;
+  position: absolute;
+  width: 99%;
+  height: 100%;
+  background-size: contain;
+  align-items: center;
+  text-align: justify;
+  margin-bottom: 0%;
+  height: auto;
+}
+
+.Listner_head {
+  color: white;
+}
+
+.create_job_form-field {
+  margin-bottom: 6px;
+  position: relative;
+  width: 600px;
+  height: 92px;
+  background-color: #00000077; /* Set background color */
+  padding-top: 10px;
+  border-radius: 8px; /* Add border radius */
+  border: 0.05px solid #dddddd13;
+  opacity: 100%;
+  /* Add border */
+}
+
+.create_job_input-label {
+  position: absolute;
+  top: 20px;
+  left: 30px;
+  color: #888;
+  font-size: 12px;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.create_job_input-field {
+  width: calc(100% - 24px); /* Adjust width to accommodate padding and border */
+  padding: 12px;
+  padding-left: 18px;
+  padding-top: 30px;
+  border: none;
+
+  border-bottom: 2px solid transparent;
+  border-radius: 0;
+  font-size: 14px;
+  transition: border-color 0.3s ease;
+  background-color: transparent;
+}
+
+.create_job_input-field:focus {
+  outline: none;
+  border-color: #026eee;
+}
+
+.create_job_input-field:focus + .create_job_input-label,
+.create_job_input-field:not(:placeholder-shown) + .create_job_input-label {
+  top: -10px;
+  font-size: 14px;
+  color: #026eee;
+}
+
+.create_job_form-field {
+  position: relative; /* Ensure relative positioning */
+}
+
+.slider {
+  position: absolute;
+  top: 67%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 60px;
+  padding: 30px;
+  padding-left: 40px;
+
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+
+  margin-bottom: 20px;
+}
+.slider p {
+  font-size: 20px;
+  font-weight: 400;
+  font-family: Open Sans;
+  padding-left: 30px;
+  color: rgb(255, 255, 255);
+}
+.slider input[type="range"] {
+  -webkit-appearance: none !important;
+  width: 420px;
+  height: 2px;
+  background: rgb(255, 255, 255);
+  border: none;
+  outline: none;
+}
+.slider input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none !important;
+  width: 20px;
+  height: 20px;
+  background: rgb(255, 255, 255);
+  border: 2px solid black;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.slider input[type="range"]::-webkit-slider-thumb:hover {
+  background: #026eee;
+  opacity: 100%;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+.button_holder {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: -25px;
+}
+
+.middle_button_Creator_main {
+  border: none;
+  background-color: #0173f9;
+  border-radius: 25px;
+  margin: 0;
+  height: 50px;
+  width: 150px;
+  font-size: 15px;
+  font-weight: 700;
+  box-shadow: none;
+  transition: box-shadow 2s ease;
+  border-radius: 10px;
+}
+
+.middle_button_Creator_main:hover {
+  box-shadow: 0px 4px #39bffe;
+  transition: 0.3s;
+  color: white;
+  opacity: 100%;
+}
