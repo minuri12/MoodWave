@@ -12,16 +12,20 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="../css/style.css" />
-    <link rel="stylesheet" href="../css/footer.css" />
-    <link rel="stylesheet" href="../css/glass-menu.css" />
+   
+    <link rel="stylesheet" href="/CSS/glass-menu.css" />
+    <link rel="stylesheet" href="CSS/Nevigation.css" />
+    <link rel="stylesheet" href="css/Common.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+    <link rel="stylesheet" href="css/Payment.css" />
+
    
     
 
     <link rel="icon" href="../images/icon.ico" type="image/x-icon" />
     <title>MoodWave</title>
   </head>
-  <body style="margin: 0; padding: 0; height: 100%; display: flex; flex-direction: column;" id="swup" class="transition-fade">
+  <body  id="swup" class="transition-fade">
        <!--Navigation bar start-->
        <center>
         <section class="navigation_section">
@@ -49,17 +53,17 @@
 
   <div class="about">
 
-      <img  src="../images/Shadow.png" alt="" class="card_image" style="width:700px ;z-index: -1; height: 400px;">
+      <img  src="../images/Shadow.png" alt="" id="card_image">
     <!-- partial:index.partial.html -->
 
 
     
-    <div class="container_card_register" style="text-align: justify; min-height: 76vh; " >
-        <div class="card_What_Mood" style="min-height: 350px; width: 400px; margin-right: 50px; padding-top: 0px; padding-left: 40px; font-size: 12px;font-weight: 300;">
+    <div class="container_card_register" >
+        <div class="card_What_Mood" >
           <p class="subtitle"  >
             <br><br>
             <div>
-              <i class="fa-brands fa-cc-visa" style="font-size: 25px;"></i></div>
+              <i class="fa-brands fa-cc-visa" id="back_icon"></i></div>
             <br>
             <h3>Summary</h3><br>
             
@@ -70,12 +74,14 @@
                   <td>200</td>
       
                 </tr>
-                <tr style="border-bottom: 1px white solid;">
+                <tr  id="workers">
                   <td>Workers will earn</td>
                   <td>LKR.20.00</td>
                 </tr>
-                <tr>
-                  <th>Total</th>
+                
+                <tr class="total_2">
+                  
+                  <th >Total</th>
                   <th>LKR.4000.00</th>
                 </tr>
               </table>
@@ -84,11 +90,11 @@
           </p>
         </div>
 
-        <div class="registerform" style="margin-top: 0px">
+        <div class="registerform" >
           <form action="" method="POST" enctype="multipart/form-data">
               <div class="row2">
                   <div class="title">
-                     <h2 style="color: white; font-weight: 400;">Payment Details</h2>
+                     <h2 >Payment Details</h2>
                   
                    <br>
                   <div class="input-container_register">
@@ -99,14 +105,14 @@
                        <label for="" >Card Number</label><br>
                        <input type="text" name="Card Number" class="input_text" placeholder="0000-0000-0000-0000"  />
                    </div>
-                     <div class="input-container-row" style="display: flex;">
+                     <div class="input-container-row" id="ex">
                       <div class="input-container_register" >
                         <label for="" >Exp. Date</label><br>
-                        <input  class="input_text" placeholder="10/25" type="text" maxlength="5" required style="width: 95%;"/>
+                        <input  class="input_text" placeholder="10/25" type="text" maxlength="5" required id="text1"/>
                     </div>
                     <div class="input-container_register" >
                       <label for="" >CCV</label><br>
-                      <input  class="input_text" placeholder="123" type="text" maxlength="3" required style="width: 100%;"/>
+                      <input  class="input_text" placeholder="123" type="text" maxlength="3" required id="text2" />
                   </div>
                      </div>
                    
@@ -114,15 +120,15 @@
                    </div>
    <br><br>
        
-                   <div class="button_holder" style="justify-content: left;">
+                   <div class="button_holder" >
                     <div>
                       <a href="Create_Job_Step_2.html"
-                        ><button class="middle_button_Creator_main" style="border-radius: 10px; "><i class="fa-solid fa-arrow-left"></i></button></a
+                        ><button class="middle_button_Creator_main" ><i class="fa-solid fa-arrow-left"></i></button></a
                       >
                       </div>
                       <div>
                         <a href="#"
-                          ><button class="middle_button_Creator_main" style="border-radius: 10px ;background-color:#023c81; ">Submit</button></a
+                          ><button class="middle_button_Creator_main2" >Submit</button></a
                         >
                         </div>
                       
