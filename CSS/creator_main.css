@@ -1,0 +1,146 @@
+/*creator_main start*/
+.creator_main {
+  z-index: -1;
+  background: url(/Images/Shadow.png) no-repeat 50%;
+  background-size: contain;
+  position: absolute;
+  width: 99%;
+  height: 100%;
+  background-size: contain;
+  align-items: center;
+  margin-top: 100px;
+  font-size: 100px;
+}
+/*creator_main end*/
+
+.Main_topic_sides {
+  text-align: center;
+  color: white;
+  font-weight: 500;
+  font-size: 40px;
+  margin-top: 130px;
+  position: relative;
+  align-items: center;
+}
+
+.Small_topic_sides {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.418);
+  font-weight: 30;
+  font-size: 15px;
+  margin-top: 20px;
+  position: relative;
+  align-items: center;
+  margin-left: 370px;
+  margin-right: 370px;
+}
+
+.button_holder {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: -25px;
+}
+
+/*creator_main button main start*/
+.middle_button_Creator_main {
+  border: none;
+  background-color: #0173f9;
+  border-radius: 25px;
+  margin: 0;
+  height: 50px;
+  width: 150px;
+  font-size: 15px;
+  font-weight: 700;
+  box-shadow: none;
+  transition: box-shadow 2s ease;
+}
+
+.middle_button_Creator_main:hover {
+  box-shadow: 0px 4px #39bffe;
+  transition: 0.3s;
+  color: white;
+  opacity: 100%;
+}
+
+/*creator_main button main stop*/
+
+.description {
+  padding-top: 11px;
+  display: flex;
+  overflow: hidden;
+  justify-content: center;
+}
+
+.sub_topic_sides {
+  text-align: center;
+  color: white;
+  font-weight: 300;
+  font-size: 30px;
+  margin-top: 100px;
+  position: relative;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.grit_card_section {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 10px;
+  margin: 10px;
+  align-items: center;
+  justify-content: center;
+  margin-left: 80px;
+  margin-right: 80px;
+  background-image: url(/Images/Shadow.png);
+  background-size: 1000px;
+}
+
+.card_section {
+  display: inline;
+}
+
+.card_section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  min-height: 280px;
+  padding: 35px;
+  background: linear-gradient(
+    326.21deg,
+    rgba(83, 83, 83, 0.03) 4.14%,
+    hsla(0, 0%, 74%, 0.08)
+  );
+  border: 1px solid hsla(0, 0%, 100%, 0.03);
+  border-radius: 7px;
+  text-align: left;
+  transition: border 0.3s ease-in-out;
+  cursor: default;
+  font-size: 17px;
+  line-height: 25px;
+  letter-spacing: -0.36px;
+  color: white;
+  height: auto;
+}
+
+.card_section:hover {
+  border: 1px solid hsla(240, 2%, 25%, 0.836);
+  cursor: pointer;
+}
+
+.card_section p {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  width: auto;
+}
+
+.card_section b {
+  font-size: 25px;
+}
+
+#box21 {
+  text-align: center;
+  align-items: center;
+}
