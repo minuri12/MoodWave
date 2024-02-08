@@ -1,0 +1,189 @@
+.Land {
+  z-index: -1;
+  background: url(/Images/Shadow.png) no-repeat 50%;
+  background-size: contain;
+  position: absolute;
+  width: 99%;
+  height: 100%;
+  background-size: contain;
+  align-items: center;
+}
+
+.Main_topic_sides {
+  text-align: center;
+  color: white;
+  font-weight: 500;
+  font-size: 40px;
+  margin-top: 130px;
+  position: relative;
+  align-items: center;
+}
+
+.Small_topic_sides {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.418);
+  font-weight: 30;
+  font-size: 15px;
+  margin-top: 20px;
+  position: relative;
+  align-items: center;
+  margin-left: 285px;
+  margin-right: 285px;
+}
+
+.button_holder {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: -25px;
+}
+
+.middle_button_Creator_main {
+  border: none;
+  background-color: #0173f9;
+  border-radius: 25px;
+  margin: 0;
+  height: 50px;
+  width: 150px;
+  font-size: 15px;
+  font-weight: 700;
+  box-shadow: none;
+  transition: box-shadow 2s ease;
+}
+
+.middle_button_Creator_main:hover {
+  box-shadow: 0px 4px #39bffe;
+  transition: 0.3s;
+  color: white;
+  opacity: 100%;
+}
+
+.description {
+  padding-top: 11px;
+  display: flex;
+  overflow: hidden;
+  justify-content: center;
+}
+
+.sub_topic_sides {
+  text-align: center;
+  color: white;
+  font-weight: 300;
+  font-size: 30px;
+  margin-top: 100px;
+  position: relative;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.grit_card_section {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 10px;
+  margin: 10px;
+  align-items: center;
+  justify-content: center;
+  margin-left: 80px;
+  margin-right: 80px;
+  background-image: url(/Images/Shadow.png);
+  background-size: 1000px;
+}
+
+.card_section {
+  display: inline;
+}
+
+.card_section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  min-height: 280px;
+  padding: 35px;
+  background: linear-gradient(
+    326.21deg,
+    rgba(83, 83, 83, 0.03) 4.14%,
+    hsla(0, 0%, 74%, 0.08)
+  );
+  border: 1px solid hsla(0, 0%, 100%, 0.03);
+  border-radius: 7px;
+  text-align: left;
+  transition: border 0.3s ease-in-out;
+  cursor: default;
+  font-size: 17px;
+  line-height: 25px;
+  letter-spacing: -0.36px;
+  color: white;
+  height: auto;
+  width: 800px;
+}
+
+.card_section:hover {
+  border: 1px solid hsla(240, 2%, 25%, 0.836);
+  cursor: pointer;
+}
+
+.percentage {
+  display: inline-block;
+  margin-right: 5px;
+  margin-right: 10px;
+}
+
+.colorcode {
+  background-color: green;
+  width: 30px;
+  height: 10px;
+  border-radius: 3px;
+  display: inline-block;
+}
+
+.percentage {
+  display: inline-block;
+  margin-right: 5px;
+  margin-right: 10px;
+}
+
+.colorcode_red {
+  background-color: rgb(228, 15, 15);
+  width: 30px;
+  height: 10px;
+  border-radius: 3px;
+  display: inline-block;
+}
+
+.colorcode_yellow {
+  background-color: rgb(215, 238, 8);
+  width: 30px;
+  height: 10px;
+  border-radius: 3px;
+  display: inline-block;
+}
+
+.grit_card_section {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 10px;
+  margin: 10px;
+  align-items: center;
+  justify-content: center;
+  margin-left: 80px;
+  margin-right: 80px;
+  background-image: url(/Images/Shadow.png);
+  background-size: 1000px;
+}
+
+table {
+  border-spacing: 1;
+  border-collapse: collapse;
+  border-radius: 6px;
+  overflow: hidden;
+
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+table tr {
+  border-bottom: 1px solid rgb(255, 255, 255);
+  height: 60px;
+}
