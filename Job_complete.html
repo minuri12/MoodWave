@@ -14,13 +14,20 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/glass-menu.css" />
+
+
+
+
+    <link rel="stylesheet" href="/CSS/glass-menu.css" />
+    <link rel="stylesheet" href="CSS/Nevigation.css" />
+    <link rel="stylesheet" href="css/Common.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+    <link rel="stylesheet" href="css/Job_complete.css" />
 
     <link rel="icon" href="images/icon.ico" type="image/x-icon" />
     <title>MoodWave</title>
   </head>
-  <body bgcolor="#0C070F" id="swup" class="transition-fade" style="overflow-x: hidden">
+  <body  id="swup" class="transition-fade" style="overflow-x: hidden">
     <!--Navigation bar start-->
     <center>
       <section class="navigation_section">
@@ -52,17 +59,17 @@
       </div>
       <br>
       <div class="grit_card_section_create" >
-        <div class="card_section_project" style="height: 100px; padding: 0%; margin: 0%;">
-          <h2 style="font-size: 20px; font-weight: 400;align-items: center;padding-bottom: 5px;">Needed Workers</h2>
-          <p style="text-align: center; font-size: 15px; font-weight: 300;padding: 0%; margin: 0%;">
+        <div class="card_section_project" >
+          <h2 >Needed Workers</h2>
+          <p >
            100
           </p>
           
          
         </div>
-        <div class="card_section_project" style="height: 100px; padding: 0%; margin: 0%;">
-          <h2 style="font-size: 20px; font-weight: 400; text-align: center; padding-bottom: 5px;">EARN </h2>
-          <p style="text-align: center; font-size: 15px; font-weight: 300; ">
+        <div class="card_section_project" >
+          <h2 >EARN </h2>
+          <p >
            LKR.30.00
           </p>
          
@@ -82,27 +89,27 @@
       </div>
 
       <div class="Small_topic_sides">
-        <i style="color: rgba(255, 0, 0, 0.507); font-weight: 100;">Note : The Anotation bar is not unloack untill you listening the song 2 times completely</i><br /><br />
+        <i >Note : The Anotation bar is not unloack untill you listening the song 2 times completely</i><br /><br />
       </div>
-      <img  src="../images/Shadow.png" alt="" class="card_image" style="width:1000px ;z-index: -1; height: 1000px; left: -600px;">
+      <img  src="../images/Shadow.png" alt="" id="card_image1" >
       <div class="description">
         <div class="sub_topic_sides" data-aos="zoom-in" data-aos-duration="2000">Annotate Here</div>
       </div>
-      <img  src="../images/Shadow.png" alt="" class="card_image" style="width:1000px ;z-index: -1; height: 1000px; right: -600px;">
+      <img  src="../images/Shadow.png" alt="" id="card_image2">
 
 <center><img  src="/Images/Annotate.png" alt="" class="Annotate_image"><br><br><br>
 
-  <div style="color: white;">- Add Comment -</div>
+  <div class="comment">- Add Comment -</div>
 </center>
 <br>
 <center>
 
     
-    <textarea  data-aos="zoom-in" data-aos-duration="1000"  id="create_job_inputField"  placeholder="Type your comment here..."  style="padding: 10px;"/>
+    <textarea  data-aos="zoom-in" data-aos-duration="1000"  id="create_job_inputField"  placeholder="Type your comment here..."  />
 </textarea>
 
 
-<div class="button_holder" style="justify-content: left;">
+<div class="button_holder" >
   <br><br>            
 
   
@@ -114,7 +121,7 @@
 <center>
   <div>
     <a href="#"
-      ><button class="middle_button_Creator_main" style="border-radius: 10px ;background-color:#026eee; ">Submit</button></a
+      ><button class="middle_button_Creator_main" >Submit</button></a
     >
     </div>
 </center>
@@ -123,17 +130,20 @@
 
 
       <br /><br />  <br /><br />
-      <footer style="position: relative; bottom: 0">
-        <div class="Icon_bar">
-          <a href="#"><i class="fab fa-facebook-square"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
-        </div>
-        <div class="box" style="text-align: center; margin-top: 20px">
-          Copyright | FOC - SUSL
-        </div>
-      </footer>
-    </section>
+     <!-- Footer start-->
+<div class="container_footer">
+
+  <footer> 
+    <div class="Icon_bar">
+    <a href="#"></a><i class="fab fa-facebook-square"></i></a>
+  <a href="#"></a><i class="fab fa-instagram"></i></a>
+  <a href="#"></a><i class="fab fa-twitter"></i></a>
+
+  </div>
+  </footer>
+</div>
+<div class="box">Copyright | FOC - SUSL</div>
+<!-- Footer end-->
     <script>
       function previewFile() {
         var preview = document.querySelector("audio");

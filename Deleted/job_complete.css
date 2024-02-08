@@ -1,0 +1,321 @@
+@import url("https://fonts.googleapis.com/css2?family=Knewave&family=Lato:wght@700&family=Pacifico&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+:root {
+  --main-colur: #0c070f;
+  --white: #ffffff;
+  --btn-colour: #026eee;
+  --btn-text: #0c070f;
+  --input-box: #a5efff;
+  --next-bar: #183787;
+}
+* {
+  font-family: "Roboto", sans-serif;
+}
+*::-webkit-scrollbar {
+  height: 0.5rem;
+  width: 0.5rem;
+}
+
+*::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #026eee;
+}
+
+body {
+  background-color: var(--main-colur);
+  background-image: url("../images/gradient.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.message {
+  position: fixed;
+  top: 0;
+  margin: 0;
+  width: 100%;
+  background-color: var(--next-bar);
+  display: flex;
+  align-items: flex-start;
+  padding: 0.5rem;
+  gap: 1.5rem;
+  z-index: 10;
+  justify-content: space-around;
+}
+
+.message span {
+  color: var(--white);
+  font-size: 1.5rem;
+}
+
+.message i {
+  font-size: 2rem;
+  color: red;
+  cursor: pointer;
+}
+
+.message i:hover {
+  transform: rotate(60deg);
+}
+
+.Navigation_Bar {
+  position: relative;
+  top: 0;
+  z-index: 3;
+  display: inline;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 30px;
+  border: 1px solid hsla(0, 0%, 100%, 0);
+  border-radius: 34px;
+  transition: all 0.5s ease-in-out;
+}
+
+.navigation_section {
+  margin-top: 30px;
+}
+
+.Navigation_Bar img {
+  width: 130px;
+  height: auto;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.Navigation_Bar ul {
+  list-style-type: none;
+  padding: 0;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  gap: 18px;
+}
+
+.Navigation_Bar li {
+  float: left;
+}
+
+.Navigation_Bar .features {
+  padding-left: 117px;
+  padding-right: 17px;
+}
+
+.Navigation_Bar .ABOUT {
+  padding-right: 117px;
+}
+
+.Navigation_Bar li a {
+  display: block;
+  color: white;
+  text-align: center;
+  font-size: 14px;
+  text-decoration: none;
+  font-weight: 400;
+}
+.Navigation_Bar li form .logout {
+  width: 120px;
+  height: 35px;
+  border-radius: 11px;
+  background-color: #026eee;
+  color: #0c070f;
+  border: none;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.Navigation_Bar li form .logout:hover {
+  background-color: #8eb5e6;
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.content form .form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  gap: 30px;
+}
+.content form .form-group .title {
+  margin: 0;
+  margin-bottom: -30px;
+}
+.content form .form-group .title h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  color: var(--white);
+  text-transform: uppercase;
+}
+.content form .form-group .title h3 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--white);
+  text-align: center;
+  margin-top: -30px;
+}
+
+.content form .form-group .row {
+  display: flex;
+  justify-content: center;
+}
+.content form .form-group .row .desc_box {
+  margin-right: 30px;
+  width: 400px;
+  line-height: 2px;
+  background-color: black;
+  background-image: url("../images/input-box.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 20px;
+  border: #bfc2ff solid 1px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+.content form .form-group .row .desc_box .topic h1 {
+  color: var(--white);
+  font-size: 1.3rem;
+  text-transform: uppercase;
+}
+.content form .form-group .row .desc_box .desc {
+  margin-top: -10px;
+  text-align: center;
+}
+.content form .form-group .row .desc_box .desc p {
+  color: var(--white);
+  font-size: 1.2rem;
+}
+.content form .anotate h1 {
+  color: var(--white);
+  font-size: 1.8rem;
+  text-align: center;
+  margin-top: 80px;
+  margin-bottom: 50px;
+}
+
+.content .demo {
+  margin-top: 30px;
+  width: 900px;
+}
+.content .demo .demoAudio {
+  width: 100%;
+}
+
+.content form .submit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.content form .submit h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--white);
+  margin-top: 10px;
+}
+.content form .submit textarea {
+  background-color: black;
+  background-image: url("../images/input-box.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 5px;
+  width: 80%;
+  height: 200px;
+  color: var(--white);
+  font-size: 1.5rem;
+}
+.content form .submit .button {
+  padding: 10px;
+  padding-left: 45px;
+  padding-right: 45px;
+  border-radius: 20px;
+  background-color: var(--btn-colour);
+  font-weight: bold;
+  font-size: 1rem;
+  margin-top: 50px;
+}
+.content form .submit .button:hover {
+  background-color: var(--white);
+}
+
+.content .footer-images {
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+  margin-bottom: 10px;
+}
+.content .footer-images i {
+  margin-right: 30px;
+  color: var(--white);
+  font-size: 1.5rem;
+}
+
+.content .box {
+  background-color: #112daa25;
+  color: rgba(240, 248, 255, 0.336);
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 100%;
+  text-align: center;
+}
+
+@media (max-width: 991px) {
+  html {
+    font-size: 65%;
+  }
+  .content form .form-group .desc {
+    width: 600px;
+    text-align: center;
+  }
+
+  .content form .form-group .row .desc_box .desc {
+    width: 300px;
+  }
+}
+@media (max-width: 768px) {
+  .header .flex .back i {
+    margin-left: -5rem;
+  }
+  .content form .form-group .row {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .content form .form-group .row .desc_box .desc {
+    width: 300px;
+  }
+  /* .content .anotate img { 
+        width: 500px; 
+    } */
+}
+@media (max-width: 450px) {
+  html {
+    font-size: 60%;
+  }
+  .content form .form-group .row {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .content form .form-group .row .desc_box .desc {
+    width: 300px;
+  }
+
+  .content form .form-group .row .desc_box .btn2 {
+    margin-top: 10px;
+  }
+}
