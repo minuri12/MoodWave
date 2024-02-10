@@ -33,4 +33,6 @@ body {
   background-color: #0c070f;
   flex-direction: column;
   overflow-x: hidden;
+  overflow-y: auto;
+  max-width: 100%;
 }

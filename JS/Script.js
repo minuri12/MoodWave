@@ -42,3 +42,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 3000);
   });
 });
+
+$(document).ready(function () {
+  $(".menu-toggle").click(function () {
+    $(".Navigation_Bar").toggleClass("open");
+  });
+});

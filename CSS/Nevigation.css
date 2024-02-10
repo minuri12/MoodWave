@@ -103,3 +103,106 @@
   transition: all 0.5s ease-in-out;
   cursor: pointer;
 }
+
+@media only screen and (max-width: 700px) {
+  .Navigation_Bar {
+    position: relative;
+    top: 0;
+    z-index: 3;
+    display: inline;
+    align-items: left;
+    justify-content: space-between;
+    padding: 40px 30px;
+    border: 1px solid hsla(0, 0%, 100%, 0);
+    border-radius: 34px;
+    transition: all 0.5s ease-in-out;
+    z-index: -3;
+  }
+
+  .navigation_section {
+    margin-top: 50px;
+    z-index: +1;
+    border-radius: 20px;
+    width: 200px;
+    position: fixed;
+    top: 25px;
+    left: 50%;
+    align-items: left;
+    transform: translateX(-50%);
+    transition: width 0.5s ease-out, background 0.5s ease-out, top 0.5s ease-out,
+      border-radius 0.5s ease-out, height 0.5s ease-out;
+  }
+
+  .navigation_section.show {
+    border-radius: 10px;
+    width: 50px;
+    background: rgba(18, 12, 21, 0.67);
+    border: 1px solid hsla(0, 0%, 100%, 0.123);
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+    box-shadow: 0 0 60px rgba(25, 0, 34, 0.76);
+    height: 50px;
+    align-items: left;
+    text-align: left;
+    top: -20px;
+  }
+
+  .Navigation_Bar ul {
+    list-style-type: none;
+    padding: 0;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    gap: 18px;
+    display: none;
+    align-items: left;
+  }
+
+  .Navigation_Bar li {
+    float: left;
+  }
+
+  .features {
+    padding-left: 117px;
+    padding-right: 17px;
+    cursor: pointer;
+    transition: transform 1 ease-in-out;
+  }
+
+  .features.active {
+    transform: scale(1.1);
+  }
+
+  .Navigation_Bar .ABOUT {
+    padding-right: 117px;
+    cursor: pointer;
+  }
+
+  .Navigation_Bar li a {
+    display: block;
+    color: white;
+    text-align: center;
+    font-size: 14px;
+    text-decoration: none;
+    font-weight: 400;
+  }
+  .Navigation_Bar li button {
+    width: 120px;
+    height: 35px;
+    border-radius: 11px;
+    background-color: #026eee;
+    color: #0c070f;
+    border: none;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .Navigation_Bar li button:hover {
+    background-color: #8eb5e6;
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;
+  }
+}
