@@ -12,33 +12,37 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="../css/style.css" />
-    <link rel="stylesheet" href="../css/footer.css" />
-    <link rel="stylesheet" href="../css/glass-menu.css" />
+
+    <link rel="stylesheet" href="/CSS/glass-menu.css" />
+    <link rel="stylesheet" href="CSS/Nevigation.css" />
+    <link rel="stylesheet" href="css/Common.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+    <link rel="stylesheet" href="css/register.css" />
+
    
     
 
-    <link rel="icon" href="../images/icon.ico" type="image/x-icon" />
+    <link rel="icon" href="images/icon.ico" type="image/x-icon" />
     <title>MoodWave</title>
   </head>
-  <body style="margin: 0; padding: 0; height: 100%; display: flex; flex-direction: column;"  id="swup" class="transition-fade">
+  <body id="swup" class="transition-fade">
 
 
   <div class="about">
     <div class="About_header">
         <ul>
-            <li><a onclick="history.back()"><i class="fas fa-arrow-left" style="color:white;cursor: pointer;"></i></a></li>
+            <li><a onclick="history.back()"><i class="fas fa-arrow-left" id="Back_register"></i></a></li>
             <li ></li>
         </ul>
     </div>
-      <img  src="../images/Shadow.png" alt="" class="card_image" style="width:700px ;z-index: -1; height: 500px;">
+      <img  src="../images/Shadow.png" alt="" id="card_image" >
     <!-- partial:index.partial.html -->
 
 
     
     <div class="container_card_register">
-        <div class="card_What_Mood" style="min-height: 400px; width: 400px; margin-right: 50px; ">
-          <img src="../images/Logo.png" alt="" style="padding-top: 20px;" /><br><br>
+        <div class="card_What_Mood">
+          <img src="../images/Logo.png" alt="" id="moodvave_logo" /><br><br>
 
 
           <p class="subtitle">
@@ -49,16 +53,16 @@
           </p>
         </div>
 
-        <div class="registerform" style="margin-top: 0px">
+        <div class="registerform" >
             <form action="" method="POST" enctype="multipart/form-data">
                 <div class="row2">
                     <div class="title">
                        
                     </div>
                     <div class="radio-btn">
-                         <input type="radio" id="Listener" name="select_type" value="Listener" style="margin-right:10px;" >
+                         <input type="radio" id="Listener" name="select_type" value="Listener"  >
                          <label for="Listener">Listener</label>
-                         <input type="radio" id="Creator" name="select_type" value="Creator" style="margin-left:30px;margin-right:10px;">
+                         <input type="radio" id="Creator" name="select_type" value="Creator">
                          <label for="Creator">Creator</label>
                      </div>
                      <br>

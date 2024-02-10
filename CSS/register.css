@@ -1,0 +1,253 @@
+.about {
+  height: auto;
+  display: block;
+  padding: 0px;
+  transition: all 0.5s ease-in-out;
+  height: fit-content;
+}
+
+.about ul {
+  list-style-type: none;
+  padding: 0;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  margin-top: 50px;
+  margin-bottom: 0;
+}
+
+.about ul li {
+  display: block;
+  color: white;
+  text-align: center;
+  font-size: 25px;
+  text-decoration: none;
+  font-weight: 400;
+  margin-right: 400px;
+}
+
+.about img {
+  width: 130px;
+  height: auto;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+#Back_register {
+  color: white;
+  cursor: pointer;
+}
+
+#card_image {
+  z-index: -1;
+  position: absolute;
+  width: 99%;
+  height: 100%;
+  display: block;
+  width: 700px;
+  z-index: -1;
+  height: 500px;
+}
+
+.container_card_register {
+  min-height: 80vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+}
+
+.card_What_Mood {
+  max-width: 600px;
+  color: white;
+  align-items: center;
+  background-color: #282c34;
+  background: linear-gradient(
+    0deg,
+    rgba(40, 44, 52, 0.1) 0%,
+    rgba(17, 0, 32, 0.3) 100%
+  );
+  box-shadow: 0 7px 20px 5px rgba(0, 0, 0, 0.4);
+  border-radius: 0.7rem;
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+  overflow: hidden;
+  transition: 0.5s all;
+  border-radius: 1rem;
+  border: rgba(255, 255, 255, 0.048) solid 0.008px;
+  padding: 1.5rem;
+  z-index: 10;
+  margin-left: 5px;
+  margin-right: 5px;
+
+  min-height: 400px;
+  width: 400px;
+  margin-right: 50px;
+}
+
+.card_What_Mood::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    -45deg,
+    transparent,
+    rgba(255, 255, 255, 0.123),
+    transparent
+  );
+  animation: shimmer 3s infinite alternate ease-in-out;
+  opacity: 0.5;
+}
+
+@keyframes shimmer {
+  0% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+#moodvave_logo {
+  padding-top: 20px;
+}
+
+.card_What_Mood .subtitle {
+  font-size: 1rem;
+  line-height: 1.5;
+  align-content: center;
+  align-items: center;
+}
+
+.registerform {
+  margin-top: 0px;
+}
+
+.card_What_Mood .title {
+  font-size: 2rem;
+  padding: 20px;
+  padding-left: 0;
+}
+
+.radio-btn {
+  display: flex;
+  align-items: center;
+  color: rgb(75, 73, 73);
+  font-weight: 700;
+}
+
+.radio-btn input[type="radio"] {
+  display: none; /* Hide the actual radio buttons */
+}
+
+.radio-btn input[type="radio"] + label {
+  cursor: pointer;
+  padding: 8px 12px; /* Adjust padding to create space around the labels */
+  border: 1px solid #494646;
+  border-radius: 5px;
+  margin-right: 10px; /* Add margin between each radio button and label */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+}
+
+.radio-btn input[type="radio"]:last-of-type + label {
+  margin-right: 0; /* Remove margin from the last radio button label */
+}
+
+.radio-btn input[type="radio"]:checked + label {
+  border-color: #39bffe;
+  color: #39bffe;
+  border-width: 0.5px;
+}
+
+#Listener {
+  margin-right: 10px;
+}
+
+#Creator {
+  margin-left: 30px;
+  margin-right: 10px;
+}
+
+.input-container_register {
+  color: white;
+  padding-bottom: 20px;
+}
+
+.input_text {
+  width: 370px;
+  padding: 8px;
+  margin-top: 5px;
+  background-color: #49474bad;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 15px;
+  transition: border-color 1.5s ease, background-color 1s ease;
+}
+
+.input_text:focus {
+  outline: none;
+  border: 0.5px solid #007bff;
+  background-color: #49474b50;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  top: 55%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  background-image: url("/Images/close-eye\ \(1\).png"); /* Path to your eye icon */
+  background-size: cover;
+  margin-right: 5px;
+}
+
+.Side_button_register {
+  width: 160px;
+  height: 50px;
+  border-radius: 25px;
+  background-color: #026eee;
+  color: #0c070f;
+  border: none;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 15px;
+  margin-left: 10px;
+  align-items: center;
+  text-align: center;
+  opacity: 100%;
+  transition: all 0.5s ease-in-out;
+}
+
+.Side_button_register:hover {
+  box-shadow: 4px 5px #39bffe;
+  transition: 0.3s;
+  color: white;
+  opacity: 100%;
+}
+
+.last_text {
+  color: rgba(255, 255, 255, 0.74);
+}
+
+.last_text a {
+  color: white;
+  font-weight: 200;
+  transition: color 0.5s ease-in-out;
+  font-weight: 700;
+}
+
+.last_text a:hover {
+  color: #0274fa;
+  font-weight: 700;
+}
