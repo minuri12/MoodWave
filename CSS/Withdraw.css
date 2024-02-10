@@ -120,10 +120,12 @@
 }
 
 .card_What_Mood .subtitle {
-  font-size: 1rem;
   line-height: 1.5;
   align-content: center;
   align-items: center;
+
+  font-size: 14px;
+  font-weight: 300;
 }
 
 #back_icon {
@@ -266,4 +268,28 @@ table tr {
 
 .total_2 {
   border-top: solid white 1px;
+}
+
+.recipt h3 {
+  font-size: 20px;
+}
+
+.registerform {
+  margin-top: 0px;
+}
+
+.input-container-row {
+  display: flex;
+}
+
+#text1 {
+  width: 95%;
+}
+
+#text2 {
+  width: 100%;
+}
+
+#amountInput {
+  width: 100%;
 }
