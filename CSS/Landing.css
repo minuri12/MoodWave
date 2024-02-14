@@ -169,3 +169,87 @@
   height: auto;
   margin-bottom: 100px;
 }
+@media(max-width:991px){
+  html{
+      font-size:65%;
+
+  }
+  .Main_topic_mood{
+    font-size: 90px;
+  }
+  .how_work {
+    width: 700px;
+  }
+  .card_image2{
+    width: 90%;
+
+  }
+  .card_image_MoodWave{
+    width: 90%;
+  }
+  
+}
+@media(max-width:768px){
+
+  .Main_topic_mood{
+    font-size: 60px;
+  }
+  .how_work {
+    width: 500px;
+  }
+  .card_image2{
+    width: 80%;
+
+  }
+  .card_image_MoodWave{
+    width: 350px;
+    height: 350px;
+    margin-top: 150px;
+    margin-left: 20%;
+    /* display: none; */
+  }
+  .icon_head img{
+    
+    width: 200px;
+
+  }
+  
+}
+@media(max-width:450px){
+  html{
+      font-size: 60%;
+
+  }
+
+  .Main_topic_mood{
+    font-size: 40px;
+  }
+  .how_work {
+    width: 370px;
+  }
+  .How {
+    font-size: 20px;
+
+  }
+  .head_Why {
+    font-size: 20px;
+
+  }
+
+  .card_image2{
+    width: 75%;
+
+  }
+  .card_image_MoodWave{
+    width: 250px;
+    height: 250px;
+    margin-top: 180px;
+    margin-left: 15%;
+  }
+  .icon_head img{
+    
+    width: 180px;
+  }
+  
+  
+}

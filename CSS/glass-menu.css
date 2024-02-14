@@ -88,3 +88,29 @@
   font-weight: 500;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
+@media(max-width:991px){
+  html{
+      font-size:65%;
+  }
+
+  
+}
+@media(max-width:768px){
+  html{
+    font-size:63%;
+}
+  
+}
+@media(max-width:450px){
+  html{
+      font-size: 60%;
+  }
+  .container .card {
+    width: 200px;
+    height: 300px;
+
+  }
+
+}
+
+
