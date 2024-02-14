@@ -1,0 +1,222 @@
+/*Preloader start*/
+#preloader {
+  background-color: #026eee;
+  width: 500px;
+  background: #0c070f url(/Images/Load.gif) no-repeat center;
+  background-size: 30%;
+  height: 150vh;
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+  top: -160px;
+  transition: opacity 0s ease-in-out;
+}
+
+#preloader.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+/*Preloader end*/
+
+.card_image_MoodWave {
+  z-index: -1;
+  position: absolute;
+  width: 99%;
+  height: 100%;
+  display: block;
+  z-index: -1;
+}
+
+.Land {
+  z-index: -1;
+  background: url(/Images/Shadow.png) no-repeat 50%;
+  background-size: contain;
+  position: absolute;
+  width: 99%;
+  height: 100%;
+  background-size: contain;
+  align-items: center;
+}
+
+.icon_head {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 230px;
+}
+
+.icon_head img {
+  width: 250px;
+}
+
+.icon_head.animate {
+  animation: in 5s ease-out forwards;
+  animation-delay: 0.1s;
+}
+
+.Main_topic_mood {
+  text-align: center;
+  color: white;
+  font-weight: 700;
+  font-size: 129px;
+  margin-top: 25px;
+  position: relative;
+  align-items: center;
+  opacity: 0;
+}
+
+.Main_topic_mood.animate {
+  animation: in 5s ease-out forwards;
+  animation-delay: 0.1s;
+}
+
+.icon_head.animate {
+  animation: in 5s ease-out forwards;
+  animation-delay: 0.1s;
+}
+
+@keyframes in {
+  0% {
+    letter-spacing: -30px;
+    opacity: 0;
+  }
+  30% {
+    letter-spacing: 3px;
+    opacity: 1;
+  }
+  100% {
+    letter-spacing: 3px;
+    opacity: 1;
+  }
+}
+
+/*Scroll down animation*/
+
+.scroll1 {
+  width: 1em;
+  height: 1em;
+  bottom: 205px;
+  border-width: 0 0.2em 0.2em 0;
+  border-style: solid;
+  border-color: rgba(250, 235, 215, 0.26);
+  animation: scrolldown 1.5s ease-in-out infinite;
+  left: 50%;
+  transform: translateY(0%) rotate(45deg);
+
+  opacity: 0;
+}
+
+.scroll2 {
+  width: 1.2em;
+  height: 1.2em;
+  bottom: 200px;
+  border-width: 0 0.2em 0.2em 0;
+  border-style: solid;
+  border-color: rgba(250, 235, 215, 0.26);
+
+  animation: scrolldown 1.5s ease-in-out infinite;
+  left: 50%;
+  transform: translateY(0%) rotate(45deg);
+
+  opacity: 0;
+}
+
+@keyframes scrolldown {
+  0% {
+    transform: translateY(10%) rotate(45deg);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translateY(0%) rotate(45deg);
+    opacity: 0.2;
+  }
+  100% {
+    transform: translateY(10%) rotate(45deg);
+    opacity: 0.5;
+  }
+}
+
+/*scroll down end*/
+.head_Why {
+  color: white;
+  font-size: 30px;
+  margin-top: 125px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.card_image2 {
+  z-index: -1;
+  position: absolute;
+  width: 99%;
+  height: 100%;
+  display: block;
+  left: 90px;
+  top: -120px;
+  z-index: -1;
+}
+
+.How {
+  text-align: center;
+  color: white;
+  font-size: 30px;
+  margin-top: 125px;
+  margin-bottom: 40px;
+}
+
+.how_work {
+  width: 1000px;
+  height: auto;
+  margin-bottom: 100px;
+}
+
+@media(max-width:991px){
+  html{
+      font-size:65%;
+
+  }
+  .Main_topic_mood{
+    font-size: 90px;
+  }
+  .how_work {
+    width: 700px;
+  }
+  
+}
+@media(max-width:768px){
+  .Main_topic_mood{
+    font-size: 60px;
+  }
+  .how_work {
+    width: 500px;
+  }
+  
+}
+@media(max-width:450px){
+  html{
+      font-size: 60%;
+
+  }
+  body{
+    width:375px;
+  }
+  .Main_topic_mood{
+    font-size: 40px;
+  }
+  .how_work {
+    width: 300px;
+  }
+  .How {
+    font-size: 20px;
+
+  }
+  .head_Why {
+    font-size: 20px;
+
+  }
+
+  
+  
+  
+}
+

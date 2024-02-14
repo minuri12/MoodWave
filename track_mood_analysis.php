@@ -1,7 +1,4 @@
-<<<<<<< Updated upstream
 
-=======
->>>>>>> Stashed changes
 <?php
 
 @include 'config.php';
@@ -54,12 +51,7 @@ if(isset($_POST['analyse'])){
     } else {
         // Move the file to the specified directory
         if (move_uploaded_file($_FILES["mp3File"]["tmp_name"], $targetFile)) {
-<<<<<<< Updated upstream
-            // $message[] = "The file " . htmlspecialchars(basename($_FILES["mp3File"]["name"])) . " has been uploaded.";
-            $message[] = "Analyse part will comming soon";
-=======
             $message[] = "The file " . htmlspecialchars(basename($_FILES["mp3File"]["name"])) . " has been uploaded.";
->>>>>>> Stashed changes
             
         } else {
             $message[] = "Error: " . $_FILES["mp3File"]["error"];
@@ -90,31 +82,19 @@ if(isset($_POST['analyse'])){
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap"
       rel="stylesheet"
     />
-<<<<<<< Updated upstream
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/glass-menu.css" />
-=======
-
     <link rel="stylesheet" href="css/glass-menu.css" />
     <link rel="stylesheet" href="css/Nevigation.css" />
     <link rel="stylesheet" href="css/Common.css" />
     <link rel="stylesheet" href="css/footer.css" />
-    <link rel="stylesheet" href="css/dynamic_emotion_analysis.css" />
->>>>>>> Stashed changes
+    <link rel="stylesheet" href="css/track_mood_analysis.css" />
 
     <link rel="icon" href="images/icon.ico" type="image/x-icon" />
     <title>MoodWave</title>
   </head>
-<<<<<<< Updated upstream
-  <body bgcolor="#0C070F">
-<?php
-  if(isset($message)){
-=======
   <body id="swup" class="transition-fade">
   <?php
 
 if(isset($message)){
->>>>>>> Stashed changes
    foreach($message as $message){
       echo '
       <div class="message">
@@ -125,89 +105,6 @@ if(isset($message)){
    }
 }
 ?>
-<<<<<<< Updated upstream
-    <!-- Navigation bar start -->
-    <section class="navigation_section">
-      <nav class="Navigation_Bar">
-        <ul>
-          <li><a href="index.php"><img src="images/Logo.png" alt="MoodWave_logo" /></a></li>
-          <li class="features"><a href="#">HELP</a></li>
-          <li><a href="#" class="ABOUT">ABOUT US</a></li>
-          <li><form action="" method="POST" enctype="multipart/form-data"><input type="submit" name="logout" class="logout" value="LOG OUT"></li>
-        </ul>
-      </nav>
-    </section>
-    <!-- Navigation bar end -->
-
-    <section class="Land">
-      <div class="Main_topic_sides" style="margin-top: 70px;">Dynamic Emotion Analysis</div><br>
-      <div class="Small_topic_sides" style="margin-left: 285px;margin-right: 285px;">
-      
-        
-        <input type="file" onchange="previewFile()"  name="mp3File" accept="audio/*" class="audio_input">
-      
-        <div style="font-size: 15px; font-weight: 100; opacity: 20%; padding-top: 10px;"><i>Click here for choose file(mp3)</i></div>
-
-        <br>
-        
-
-
-<audio controls src=""></audio>
-<div id="result"></div>
-
-<div class="button_holder">
-
-  <li style="list-style-type: none;"><input type="submit" name="analyse" class="Middle_button" value="ANALYSIS"></form></li>
-  
-  </div>
-
-
-
-      </div>
-      
-      <div class="description">
-        <div class="sub_topic_sides">
-          Analysis
-        </div>
-      </div>
-      <br /><br />
-      <footer style="position: relative; bottom: 0">
-        <div class="Icon_bar">
-          <a href="#"><i class="fab fa-facebook-square"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
-        </div>
-        <div class="box" style="text-align: center; margin-top: 20px">
-          Copyright | FOC - SUSL
-        </div>
-      </footer>
-
-       
-    </section>
-    <script>
-      function previewFile() {
-        var preview = document.querySelector('audio');
-        var fileInput = document.querySelector('input[type=file]');
-        var file = fileInput.files[0];
-        var reader = new FileReader();
-    
-        reader.addEventListener("load", function () {
-          preview.src = reader.result;
-        }, false);
-    
-        if (file) {
-          reader.readAsDataURL(file);
-          updateButtonAppearance();
-        }
-      }
-    
-      function updateButtonAppearance() {
-        var fileInput = document.querySelector('input[type=file]');
-        fileInput.classList.add('file-uploaded');
-      }
-    </script>
-
-=======
 <form action="" method="POST" enctype="multipart/form-data">
     <!--Navigation bar start-->
     <center>
@@ -234,8 +131,8 @@ if(isset($message)){
     <!--Navigation bar end-->
     <br /><br /><br /><br /><br /><br /><br />
     <section class="Land">
-      <div class="Main_topic_sides">DYNAMIC EMOTION ANALYZE<br /></div>
-      <div class="container_mp3">
+      <div class="Main_topic_sides">TRACK MOOD ANALYZE<br /></div>
+      <div class="container_mp3" style="margin-top: 18px">
         <div class="card_mp3">
           <div class="drop_box">
             <header>
@@ -258,7 +155,6 @@ if(isset($message)){
       <div class="audio-player-container">
         <audio controls id="audioPlayer"></audio>
       </div>
-
       <div class="analyse_btn">
         <button class="btn" name="analyse">ANALYSE</button>
       </div>
@@ -267,11 +163,7 @@ if(isset($message)){
         <div class="sub_topic_sides">Analysis</div>
       </div>
       <br /><br />
-     
-    <!--Needed-->
-
-
-          
+               
 <!-- Footer start-->
 <div class="container_footer">
 
@@ -286,6 +178,8 @@ if(isset($message)){
 </div>
 <div class="box">Copyright | FOC - SUSL</div>
 <!-- Footer end-->
+
+    <!--Needed-->
 
     <script src="JS/vanilla-tilt.min.js"></script>
     <script src="JS/Script.js"></script>
@@ -319,6 +213,5 @@ if(isset($message)){
         audioPlayer.src = URL.createObjectURL(file);
       }
     </script>
->>>>>>> Stashed changes
   </body>
 </html>
