@@ -1,3 +1,62 @@
+
+
+<?php
+
+@include 'config.php';
+
+session_start();
+
+
+$creator_id = $_SESSION['user_id'];
+
+
+if(!isset($creator_id)){
+   header('location:login.php');
+};
+
+if(isset($_POST['logout'])){
+
+    session_unset();
+    session_destroy();
+
+    header('location:index.php');
+}
+
+
+if(isset($_POST['next'])){
+
+  if($_POST['name_on_card']==""){
+      $message[] = 'Please enter name on card';
+  }elseif($_POST['card_details']==""){
+      $message[] = 'Please enter card details';
+  }elseif($_POST['expiary']==""){
+      $message[] = 'Please enter expiary date';
+  }elseif($_POST['cvv']==""){
+      $message[] = 'Please enter cvv';
+  }else{
+      $new_audio_name = $_GET['music'];
+      $song_name = $_GET['song_name'];
+      $song_writter = $_GET['song_writter'];
+      $singers = $_GET['singers'];
+      $workers_need = $_GET['workers_need'];
+      $workers_earn = $_GET['workers_earn'];
+      $name_on_card = $_POST['name_on_card'];
+      $card_details = $_POST['card_details'];
+      $expiary=$_POST['expiary'];
+      $cvv = $_POST['cvv'];
+      $placed_on = date('d-M-Y');
+      $total=$workers_need*$workers_earn;
+
+      mysqli_query($conn, "INSERT INTO `jobs`(creater_id,song_name,song_writter,singers,music,workers_need,workers_earn,name_on_card,card_number,expiary,cvv,total,placed_on) VALUES('$creator_id', '$song_name', '$song_writter', '$singers', '$new_audio_name', '$workers_need', '$workers_earn','$name_on_card', '$card_details', '$expiary', '$cvv','$total','$placed_on')") or die(mysqli_error($conn));
+
+
+      $message[] = 'payement done successfully!';
+
+      header("location:thanks_creator.php");
+  }
+
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -13,8 +72,8 @@
       rel="stylesheet"
     />
    
-    <link rel="stylesheet" href="/CSS/glass-menu.css" />
-    <link rel="stylesheet" href="CSS/Nevigation.css" />
+    <link rel="stylesheet" href="css/glass-menu.css" />
+    <link rel="stylesheet" href="css/Nevigation.css" />
     <link rel="stylesheet" href="css/Common.css" />
     <link rel="stylesheet" href="css/footer.css" />
     <link rel="stylesheet" href="css/Payment.css" />
@@ -22,10 +81,24 @@
    
     
 
-    <link rel="icon" href="../images/icon.ico" type="image/x-icon" />
+    <link rel="icon" href="images/icon.ico" type="image/x-icon" />
     <title>MoodWave</title>
   </head>
   <body  id="swup" class="transition-fade">
+  <?php
+
+if(isset($message)){
+   foreach($message as $message){
+      echo '
+      <div class="message">
+         <span>'.$message.'</span>
+         <i class="fas fa-times" onclick="this.parentElement.remove();"></i>
+      </div>
+      ';
+   }
+}
+?>
+<form action="" method="POST" enctype="multipart/form-data">
        <!--Navigation bar start-->
        <center>
         <section class="navigation_section">
@@ -36,12 +109,12 @@
                   ><img src="images/Logo.png" alt="MoodWave_logo"
                 /></a>
               </li>
-              <li class="features"><a href="Need_Help.html">HELP</a></li>
+              <li class="features"><a href="Need_Help.php">HELP</a></li>
               <li>
-                <a href="About_us.html" class="ABOUT transition-fade">ABOUT US</a>
+                <a href="About_us.php" class="ABOUT transition-fade">ABOUT US</a>
               </li>
               <li>
-                <a href="Landing.html"><button>Logout</button></a>
+                <button name="logout">Logout</button>
               </li>
             </ul>
           </nav>
@@ -53,7 +126,7 @@
 
   <div class="about">
 
-      <img  src="../images/Shadow.png" alt="" id="card_image">
+      <img  src="images/Shadow.png" alt="" id="card_image">
     <!-- partial:index.partial.html -->
 
 
@@ -69,20 +142,20 @@
             
             <div class="recipt">
               <table class="Payment_Table">
-                <tr>
+              <tr>
                   <td>Number of workers</td>
-                  <td>200</td>
+                  <td><?php echo $_GET['workers_need'];?></td>
       
                 </tr>
-                <tr  id="workers">
+                <tr style="border-bottom: 1px white solid;">
                   <td>Workers will earn</td>
-                  <td>LKR.20.00</td>
+                  <td><?php echo $_GET['workers_earn'];?>.00</td>
+                  <!-- <td>LKR.20.00</td> -->
                 </tr>
-                
-                <tr class="total_2">
-                  
-                  <th >Total</th>
-                  <th>LKR.4000.00</th>
+                <tr>
+                  <th>Total</th>
+                  <td><?php echo $_GET['workers_earn']*$_GET['workers_need'];?>.00</td>
+                  <!-- <th>LKR.4000.00</th> -->
                 </tr>
               </table>
             </div>
@@ -91,7 +164,6 @@
         </div>
 
         <div class="registerform" >
-          <form action="" method="POST" enctype="multipart/form-data">
               <div class="row2">
                   <div class="title">
                      <h2 >Payment Details</h2>
@@ -99,20 +171,20 @@
                    <br>
                   <div class="input-container_register">
                        <label for="" >Card Holder Name</label><br>
-                       <input type="text" name="Cardholder Name" class="input_text" placeholder="S K S Michel" />
+                       <input type="text" name="name_on_card" class="input_text" placeholder="S K S Michel" required />
                    </div>
                   <div class="input-container_register">
                        <label for="" >Card Number</label><br>
-                       <input type="text" name="Card Number" class="input_text" placeholder="0000-0000-0000-0000"  />
+                       <input type="text" name="card_details" class="input_text" placeholder="0000-0000-0000-0000" required />
                    </div>
                      <div class="input-container-row" id="ex">
                       <div class="input-container_register" >
                         <label for="" >Exp. Date</label><br>
-                        <input  class="input_text" placeholder="10/25" type="text" maxlength="5" required id="text1"/>
+                        <input type="date" name="expiary" class="input_text" placeholder="10/25" type="text" required id="text1" />
                     </div>
                     <div class="input-container_register" >
                       <label for="" >CCV</label><br>
-                      <input  class="input_text" placeholder="123" type="text" maxlength="3" required id="text2" />
+                      <input  class="input_text" name="cvv" placeholder="123" type="text" maxlength="3" required id="text2" />
                   </div>
                      </div>
                    
@@ -122,14 +194,11 @@
        
                    <div class="button_holder" >
                     <div>
-                      <a href="Create_Job_Step_2.html"
-                        ><button class="middle_button_Creator_main" ><i class="fa-solid fa-arrow-left"></i></button></a
+                    <a onclick="history.back()"><button class="middle_button_Creator_main" ><i class="fa-solid fa-arrow-left"></i></button></a
                       >
                       </div>
                       <div>
-                        <a href="#"
-                          ><button class="middle_button_Creator_main2" >Submit</button></a
-                        >
+                        <button class="middle_button_Creator_main2" name="next">Submit</button>
                         </div>
                       
                   
@@ -139,13 +208,13 @@
                </div>
            </div>
            
-       </form>
+
               
           </form>
         </div>
 
-        <script src="/JS/vanilla-tilt.min.js"></script>
-        <script src="/JS/Script.js"></script>
+        <script src="JS/vanilla-tilt.min.js"></script>
+        <script src="JS/Script.js"></script>
         <script>
           VanillaTilt.init(document.querySelectorAll(".card"), {
             max: 25,

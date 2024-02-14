@@ -15,8 +15,8 @@
 
 
 
-    <link rel="stylesheet" href="/CSS/glass-menu.css" />
-    <link rel="stylesheet" href="CSS/Nevigation.css" />
+    <link rel="stylesheet" href="css/glass-menu.css" />
+    <link rel="stylesheet" href="css/Nevigation.css" />
     <link rel="stylesheet" href="css/Common.css" />
     <link rel="stylesheet" href="css/footer.css" />
     <link rel="stylesheet" href="css/Need_Help.css" />

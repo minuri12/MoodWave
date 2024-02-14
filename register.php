@@ -1,3 +1,43 @@
+<?php
+
+@include 'config.php';
+
+session_start();
+
+if(isset($_POST['register'])){
+
+    if(!isset($_POST['select_type'])){
+        $message[] = 'Plaese select user type';
+    }elseif($_POST['username']==""){
+        $message[] = 'Plaese enter Username';
+    }elseif($_POST['email']==""){
+        $message[] = 'Plaese enter Email';
+    }elseif($_POST['password']==""){
+        $message[] = 'Plaese enter Password';
+    }else{
+        $user_type = $_POST['select_type'];
+        $username = $_POST['username'];
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+        $placed_on = date('d-M-Y');
+
+
+        $select_users = mysqli_query($conn, "SELECT * FROM `users` WHERE email = '$email'") or die('query failed');
+
+        if(mysqli_num_rows($select_users) > 0){
+            $message[] = 'user already exist!';
+        }else{
+                mysqli_query($conn, "INSERT INTO `users`(username,email,password,user_type,placed_on) VALUES('$username', '$email', '$password', '$user_type', '$placed_on')") or die(mysqli_error($conn));
+                $message[] = 'Login successfully!';
+                header("location:login.php");
+                
+        }
+    }
+
+    
+
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -13,8 +53,8 @@
       rel="stylesheet"
     />
 
-    <link rel="stylesheet" href="/CSS/glass-menu.css" />
-    <link rel="stylesheet" href="CSS/Nevigation.css" />
+    <link rel="stylesheet" href="css/glass-menu.css" />
+    <link rel="stylesheet" href="css/Nevigation.css" />
     <link rel="stylesheet" href="css/Common.css" />
     <link rel="stylesheet" href="css/footer.css" />
     <link rel="stylesheet" href="css/register.css" />
@@ -27,7 +67,19 @@
   </head>
   <body id="swup" class="transition-fade">
 
+  <?php
 
+if(isset($message)){
+   foreach($message as $message){
+      echo '
+      <div class="message">
+         <span>'.$message.'</span>
+         <i class="fas fa-times" onclick="this.parentElement.remove();"></i>
+      </div>
+      ';
+   }
+}
+?>
   <div class="about">
     <div class="About_header">
         <ul>
@@ -35,14 +87,14 @@
             <li ></li>
         </ul>
     </div>
-      <img  src="../images/Shadow.png" alt="" id="card_image" >
+      <img  src="images/Shadow.png" alt="" id="card_image" >
     <!-- partial:index.partial.html -->
 
 
     
     <div class="container_card_register">
         <div class="card_What_Mood">
-          <img src="../images/Logo.png" alt="" id="moodvave_logo" /><br><br>
+          <img src="images/Logo.png" alt="" id="moodvave_logo" /><br><br>
 
 
           <p class="subtitle">
@@ -68,16 +120,16 @@
                      <br>
                     <div class="input-container_register">
                          <label for="" >Username</label><br>
-                         <input type="text" name="username" class="input_text" placeholder="Ex:Michel" />
+                         <input type="text" name="username" class="input_text" placeholder="Ex:Michel" required/>
                      </div>
                     <div class="input-container_register">
                          <label for="" >Email</label><br>
-                         <input type="text" name="email" class="input_text" placeholder="Ex:MichelVaz@gmail.com" />
+                         <input type="text" name="email" class="input_text" placeholder="Ex:MichelVaz@gmail.com" required/>
                      </div>
                      <div class="input-container_register">
                       <label for="password">Password</label><br>
                       <div class="password-input">
-                          <input type="password" id="password" name="password" class="input_text" placeholder="Ex:Vaz342#" />
+                          <input type="password" id="password" name="password" class="input_text" placeholder="Ex:Vaz342#" required/>
                           <span class="toggle-password" onclick="togglePasswordVisibility()"></span>
                       </div>
                   </div>
@@ -89,7 +141,7 @@
                     </div>
      <br>
                     <div class="last_text">
-                        <i><p>You already have an account? <a href="Login.html">Login</a></i> 
+                        <i><p>You already have an account? <a href="Login.php">Login</a></i> 
                      </div>
                  </div>
              </div>
@@ -101,7 +153,7 @@
 
 
 <script src="https://unpkg.com/swup@4"></script>
-<script src="/JS/Script.js"></script>
+<script src="JS/Script.js"></script>
 <script>
   const swup = new Swup();
 </script>
@@ -113,10 +165,10 @@
 
   if (passwordInput.type === "password") {
     passwordInput.type = "text";
-    toggleIcon.style.backgroundImage = "url('../images/open-eye.png')"; 
+    toggleIcon.style.backgroundImage = "url('images/open-eye.png')"; 
   } else {
     passwordInput.type = "password";
-    toggleIcon.style.backgroundImage = "url('../images/close-eye (1).png')"; 
+    toggleIcon.style.backgroundImage = "url('images/close-eye (1).png')"; 
   }
 }
 

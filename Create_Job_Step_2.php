@@ -1,3 +1,48 @@
+
+<?php
+
+@include 'config.php';
+
+session_start();
+
+
+$creator_id = $_SESSION['user_id'];
+
+
+if(!isset($creator_id)){
+   header('location:login.php');
+};
+
+if(isset($_POST['logout'])){
+
+    session_unset();
+    session_destroy();
+
+    header('location:index.php');
+}
+
+
+if(isset($_POST['next'])){
+
+    if($_POST['workers_need']==""){
+        $message[] = 'Please enter amount of needed workers';
+    }elseif($_POST['workers_earn']==""){
+        $message[] = 'Please enter workers earn money';
+    }else{
+
+        $new_audio_name = $_GET['music'];
+        $song_name = $_GET['song_name'];
+        $song_writter = $_GET['song_writter'];
+        $singers = $_GET['singers'];
+        $workers_need =$_POST['workers_need'];
+        $workers_earn =$_POST['workers_earn'];
+        
+        header("location:Payment.php?music=$new_audio_name&song_name=$song_name&song_writter=$song_writter&singers=$singers&workers_need=$workers_need&workers_earn=$workers_earn");
+            
+        
+    }   
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -14,7 +59,7 @@
       rel="stylesheet"
     />
    
-    <link rel="stylesheet" href="CSS/Nevigation.css" />
+    <link rel="stylesheet" href="css/Nevigation.css" />
     <link rel="stylesheet" href="css/footer.css" />
     <link rel="stylesheet" href="css/glass-menu.css" />
     <link rel="stylesheet" href="css/Common.css" />
@@ -23,10 +68,24 @@
    
     
 
-    <link rel="icon" href="../images/icon.ico" type="image/x-icon" />
+    <link rel="icon" href="images/icon.ico" type="image/x-icon" />
     <title>MoodWave</title>
   </head>
   <body  id="swup" class="transition-fade">
+  <?php
+
+if(isset($message)){
+   foreach($message as $message){
+      echo '
+      <div class="message">
+         <span>'.$message.'</span>
+         <i class="fas fa-times" onclick="this.parentElement.remove();"></i>
+      </div>
+      ';
+   }
+}
+?>
+<form action="" method="POST" enctype="multipart/form-data">
     <!--Navigation bar start-->
     <center>
       <section class="navigation_section">
@@ -37,12 +96,12 @@
                 ><img src="images/Logo.png" alt="MoodWave_logo"
               /></a>
             </li>
-            <li class="features"><a href="Need_Help.html">HELP</a></li>
+            <li class="features"><a href="Need_Help.php">HELP</a></li>
             <li>
-              <a href="About_us.html" class="ABOUT transition-fade">ABOUT US</a>
+              <a href="About_us.php" class="ABOUT transition-fade">ABOUT US</a>
             </li>
             <li>
-              <a href="Landing.html"><button>Logout</button></a>
+              <button name="logout">Logout</button>
             </li>
           </ul>
         </nav>
@@ -58,7 +117,6 @@
 
     <section class="Land" >
       
-      <form action="#" >
       
       
       
@@ -70,14 +128,14 @@
 <br>
   <div class="create_job_form-field">
     <label for="create_job_inputField" class="create_job_input-label">Workers Will earn ( LKR ) *</label>
-    <input type="number" min="20" id="create_job_inputField" class="create_job_input-field" placeholder="More than LKR.20.00..." />
+    <input type="number" min="20" name="workers_earn" id="create_job_inputField" required class="create_job_input-field" placeholder="More than LKR.20.00..." />
 </div>
 
 <div class="create_job_form-field">
   <label for="create_job_inputField" class="create_job_input-label">Workers needed *</label>
   <div class="slider">
   
-    <input type="range" min="5" max="1000" value="200" oninput="rangeValue.innerText = this.value">
+    <input type="range" min="5" max="1000" value="200" name="workers_need" required oninput="rangeValue.innerText = this.value">
     <p id="rangeValue">200</p>
     </div> 
 </div>
@@ -90,14 +148,12 @@
 <br>
 <div class="button_holder">
   <div>
-    <a href="Create_Job.html"
+    <a href="Create_Job.php"
       ><button class="middle_button_Creator_main" ><i class="fa-solid fa-arrow-left"></i></button></a
     >
     </div>
     <br />
-    <a href="Payment.html"
-      ><button class="middle_button_Creator_main" ><i class="fa-solid fa-arrow-right"></i></button></a
-    >
+    <button class="middle_button_Creator_main" name="next"><i class="fa-solid fa-arrow-right"></i></button>
   </div>
 
   </div>
@@ -171,7 +227,7 @@ dec.addEventListener("click", () => {
         </script>
 
 <!--Need-->
-<script src="/JS/vanilla-tilt.min.js"></script>
+<script src="JS/vanilla-tilt.min.js"></script>
 <script>
   VanillaTilt.init(document.querySelectorAll(".card"), {
     max: 25,
@@ -181,7 +237,7 @@ dec.addEventListener("click", () => {
   });
 </script>
 
-<script src="/JS/Script.js"></script>
+<script src="JS/Script.js"></script>
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>

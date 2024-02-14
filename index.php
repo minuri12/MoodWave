@@ -13,10 +13,10 @@
     />
     
     <link rel="stylesheet" href="css/glass-menu.css" />
-    <link rel="stylesheet" href="CSS/Nevigation.css" />
-    <link rel="stylesheet" href="CSS/Landing.css" />
-    <link rel="stylesheet" href="CSS/footer.css" />
-    <link rel="stylesheet" href="CSS/Common.css" />
+    <link rel="stylesheet" href="css/Nevigation.css" />
+    <link rel="stylesheet" href="css/Landing.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+    <link rel="stylesheet" href="css/Common.css" />
 
     <link rel="icon" href="images/icon.ico" type="image/x-icon" />
     <title>MoodWave</title>
@@ -37,8 +37,8 @@
           <ul>
             <li><a href="index.php"><img src="images/Logo.png" alt="MoodWave_logo" /></a></li>
             <li class="features"><a href="#test">FEATURES</a></li>
-            <li><a href="About_us.html" class="ABOUT transition-fade" >ABOUT US</a></li>
-            <li><a href="register.html"><button >Join</button></a></li>
+            <li><a href="About_us.php" class="ABOUT transition-fade" >ABOUT US</a></li>
+            <li><a href="register.php"><button >Join</button></a></li>
           </ul>
         </nav>
     </section>

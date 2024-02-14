@@ -1,3 +1,72 @@
+
+<?php
+
+@include 'config.php';
+
+session_start();
+
+
+$listener_id = $_SESSION['user_id'];
+
+
+if(!isset($listener_id)){
+   header('location:login.php');
+};
+
+
+if(isset($_POST['logout'])){
+
+  session_unset();
+  session_destroy();
+
+  header('location:index.php');
+}
+
+
+if(isset($_POST['submit'])){
+
+    
+  $listener_id = $_SESSION['user_id'];
+
+  $select_balance = mysqli_query($conn, "SELECT * FROM `users` WHERE user_id='$listener_id'") or die('query failed');
+  $fetch_balance = mysqli_fetch_assoc($select_balance);
+  $balance=$fetch_balance['balance'];
+
+
+    if($_POST['name_on_card']==""){
+        $message[] = 'Please enter card holder name';
+    }elseif($_POST['card_details']==""){
+        $message[] = 'Please enter card details';
+    }elseif($_POST['expiary']==""){
+        $message[] = 'Please enter expiary date';
+    }elseif($_POST['amount']==""){
+        $message[] = 'Please enter amount';
+    }elseif($_POST['cvv']==""){
+        $message[] = 'Please enter cvv';
+    }elseif($_POST['amount']>$balance){
+        $message[] = 'Your Withdraw amount is greater than your balance';
+    }else{
+        $name_on_card = $_POST['name_on_card'];
+        $card_details = $_POST['card_details'];
+        $amount = $_POST['amount'];
+        $expiary=$_POST['expiary'];
+        $cvv = $_POST['cvv'];
+        $placed_on = date('d-M-Y');
+    
+    
+       mysqli_query($conn, "INSERT INTO `withdraw`(listener_id,name_on_card,amount,card_details,expiary,cvv,placed_on) VALUES('$listener_id','$name_on_card','$amount', '$card_details', '$expiary', '$cvv','$placed_on')") or die(mysqli_error($conn));
+       
+       $balance=$balance-$amount;
+       mysqli_query($conn, "UPDATE users SET balance = '$balance' WHERE user_id='$listener_id'") or die(mysqli_error($conn));
+       
+    
+       $message[] = 'payement done successfully!';
+    
+       header("location:thanks_listener.php");
+    }
+    
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -14,18 +83,32 @@
     />
  
 
-    <link rel="stylesheet" href="/CSS/glass-menu.css" />
-    <link rel="stylesheet" href="CSS/Nevigation.css" />
+    <link rel="stylesheet" href="css/glass-menu.css" />
+    <link rel="stylesheet" href="css/Nevigation.css" />
     <link rel="stylesheet" href="css/Common.css" />
     <link rel="stylesheet" href="css/footer.css" />
     <link rel="stylesheet" href="css/Withdraw.css" />
    
     
 
-    <link rel="icon" href="../images/icon.ico" type="image/x-icon" />
+    <link rel="icon" href="images/icon.ico" type="image/x-icon" />
     <title>MoodWave</title>
   </head>
   <body  id="swup" class="transition-fade">
+  <?php
+
+if(isset($message)){
+   foreach($message as $message){
+      echo '
+      <div class="message">
+         <span>'.$message.'</span>
+         <i class="fas fa-times" onclick="this.parentElement.remove();"></i>
+      </div>
+      ';
+   }
+}
+?>
+<form action="" method="POST" enctype="multipart/form-data">
        <!--Navigation bar start-->
        <center>
         <section class="navigation_section">
@@ -36,12 +119,12 @@
                   ><img src="images/Logo.png" alt="MoodWave_logo"
                 /></a>
               </li>
-              <li class="features"><a href="Need_Help.html">HELP</a></li>
+              <li class="features"><a href="Need_Help.php">HELP</a></li>
               <li>
-                <a href="About_us.html" class="ABOUT transition-fade">ABOUT US</a>
+                <a href="About_us.php" class="ABOUT transition-fade">ABOUT US</a>
               </li>
               <li>
-                <a href="Landing.html"><button>Logout</button></a>
+                <button name="logout">Logout</button>
               </li>
             </ul>
           </nav>
@@ -53,7 +136,7 @@
 
   <div class="about">
 
-      <img  src="../images/Shadow.png" alt="" id="card_image" >
+      <img  src="images/Shadow.png" alt="" id="card_image" >
     <!-- partial:index.partial.html -->
 
 
@@ -68,7 +151,12 @@
             <h3>Balance</h3><br>
             
             <div class="recipt">
-              <h3 >LKR 5430.00</h3><br>
+            <h3 style="font-size: 20px;">LKR <?php
+                  $select_balance = mysqli_query($conn, "SELECT * FROM `users` WHERE user_id='$listener_id'") or die('query failed');
+                  $fetch_balance = mysqli_fetch_assoc($select_balance);
+                  $balance=$fetch_balance['balance'];
+                  echo $balance.'.00';
+              ?></h3><br>
               <hr><br>
               <p class="subtitle" >
            
@@ -94,27 +182,27 @@
                    <div class="input-container-row" >
                     <div class="input-container_register" >
                       <label for="" >Card Holder Name</label><br>
-                      <input  class="input_text" placeholder="Michel" type="text"  required  id="text1"/>
+                      <input  class="input_text" placeholder="Michel" name="name_on_card" type="text"  required  id="text1"/>
                   </div>
                   <div class="input-container_register" >
                     <label for="" >Amount(LKR)</label><br>
-                    <input  id="amountInput" class="input_text" placeholder="5000" type="number" min="5000" required   />
+                    <input  id="amountInput" class="input_text" name="amount"  placeholder="5000" type="number" required   />
                 </div>
                    </div>
 
                    
                   <div class="input-container_register">
                        <label for="" >Card Number</label><br>
-                       <input type="text" name="Card Number" class="input_text" placeholder="0000-0000-0000-0000" maxlength="16"  />
+                       <input type="text" name="card_details" class="input_text" placeholder="0000-0000-0000-0000" maxlength="16"  required/>
                    </div>
                      <div class="input-container-row" style="display: flex;">
                       <div class="input-container_register" >
                         <label for="" >Exp. Date</label><br>
-                        <input  class="input_text" placeholder="10/25" type="text" maxlength="5" required id="text1"/>
+                        <input type="date" class="input_text"  name="expiary"  placeholder="10/25" type="text" maxlength="5" required id="text1"/>
                     </div>
                     <div class="input-container_register" >
                       <label for="" >CCV</label><br>
-                      <input  class="input_text" placeholder="123" type="text" maxlength="3" required  id="text2" />
+                      <input  class="input_text" placeholder="123" name="cvv" type="text" maxlength="3" required  id="text2" />
                   </div>
                      </div>
                    
@@ -125,9 +213,7 @@
                    <div class="button_holder" >
                     
                       <div>
-                        <a href="#"
-                          ><button class="middle_button_Creator_main" >Submit</button></a
-                        >
+                        <button class="middle_button_Creator_main" name="submit">Submit</button>
                         </div>
                       
                   
@@ -142,8 +228,8 @@
           </form>
         </div>
 
-        <script src="/JS/vanilla-tilt.min.js"></script>
-        <script src="/JS/Script.js"></script>
+        <script src="JS/vanilla-tilt.min.js"></script>
+        <script src="JS/Script.js"></script>
         <script>
           VanillaTilt.init(document.querySelectorAll(".card"), {
             max: 25,

@@ -1,3 +1,51 @@
+<?php
+
+@include 'config.php';
+
+session_start();
+
+
+$user_id = $_SESSION['user_id'];
+
+
+if(!isset($user_id)){
+   header('location:login.php');
+};
+
+if(isset($_POST['logout'])){
+
+    session_unset();
+    session_destroy();
+
+    header('location:index.php');
+}
+
+
+if(isset($_POST['track_start'])){
+    if($_POST['project_name']==""){
+        $message[] = 'Enter Project Name';
+       
+    }else{
+        $project_name=$_POST['project_name'];
+        header("location:track_mood_analysis.php?project_name=$project_name");
+    }
+
+    
+    
+}
+if(isset($_POST['dynamic_start'])){
+
+  if($_POST['project_name']==""){
+      $message[] = 'Enter Project Name';
+     
+  }else{
+      $project_name=$_POST['project_name'];
+      header("location:dynamic_emotion_analysis.php?project_name=$project_name");
+  }
+  
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -15,17 +63,31 @@
       rel="stylesheet"
     />
 
-    <link rel="stylesheet" href="/CSS/glass-menu.css" />
-    <link rel="stylesheet" href="CSS/Nevigation.css" />
+    <link rel="stylesheet" href="css/glass-menu.css" />
+    <link rel="stylesheet" href="css/Nevigation.css" />
     <link rel="stylesheet" href="css/Common.css" />
     <link rel="stylesheet" href="css/footer.css" />
     <link rel="stylesheet" href="css/Create_Project.css" />
 
-    <link rel="icon" href="../images/icon.ico" type="image/x-icon" />
+    <link rel="icon" href="images/icon.ico" type="image/x-icon" />
     <title>MoodWave</title>
   </head>
   <body  id="swup"
   class="transition-fade" >
+  <?php
+
+if(isset($message)){
+   foreach($message as $message){
+      echo '
+      <div class="message">
+         <span>'.$message.'</span>
+         <i class="fas fa-times" onclick="this.parentElement.remove();"></i>
+      </div>
+      ';
+   }
+}
+?>
+<form action="" method="POST" enctype="multipart/form-data">
         <!--Navigation bar start-->
         <center>
           <section class="navigation_section">
@@ -36,12 +98,12 @@
                     ><img src="images/Logo.png" alt="MoodWave_logo"
                   /></a>
                 </li>
-                <li class="features"><a href="Need_Help.html">HELP</a></li>
+                <li class="features"><a href="Need_Help.php">HELP</a></li>
                 <li>
-                  <a href="About_us.html" class="ABOUT transition-fade">ABOUT US</a>
+                  <a href="About_us.php" class="ABOUT transition-fade">ABOUT US</a>
                 </li>
                 <li>
-                  <a href="Landing.html"><button>Logout</button></a>
+                  <button name="logout">Logout</button>
                 </li>
               </ul>
             </nav>
@@ -56,7 +118,7 @@
         <center>
           <div class="create_job_form-field" >
             
-            <input type="text" id="create_job_inputField" class="create_job_input-field" placeholder="Type your project name here..."  style="padding: 10px;text-align: center;"/>
+            <input type="text" id="create_job_inputField" name="project_name" class="create_job_input-field" placeholder="Type your project name here..."  style="padding: 10px;text-align: center;"/>
         </div>
         </center>
 
@@ -68,7 +130,8 @@
             Compare multiple tracks and find the best one for the emotion.
           </p>
           <br>
-          <div  class="icon-container"><a href="track_mood_analysis.html" ><i class="fa-solid fa-circle-play"></i></a></div>
+          <!-- <div  class="icon-container"><button name="track_start"><i class="fa-solid fa-circle-play"></i></button></div> -->
+          <div  class="icon-container"><button name="track_start" style="background: transparent; border: none;"><i class="fa-solid fa-circle-play"></i></button></div>
         </div>
         <div class="card_section_project">
           <h2 >Dynamic Emotion </h2><br>
@@ -76,7 +139,9 @@
             Upload any audio and get a second-by-second emotion analysis.
           </p>
           <br>
-          <div  class="icon-container"><a href="dynamic_emotion_analysis.html" ><i class="fa-solid fa-circle-play"></i></a></div>
+          <!-- <div  class="icon-container"><a href="dynamic_emotion_analysis.html" ><i class="fa-solid fa-circle-play"></i></a></div> -->
+          <!-- <div  class="icon-container"><button name="dynamic_start" ><i class="fa-solid fa-circle-play"></i></button></div> -->
+          <div  class="icon-container"><button name="dynamic_start" style="background: transparent; border: none;"><i class="fa-solid fa-circle-play"></i></button></form></div>
         </div>
         <img  src="images/Shadow.png" alt="" class="card_image">
        
@@ -85,8 +150,8 @@
       </div>
       
 
-        <script src="/JS/vanilla-tilt.min.js"></script>
-    <script src="/JS/Script.js"></script>
+        <script src="JS/vanilla-tilt.min.js"></script>
+    <script src="JS/Script.js"></script>
     <script>
       VanillaTilt.init(document.querySelectorAll(".card"), {
         max: 25,

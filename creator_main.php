@@ -1,3 +1,35 @@
+<?php
+
+@include 'config.php';
+
+session_start();
+
+$user_id = $_SESSION['user_id'];
+
+
+if(!isset($user_id)){
+   header('location:login.php');
+}
+
+
+if(isset($_POST['logout'])){
+
+    session_unset();
+    session_destroy();
+
+    header('location:index.php');
+}
+
+if(isset($_POST['projects'])){
+
+    header('location:Create_Project.php');
+}
+if(isset($_POST['jobs'])){
+
+    header('location:Create_New_Job.php');
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -15,8 +47,8 @@
       rel="stylesheet"
     />
    
-    <link rel="stylesheet" href="/CSS/glass-menu.css" />
-    <link rel="stylesheet" href="CSS/Nevigation.css" />
+    <link rel="stylesheet" href="css/glass-menu.css" />
+    <link rel="stylesheet" href="css/Nevigation.css" />
     <link rel="stylesheet" href="css/Common.css" />
     <link rel="stylesheet" href="css/footer.css" />
     <link rel="stylesheet" href="css/creator_main.css" />
@@ -25,6 +57,20 @@
     <title>MoodWave</title>
   </head>
   <body id="swup" class="transition-fade" id="swup" class="transition-fade">
+  <?php
+
+if(isset($message)){
+   foreach($message as $message){
+      echo '
+      <div class="message">
+         <span>'.$message.'</span>
+         <i class="fas fa-times" onclick="this.parentElement.remove();"></i>
+      </div>
+      ';
+   }
+}
+?>
+<form action="" method="POST" enctype="multipart/form-data">
     <!--Navigation bar start-->
     <center>
       <section class="navigation_section">
@@ -35,12 +81,12 @@
                 ><img src="images/Logo.png" alt="MoodWave_logo"
               /></a>
             </li>
-            <li class="features"><a href="Need_Help.html">HELP</a></li>
+            <li class="features"><a href="Need_Help.php">HELP</a></li>
             <li>
-              <a href="About_us.html" class="ABOUT transition-fade">ABOUT US</a>
+              <a href="About_us.php" class="ABOUT transition-fade">ABOUT US</a>
             </li>
             <li>
-              <a href="Landing.html"><button>Logout</button></a>
+              <button name="logout">Logout</button>
             </li>
           </ul>
         </nav>
@@ -61,15 +107,13 @@
       </div>
       <div class="button_holder">
         <div>
-          <a href="Create_Project.html"
-            ><button class="middle_button_Creator_main">PROJECTS</button></a
-          >
+          <button class="middle_button_Creator_main" name="projects">PROJECTS</button>
+          
         </div>
         <br />
         <div>
-          <a href="Create_New_Job.html"
-            ><button class="middle_button_Creator_main">JOBS</button></a
-          >
+          <button class="middle_button_Creator_main" name="jobs">JOBS</button>
+          
         </div>
       </div>
 
@@ -161,23 +205,24 @@
           </p>
         </div>
       </div>
-<!-- Footer start-->
-<div class="container_footer">
+      <!-- Footer start-->
+      <div class="container_footer">
 
-  <footer> 
-    <div class="Icon_bar">
-    <a href="#"></a><i class="fab fa-facebook-square"></i></a>
-  <a href="#"></a><i class="fab fa-instagram"></i></a>
-  <a href="#"></a><i class="fab fa-twitter"></i></a>
+<footer> 
+  <div class="Icon_bar">
+  <a href="#"></a><i class="fab fa-facebook-square"></i></a>
+<a href="#"></a><i class="fab fa-instagram"></i></a>
+<a href="#"></a><i class="fab fa-twitter"></i></a>
 
-  </div>
-  </footer>
 </div>
-<div class="box">Copyright | FOC - SUSL</div>
+
+<!-- There is a error in this footer -->
+<!-- <div class="box" >Copyright | FOC - SUSL</div> -->
+</footer>
 <!-- Footer end-->
 
-    <script src="/JS/vanilla-tilt.min.js"></script>
-    <script src="/JS/Script.js"></script>
+    <script src="JS/vanilla-tilt.min.js"></script>
+    <script src="JS/Script.js"></script>
     <script>
       VanillaTilt.init(document.querySelectorAll(".card"), {
         max: 25,
