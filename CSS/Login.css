@@ -192,3 +192,64 @@
   color: #0274fa;
   font-weight: 700;
 }
+
+@media(max-width:991px){
+  html{
+      font-size:65%;
+  }
+  .Mood_text {
+    opacity: 4%;
+    width: 300px;
+    margin-left: 10px;
+  }
+  .input_text {
+    width: 320px;
+  }
+
+  
+}
+@media(max-width:768px){
+  html{
+    font-size: 90%;
+}
+.Login_card{
+  display: none;
+}
+#card_image1{
+  width: 100%;
+}
+#card_image2{
+  width: 100%;
+}
+.registerform_login {
+  margin-left: 20%;
+}
+.input_text {
+  width: 300px;
+}
+  
+}
+@media(max-width:450px){
+  html{
+      font-size: 80%;
+  }
+  .Login_card{
+    display: none;
+  }
+  #card_image1{
+    width: 100%;
+  }
+  #card_image2{
+    width: 100%;
+  }
+  .registerform_login {
+    margin-left: 10%;
+  }
+  .input_text {
+    width: 300px;
+  }
+  
+
+}
+
+

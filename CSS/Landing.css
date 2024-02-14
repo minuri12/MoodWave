@@ -2,7 +2,7 @@
 #preloader {
   background-color: #026eee;
   width: 500px;
-  background: #0c070f url(/Images/Load.gif) no-repeat center;
+  background: #0c070f url(../images/Load.gif) no-repeat center;
   background-size: 30%;
   height: 150vh;
   width: 100%;
@@ -29,7 +29,7 @@
 
 .Land {
   z-index: -1;
-  background: url(/Images/Shadow.png) no-repeat 50%;
+  background: url(../images/Shadow.png) no-repeat 50%;
   background-size: contain;
   position: absolute;
   width: 99%;

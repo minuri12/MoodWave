@@ -1,3 +1,9 @@
+
+<?php
+if(isset($_POST['register'])){
+  header('location:register.php'); 
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -30,7 +36,8 @@
 
     <!--Navigation bar start-->
     <center>
-      
+
+      <form action="" method="POST" enctype="multipart/form-data">
       <section class="navigation_section">
 
         <nav class="Navigation_Bar">
@@ -38,7 +45,7 @@
             <li><a href="index.php"><img src="images/Logo.png" alt="MoodWave_logo" /></a></li>
             <li class="features"><a href="#test">FEATURES</a></li>
             <li><a href="About_us.php" class="ABOUT transition-fade" >ABOUT US</a></li>
-            <li><a href="register.php"><button >Join</button></a></li>
+            <li><button name="register">Join</button></li>
           </ul>
         </nav>
     </section>
