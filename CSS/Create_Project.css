@@ -124,3 +124,70 @@
   transform: scale(1.2);
   color: #026eee;
 }
+@media(max-width:991px){
+  html{
+      font-size:65%;
+  }
+
+  
+}
+@media(max-width:768px){
+  html{
+    font-size:63%;
+}
+.grit_card_section_create {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 200px;
+}
+.create_job_form-field {
+  height: 70px;
+  width: 80vw;
+
+}
+.Main_topic_sides {
+  font-size: 25px;
+  margin-left: 5%;
+}
+.card_image {
+  width: 70vw;
+  left: 10%;
+  top: 20%;
+  height: 500px;
+}
+  
+}
+@media(max-width:450px){
+  html{
+      font-size: 60%;
+  }
+  .grit_card_section_create {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 200px;
+  }
+  .create_job_form-field {
+    height: 70px;
+    width: 80vw;
+
+  }
+  .Main_topic_sides {
+    font-size: 25px;
+    margin-left: 5%;
+  }
+  .card_image {
+    width: 70vw;
+    left: 10%;
+    top: 20%;
+    height: 500px;
+  }
+  
+  
+
+}
+
+

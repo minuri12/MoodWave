@@ -140,7 +140,7 @@ if(isset($message)){
             leverage a user-friendly feature.
           </p>
 
-          <img src="images/Desktop.png" alt="" />
+          <img src="images/Desktop.png" alt="" class="p1" />
         </div>
         <div
           class="card_section"
@@ -154,7 +154,7 @@ if(isset($message)){
             wherein they can request an analysis of the emotions in their music
             by engaging the perspectives of actual listeners.
 
-            <img src="images/Complete.png" alt="" />
+            <img src="images/Complete.png" alt="" class="p1"/>
           </p>
         </div>
       </div>
