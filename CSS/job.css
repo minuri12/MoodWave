@@ -127,18 +127,21 @@
   min-height: 0;
   padding-top: 10px;
   padding-bottom: 10px;
-  gap: 0;
+  /* gap: 0; */
   position: relative; /* Add position relative to enable absolute positioning */
 }
 
 .Available_Job td {
   font-weight: 200;
   font-size: 15px;
-  width: 100px;
+  width: 200px;
+  text-align: center;
+  /* margin-left: 10px; */
 }
 
 .Available_Job tr {
   border: none;
+
 }
 .Available_Job:hover {
   border: 1px solid hsla(240, 2%, 25%, 0.836);
@@ -208,3 +211,87 @@ progress[value]::-moz-progress-bar {
   top: 400px;
   left: -900px;
 }
+
+@media(max-width:991px){
+  html{
+      font-size:65%;
+  }
+  .Small_topic_sides {
+    font-size: 15px;
+    width: 90%;
+    margin-left: 50px;
+
+  }
+  
+}
+@media(max-width:768px){
+  html{
+    font-size:63%;
+  }
+  .Small_topic_sides {
+    font-size: 15px;
+    width: 90%;
+    margin-left: 10px;
+
+  }
+  .wrap {
+    width: 60%;
+
+  }
+  .searchButton {
+    width: 250px;
+  }
+  
+  .Available_Job {
+    width: 90%;
+    
+  }
+  .Available_Job td {
+    width: 130px;
+    text-align: center;
+    font-size: 12px;
+  }
+  .Available_Job tr {
+    display: flex;
+    justify-content: space-between;
+
+  }
+
+  
+}
+@media(max-width:450px){
+  html{
+      font-size: 60%;
+  }
+  .Small_topic_sides {
+    font-size: 15px;
+    width: 90%;
+    margin-left: 10px;
+
+  }
+  .wrap {
+    width: 60%;
+
+  }
+  .searchButton {
+    width: 250px;
+  }
+  
+  .Available_Job {
+    width: 90%;
+    
+  }
+  .Available_Job td {
+    width: 130px;
+    text-align: center;
+    font-size: 12px;
+  }
+  .Available_Job tr {
+    display: flex;
+    justify-content: space-between;
+
+  }
+
+}
+
+
