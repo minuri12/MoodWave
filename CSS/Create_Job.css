@@ -1,6 +1,6 @@
 .Land {
   z-index: -1;
-  background: url(/Images/Shadow.png) no-repeat 50%;
+  background: url(../images/Shadow.png) no-repeat 50%;
   background-size: contain;
   position: absolute;
   width: 99%;
@@ -244,3 +244,52 @@ input[type="number"]::-webkit-outer-spin-button {
 .Important {
   color: white;
 }
+@media(max-width:991px){
+  html{
+      font-size:65%;
+  }
+
+  
+}
+@media(max-width:768px){
+  html{
+    font-size:63%;
+}
+.create_job_form-field {
+  width: 90%;
+
+}
+.create_job_input-field {
+  width: 90%;
+}
+.middle_button_Creator_main {
+  margin-top: 20px;
+  height: 40px;
+  width: 130px;
+  font-size: 14px;
+
+}
+  
+}
+@media(max-width:450px){
+  html{
+      font-size: 60%;
+  }
+  .create_job_form-field {
+    width: 90%;
+
+  }
+  .create_job_input-field {
+    width: 90%;
+  }
+  .middle_button_Creator_main {
+    margin-top: 20px;
+    height: 40px;
+    width: 120px;
+    font-size: 14px;
+
+  }
+
+}
+
+

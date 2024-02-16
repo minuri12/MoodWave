@@ -267,3 +267,117 @@ table tr {
 .total_2 {
   border-top: solid white 1px;
 }
+@media(max-width:991px){
+  html{
+      font-size:80%;
+  }
+
+  
+}
+@media(max-width:768px){
+  html{
+    font-size:75%;
+}
+#card_image {
+  width: 100vw;
+}
+.container_card_register {
+  margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+
+}
+.card_What_Mood {
+  margin-left: 20px;
+  height: 320px;
+  width: 320px;
+  margin-bottom: 50px;
+
+}
+.card_What_Mood .subtitle {
+  font-size: 12px;
+}
+.registerform{
+  margin-left: 20px;
+}
+.input_text {
+  width: 350px;
+
+}
+#text1 {
+  width: 90%;
+}
+
+#text2 {
+  width: 90%;
+}
+#amountInput {
+  width: 90%;
+}
+.button_holder {
+  justify-content: center;
+}
+.middle_button_Creator_main {
+  height: 50px;
+  width: 130px;
+}
+.middle_button_Creator_main2 {
+  height: 50px;
+  width: 130px;
+}
+
+  
+}
+@media(max-width:450px){
+  html{
+      font-size: 70%;
+  }
+  #card_image {
+    width: 100vw;
+  }
+  .container_card_register {
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+
+  }
+  .card_What_Mood {
+    margin-left: 20px;
+    height: 280px;
+    width: 280px;
+    margin-bottom: 50px;
+
+  }
+  .card_What_Mood .subtitle {
+    font-size: 10px;
+  }
+  .registerform{
+    margin-left: 20px;
+  }
+  .input_text {
+    width: 320px;
+
+  }
+  #text1 {
+    width: 90%;
+  }
+  
+  #text2 {
+    width: 90%;
+  }
+  #amountInput {
+    width: 90%;
+  }
+  .button_holder {
+    justify-content: center;
+  }
+  .middle_button_Creator_main {
+    height: 40px;
+    width: 120px;
+  }
+  .middle_button_Creator_main2 {
+    height: 40px;
+    width: 120px;
+  }
+
+}

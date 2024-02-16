@@ -1,6 +1,6 @@
 .Land {
   z-index: -1;
-  background: url(/Images/Shadow.png) no-repeat 50%;
+  background: url(../images/Shadow.png) no-repeat 50%;
   background-size: contain;
   position: absolute;
   width: 99%;
@@ -39,7 +39,7 @@
   justify-content: center;
   margin-left: 270px;
   margin-right: 270px;
-  background-image: url(/Images/Shadow.png);
+  background-image: url(../images/Shadow.png);
   background-size: 400px;
   background-repeat: no-repeat;
   height: 4px;

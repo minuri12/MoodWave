@@ -1,6 +1,6 @@
 .Land {
   z-index: -1;
-  background: url(/Images/Shadow.png) no-repeat 50%;
+  background: url(../images/Shadow.png) no-repeat 50%;
   background-size: contain;
   position: absolute;
   width: 99%;
@@ -148,3 +148,81 @@ input[type="number"]::-webkit-outer-spin-button {
   color: white;
   opacity: 100%;
 }
+@media(max-width:991px){
+  html{
+      font-size:65%;
+  }
+  .Land {
+    margin-top: 50px;
+  }
+
+  
+}
+@media(max-width:768px){
+  html{
+    font-size:63%;
+}
+.Land {
+  margin-top: 50px;
+}
+.create_job_form-field {
+  width: 90%;
+
+}
+.create_job_input-field {
+  width: 90%;
+}
+.middle_button_Creator_main {
+  margin-top: 20px;
+  height: 40px;
+  width: 130px;
+  font-size: 14px;
+
+}
+.slider {
+  position: absolute;
+  left: 15%;
+  width: 500px;
+}
+.slider input[type="range"] {
+  width: 100%;
+  margin-left: 170px;
+
+}
+  
+}
+@media(max-width:450px){
+  html{
+      font-size: 60%;
+  }
+  .Land {
+    margin-top: 50px;
+  }
+  
+  .create_job_form-field {
+    width: 90%;
+
+  }
+  .create_job_input-field {
+    width: 90%;
+  }
+  .middle_button_Creator_main {
+    margin-top: 20px;
+    height: 40px;
+    width: 120px;
+    font-size: 14px;
+
+  }
+  .slider {
+    position: absolute;
+    left: 10%;
+    width: 400px;
+  }
+  .slider input[type="range"] {
+    width: 100%;
+    margin-left: 170px;
+
+  }
+
+}
+

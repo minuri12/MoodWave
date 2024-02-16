@@ -1,6 +1,6 @@
 .Land {
   z-index: -1;
-  background: url(/Images/Shadow.png) no-repeat 50%;
+  background: url(../images/Shadow.png) no-repeat 50%;
   background-size: contain;
   position: absolute;
   width: 99%;
@@ -85,7 +85,7 @@
   justify-content: center;
   margin-left: 80px;
   margin-right: 80px;
-  background-image: url(/Images/Shadow.png);
+  background-image: url(../images/Shadow.png);
   background-size: 1000px;
 }
 
@@ -169,7 +169,7 @@
   justify-content: center;
   margin-left: 80px;
   margin-right: 80px;
-  background-image: url(/Images/Shadow.png);
+  background-image: url(../images/Shadow.png);
   background-size: 1000px;
 }
 
@@ -186,4 +186,89 @@ table {
 table tr {
   border-bottom: 1px solid rgb(255, 255, 255);
   height: 60px;
+}
+.grit_card_section .card_section table tr td{
+  text-align: center;
+}
+.grit_card_section .card_section table tr th{
+  text-align: center;
+}
+
+
+@media(max-width:991px){
+  html{
+      font-size:65%;
+  }
+  .Small_topic_sides {
+    font-size: 14px;
+    margin-left: 25px;
+    margin-right: 25px;
+  }
+
+  
+}
+@media(max-width:768px){
+  html{
+    font-size:63%;
+}
+.Small_topic_sides {
+  font-size: 13px;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+.middle_button_Creator_main {
+  margin-top: 20px;
+  height: 50px;
+  width: 140px;
+  font-size: 14px;
+}
+.card_section {
+  font-size: 14px;
+  height: auto;
+  width: 90vw;
+  gap: 1px;
+}
+.grit_card_section {
+  margin-left: 2px;
+  margin-right: 2px;
+}
+.grit_card_section .card_section table tr th{
+  text-align: center;
+}
+
+.grit_card_section .card_section table tr td{
+  text-align: center;
+}
+  
+}
+@media(max-width:450px){
+  html{
+      font-size: 60%;
+  }
+  .Small_topic_sides {
+    font-size: 12px;
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+  .middle_button_Creator_main {
+    margin-top: 20px;
+    height: 40px;
+    width: 120px;
+    font-size: 13px;
+  }
+  .card_section {
+    font-size: 14px;
+    height: auto;
+    width: 100%;
+    gap: 1px;
+  }
+  .grit_card_section {
+    margin-left: 2px;
+    margin-right: 2px;
+  }
+  .grit_card_section .card_section table tr td{
+    text-align: center;
+  }
+
+
 }
