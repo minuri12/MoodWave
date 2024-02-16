@@ -24,7 +24,8 @@ if(isset($_POST['login'])){
           $_SESSION['user_email'] = $row['email'];
           $_SESSION['user_id'] = $row['user_id'];
 
-          header('location:job.php');
+          //header('location:Job.php');
+          echo "<script> window.location.href='Job.php'</script>";
  
        }elseif($row['user_type'] == 'Creator'){
  
@@ -33,7 +34,8 @@ if(isset($_POST['login'])){
           $_SESSION['user_id'] = $row['user_id'];
 
          $tid= $_SESSION['user_id'];
-          header("location:creator_main.php");
+          //header("location:creator_main.php");
+          echo "<script> window.location.href='creator_main.php'</script>";
  
        }else{
           $message[] = 'no user found!';
@@ -131,7 +133,7 @@ if(isset($message)){
                 </div>
  <br>
                 <div class="last_text">
-                    <i><p>You don't have an account yet?  <a href="register.php">Register</a></i> 
+                    <i><p>You don't have an account yet?  <a id="registerLink" href="#">Register</a></i> 
                  </div>
                    </div>
                </div>
@@ -160,7 +162,15 @@ if(isset($message)){
               toggleIcon.style.backgroundImage = "url('images/close-eye (1).png')";
             }
           }
+
           
+          </script>
+
+          <script>
+            document.getElementById("registerLink").addEventListener("click", function(event) {
+                event.preventDefault(); // Prevent default link behavior (i.e., navigating to href)
+                window.location.href = 'register.php'; // Redirect to register.php
+            });
           </script>
 
 

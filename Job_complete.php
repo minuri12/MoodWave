@@ -1,4 +1,3 @@
-
 <?php
 
 @include 'config.php';
@@ -11,8 +10,17 @@ $user_id = $_SESSION['user_id'];
 
 
 if(!isset($user_id)){
-   header('location:login.php');
+   //header('location:Login.php');
+   echo "<script> window.location.href='Login.php'</script>";
 };
+if(isset($_POST['logout'])){
+
+  session_unset();
+  session_destroy();
+
+  //header('location:index.php');
+  echo "<script> window.location.href='index.php'</script>";
+}
 
 
 
@@ -32,7 +40,12 @@ if(isset($_POST['submit'])){
 
         $amount = $fetch_jobs['workers_earn'];
         $placed_on = date('d-M-Y');
+        $completed = $fetch_jobs['completed'];
+        $new_completed = $completed +1;
+
         
+        mysqli_query($conn, "UPDATE jobs SET completed = '$new_completed' WHERE job_id='$job_id'") or die(mysqli_error($conn));
+
         mysqli_query($conn, "INSERT INTO `job_complete`(job_id,listener_id,comments,annotate,amount,placed_on) VALUES('$job_id', '$listener_id','$comments','$annotate', '$amount','$placed_on')") or die(mysqli_error($conn));
         
         $select_balance = mysqli_query($conn, "SELECT * FROM `users` WHERE user_id='$listener_id'") or die('query failed');
@@ -43,7 +56,8 @@ if(isset($_POST['submit'])){
         mysqli_query($conn, "UPDATE users SET balance = '$balance' WHERE user_id='$listener_id'") or die(mysqli_error($conn));
         
         $message[] = 'payement done successfully!';
-        header("location:Withdraw.php");
+        //header("location:Withdraw.php");
+        echo "<script> window.location.href='Withdraw.php'</script>";
     }else{
         $message[] = 'You have to anotate First';
     }
@@ -76,7 +90,7 @@ if(isset($_POST['submit'])){
     <link rel="stylesheet" href="css/Nevigation.css" />
     <link rel="stylesheet" href="css/Common.css" />
     <link rel="stylesheet" href="css/footer.css" />
-    <link rel="stylesheet" href="css/Job_complete.css" />
+    <link rel="stylesheet" href="css/job_complete.css" />
 
     <link rel="icon" href="images/icon.ico" type="image/x-icon" />
     <title>MoodWave</title>
@@ -101,15 +115,9 @@ if(isset($message)){
       <section class="navigation_section">
         <nav class="Navigation_Bar">
           <ul>
-            <li>
-              <a href="index.php"
-                ><img src="images/Logo.png" alt="MoodWave_logo"
-              /></a>
-            </li>
-            <li class="features"><a href="Need_Help.php">HELP</a></li>
-            <li>
-              <a href="Withdraw.php" class="ABOUT transition-fade">WITHDRAW</a>
-            </li>
+            <li><a id="index" href="#"><img src="images/Logo.png" alt="MoodWave_logo"/></a></li>
+            <li class="features"><a id="Need_Help" href="#">HELP</a></li>
+            <li><a id="Withdraw" href="#" class="ABOUT transition-fade">WITHDRAW</a></li>
             <li>
               <button name="logout">Logout</button>
             </li>
@@ -157,7 +165,10 @@ if(isset($message)){
       </div>
 
       <div class="audio-player-container">
-        <audio controls id="audioPlayer"></audio>
+        <audio controls id="audioPlayer">
+          <source src="uploads/<?php echo $fetch_jobs['music']; ?>" type="audio/mp3">
+          <!-- <source src="uploads/new1.mp3" type="audio/mpeg"> -->
+        </audio>
       </div>
 
       <div class="Small_topic_sides">
@@ -176,14 +187,14 @@ if(isset($message)){
     <img src="images/anotate_s1.png" usemap="#image-map1">
 
       <map name="image-map1">
-        <area target="" alt="sad-calm" title="sad-calm" href="job_complete.php?id=<?php echo $id ?>&annotate=sad-calm" coords="162,154,67,244,163,292" shape="poly">
-        <area target="" alt="calm-chiled" title="calm-chiled" href="job_complete.php?id=<?php echo $id ?>&annotate=calm-chiled" coords="162,153,164,289,266,252" shape="poly">
-        <area target="" alt="chiled-happy" title="chiled-happy" href="job_complete.php?id=<?php echo $id ?>&annotate=chiled-happy" coords="165,152,260,253,305,153" shape="poly">
-        <area target="" alt="happy-uplifting" title="happy-uplifting" href="job_complete.php?id=<?php echo $id ?>&annotate=happy-uplifting" coords="164,151,303,152,264,53" shape="poly">
-        <area target="" alt="uplifting-energtic" title="uplifting-energtic" href="job_complete.php?id=<?php echo $id ?>&annotate=uplifting-energtic" coords="163,9,163,150,266,53" shape="poly">
-        <area target="" alt="energtic-aggresive" title="energtic-aggresive" href="job_complete.php?id=<?php echo $id ?>&annotate=energtic-aggresive" coords="164,150,61,48,161,7" shape="poly">
-        <area target="" alt="aggersive-dark" title="aggersive-dark" href="job_complete.php?id=<?php echo $id ?>&annotate=aggersive-dark" coords="167,152,21,153,63,52" shape="poly">
-        <area target="" alt="dark-sad" title="dark-sad" href="job_complete.php?id=<?php echo $id ?>&annotate=dark-sad" coords="167,149,67,249,21,152" shape="poly">
+        <area target="" alt="sad-calm" title="sad-calm" href="Job_complete.php?id=<?php echo $id ?>&annotate=sad-calm" coords="162,154,67,244,163,292" shape="poly">
+        <area target="" alt="calm-chiled" title="calm-chiled" href="Job_complete.php?id=<?php echo $id ?>&annotate=calm-chiled" coords="162,153,164,289,266,252" shape="poly">
+        <area target="" alt="chiled-happy" title="chiled-happy" href="Job_complete.php?id=<?php echo $id ?>&annotate=chiled-happy" coords="165,152,260,253,305,153" shape="poly">
+        <area target="" alt="happy-uplifting" title="happy-uplifting" href="Job_complete.php?id=<?php echo $id ?>&annotate=happy-uplifting" coords="164,151,303,152,264,53" shape="poly">
+        <area target="" alt="uplifting-energtic" title="uplifting-energtic" href="Job_complete.php?id=<?php echo $id ?>&annotate=uplifting-energtic" coords="163,9,163,150,266,53" shape="poly">
+        <area target="" alt="energtic-aggresive" title="energtic-aggresive" href="Job_complete.php?id=<?php echo $id ?>&annotate=energtic-aggresive" coords="164,150,61,48,161,7" shape="poly">
+        <area target="" alt="aggersive-dark" title="aggersive-dark" href="Job_complete.php?id=<?php echo $id ?>&annotate=aggersive-dark" coords="167,152,21,153,63,52" shape="poly">
+        <area target="" alt="dark-sad" title="dark-sad" href="Job_complete.php?id=<?php echo $id ?>&annotate=dark-sad" coords="167,149,67,249,21,152" shape="poly">
       </map>
 
   </div>
@@ -193,14 +204,14 @@ if(isset($message)){
 
 
     <map name="image-map2">
-        <area target="" alt="sad-calm" title="sad-calm" href="job_complete.php?id=<?php echo $id ?>&annotate=sad-calm" coords="238,222,96,365,243,430" shape="poly">
-        <area target="" alt="calm-chiled" title="calm-chiled" href="job_complete.php?id=<?php echo $id ?>&annotate=calm-chiled" coords="238,222,243,436,382,365" shape="poly">
-        <area target="" alt="chiled-happy" title="chiled-happy" href="job_complete.php?id=<?php echo $id ?>&annotate=chiled-happy" coords="382,365,449,222,239,221" shape="poly">
-        <area target="" alt="happy-uplifting" title="happy-uplifting" href="job_complete.php?id=<?php echo $id ?>&annotate=happy-uplifting" coords="242,222,443,221,385,81" shape="poly">
-        <area target="" alt="uplifting-energtic" title="uplifting-energtic" href="job_complete.php?id=<?php echo $id ?>&annotate=uplifting-energtic" coords="239,224,239,20,390,78" shape="poly">
-        <area target="" alt="energtic-aggresive" title="energtic-aggresive" href="job_complete.php?id=<?php echo $id ?>&annotate=energtic-aggresive" coords="99,81,240,21,241,223" shape="poly">
-        <area target="" alt="aggersive-dark" title="aggersive-dark" href="job_complete.php?id=<?php echo $id ?>&annotate=aggersive-dark" coords="241,222,33,225,94,79" shape="poly">
-        <area target="" alt="dark-sad" title="dark-sad" href="job_complete.php?id=<?php echo $id ?>&annotate=dark-sad" coords="239,221,95,369,41,223" shape="poly">
+        <area target="" alt="sad-calm" title="sad-calm" href="Job_complete.php?id=<?php echo $id ?>&annotate=sad-calm" coords="238,222,96,365,243,430" shape="poly">
+        <area target="" alt="calm-chiled" title="calm-chiled" href="Job_complete.php?id=<?php echo $id ?>&annotate=calm-chiled" coords="238,222,243,436,382,365" shape="poly">
+        <area target="" alt="chiled-happy" title="chiled-happy" href="Job_complete.php?id=<?php echo $id ?>&annotate=chiled-happy" coords="382,365,449,222,239,221" shape="poly">
+        <area target="" alt="happy-uplifting" title="happy-uplifting" href="Job_complete.php?id=<?php echo $id ?>&annotate=happy-uplifting" coords="242,222,443,221,385,81" shape="poly">
+        <area target="" alt="uplifting-energtic" title="uplifting-energtic" href="Job_complete.php?id=<?php echo $id ?>&annotate=uplifting-energtic" coords="239,224,239,20,390,78" shape="poly">
+        <area target="" alt="energtic-aggresive" title="energtic-aggresive" href="Job_complete.php?id=<?php echo $id ?>&annotate=energtic-aggresive" coords="99,81,240,21,241,223" shape="poly">
+        <area target="" alt="aggersive-dark" title="aggersive-dark" href="Job_complete.php?id=<?php echo $id ?>&annotate=aggersive-dark" coords="241,222,33,225,94,79" shape="poly">
+        <area target="" alt="dark-sad" title="dark-sad" href="Job_complete.php?id=<?php echo $id ?>&annotate=dark-sad" coords="239,221,95,369,41,223" shape="poly">
     </map>
 
     
@@ -208,14 +219,14 @@ if(isset($message)){
   <div class="s2">
     <img src="images/anotate_s3.png" usemap="#image-map3">
     <map name="image-map3">
-          <area target="" alt="sad-calm" title="sad-calm" href="job_complete.php?id=<?php echo $id ?>&annotate=sad-calm" coords="335,305,138,504,339,592" shape="poly">
-          <area target="" alt="calm-chiled" title="calm-chiled" href="job_complete.php?id=<?php echo $id ?>&annotate=calm-chiled" coords="336,309,339,590,538,511" shape="poly">
-          <area target="" alt="chiled-happy" title="chiled-happy" href="job_complete.php?id=<?php echo $id ?>&annotate=chiled-happy" coords="339,313,533,506,619,314" shape="poly">
-          <area target="" alt="happy-uplifting" title="happy-uplifting" href="job_complete.php?id=<?php echo $id ?>&annotate=happy-uplifting" coords="340,308,619,310,541,114" shape="poly">
-          <area target="" alt="uplifting-energtic" title="uplifting-energtic" href="job_complete.php?id=<?php echo $id ?>&annotate=uplifting-energtic" coords="338,311,335,29,542,112" shape="poly">
-          <area target="" alt="energtic-aggresive" title="energtic-aggresive" href="job_complete.php?id=<?php echo $id ?>&annotate=energtic-aggresive" coords="334,306,141,113,339,25" shape="poly">
-          <area target="" alt="aggersive-dark" title="aggersive-dark" href="job_complete.php?id=<?php echo $id ?>&annotate=aggersive-dark" coords="335,309,50,310,143,114" shape="poly">
-          <area target="" alt="dark-sad" title="dark-sad" href="job_complete.php?id=<?php echo $id ?>&annotate=dark-sad" coords="135,513,334,311,53,314" shape="poly">
+          <area target="" alt="sad-calm" title="sad-calm" href="Job_complete.php?id=<?php echo $id ?>&annotate=sad-calm" coords="335,305,138,504,339,592" shape="poly">
+          <area target="" alt="calm-chiled" title="calm-chiled" href="Job_complete.php?id=<?php echo $id ?>&annotate=calm-chiled" coords="336,309,339,590,538,511" shape="poly">
+          <area target="" alt="chiled-happy" title="chiled-happy" href="Job_complete.php?id=<?php echo $id ?>&annotate=chiled-happy" coords="339,313,533,506,619,314" shape="poly">
+          <area target="" alt="happy-uplifting" title="happy-uplifting" href="Job_complete.php?id=<?php echo $id ?>&annotate=happy-uplifting" coords="340,308,619,310,541,114" shape="poly">
+          <area target="" alt="uplifting-energtic" title="uplifting-energtic" href="Job_complete.php?id=<?php echo $id ?>&annotate=uplifting-energtic" coords="338,311,335,29,542,112" shape="poly">
+          <area target="" alt="energtic-aggresive" title="energtic-aggresive" href="Job_complete.php?id=<?php echo $id ?>&annotate=energtic-aggresive" coords="334,306,141,113,339,25" shape="poly">
+          <area target="" alt="aggersive-dark" title="aggersive-dark" href="Job_complete.php?id=<?php echo $id ?>&annotate=aggersive-dark" coords="335,309,50,310,143,114" shape="poly">
+          <area target="" alt="dark-sad" title="dark-sad" href="Job_complete.php?id=<?php echo $id ?>&annotate=dark-sad" coords="135,513,334,311,53,314" shape="poly">
       </map>
 
   </div>
@@ -223,14 +234,14 @@ if(isset($message)){
     <img src="images/anotate.png" usemap="#image-map4">
 
     <map name="image-map4">
-      <area target="" alt="sad-calm" title="sad-calm" href="job_complete.php?id=<?php echo $id ?>&annotate=sad-calm" coords="194,659,444,762,446,411" shape="poly">
-      <area target="" alt="calm-chiled" title="calm-chiled" href="job_complete.php?id=<?php echo $id ?>&annotate=calm-chiled" coords="442,763,697,662,445,413" shape="poly">
-      <area target="" alt="chiled-happy" title="chiled-happy" href="job_complete.php?id=<?php echo $id ?>&annotate=chiled-happy" coords="695,663,802,411,448,410" shape="poly">
-      <area target="" alt="happy-uplifting" title="happy-uplifting" href="job_complete.php?id=<?php echo $id ?>&annotate=happy-uplifting" coords="801,411,693,157,445,412" shape="poly">
-      <area target="" alt="uplifting-energtic" title="uplifting-energtic" href="job_complete.php?id=<?php echo $id ?>&annotate=uplifting-energtic" coords="697,158,446,55,443,411" shape="poly">
-      <area target="" alt="energtic-aggresive" title="energtic-aggresive" href="job_complete.php?id=<?php echo $id ?>&annotate=energtic-aggresive" coords="443,55,192,159,444,408" shape="poly">
-      <area target="" alt="aggersive-dark" title="aggersive-dark" href="job_complete.php?id=<?php echo $id ?>&annotate=aggersive-dark" coords="196,158,89,412,443,408" shape="poly">
-      <area target="" alt="dark-sad" title="dark-sad" href="job_complete.php?id=<?php echo $id ?>&annotate=dark-sad" coords="88,411,439,410,192,664" shape="poly">
+      <area target="" alt="sad-calm" title="sad-calm" href="Job_complete.php?id=<?php echo $id ?>&annotate=sad-calm" coords="194,659,444,762,446,411" shape="poly">
+      <area target="" alt="calm-chiled" title="calm-chiled" href="Job_complete.php?id=<?php echo $id ?>&annotate=calm-chiled" coords="442,763,697,662,445,413" shape="poly">
+      <area target="" alt="chiled-happy" title="chiled-happy" href="Job_complete.php?id=<?php echo $id ?>&annotate=chiled-happy" coords="695,663,802,411,448,410" shape="poly">
+      <area target="" alt="happy-uplifting" title="happy-uplifting" href="Job_complete.php?id=<?php echo $id ?>&annotate=happy-uplifting" coords="801,411,693,157,445,412" shape="poly">
+      <area target="" alt="uplifting-energtic" title="uplifting-energtic" href="Job_complete.php?id=<?php echo $id ?>&annotate=uplifting-energtic" coords="697,158,446,55,443,411" shape="poly">
+      <area target="" alt="energtic-aggresive" title="energtic-aggresive" href="Job_complete.php?id=<?php echo $id ?>&annotate=energtic-aggresive" coords="443,55,192,159,444,408" shape="poly">
+      <area target="" alt="aggersive-dark" title="aggersive-dark" href="Job_complete.php?id=<?php echo $id ?>&annotate=aggersive-dark" coords="196,158,89,412,443,408" shape="poly">
+      <area target="" alt="dark-sad" title="dark-sad" href="Job_complete.php?id=<?php echo $id ?>&annotate=dark-sad" coords="88,411,439,410,192,664" shape="poly">
     </map>
   </div>
 
@@ -339,8 +350,22 @@ if(isset($message)){
         const fileName = fileInput.files[0].name;
         const header = document.querySelector(".drop_box header h4");
         header.textContent = fileName;
-        audioPlayer.src = URL.createObjectURL(file);
+        //audioPlayer.src = URL.createObjectURL(file);
       }
+    </script>
+        <script>
+      document.getElementById("Withdraw").addEventListener("click", function(event) {
+      event.preventDefault(); 
+      window.location.href = 'Withdraw.php';
+      });
+      document.getElementById("Need_Help").addEventListener("click", function(event) {
+      event.preventDefault(); 
+      window.location.href = 'Need_Help.php';
+      });
+      document.getElementById("index").addEventListener("click", function(event) {
+      event.preventDefault(); 
+      window.location.href = 'index.php';
+      });
     </script>
   </body>
 </html>

@@ -48,3 +48,8 @@ $(document).ready(function () {
     $(".Navigation_Bar").toggleClass("open");
   });
 });
+
+document.getElementById("About_us").addEventListener("click", function(event) {
+event.preventDefault(); // Prevent default link behavior (i.e., navigating to href)
+window.location.href = 'About_us.php';
+});

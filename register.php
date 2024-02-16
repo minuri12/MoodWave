@@ -29,7 +29,8 @@ if(isset($_POST['register'])){
         }else{
                 mysqli_query($conn, "INSERT INTO `users`(username,email,password,user_type,placed_on) VALUES('$username', '$email', '$password', '$user_type', '$placed_on')") or die(mysqli_error($conn));
                 $message[] = 'Login successfully!';
-                header("location:login.php");
+                //header("location:Login.php");
+                echo "<script> window.location.href='Login.php'</script>";
                 
         }
     }
@@ -141,7 +142,7 @@ if(isset($message)){
                     </div>
      <br>
                     <div class="last_text">
-                        <i><p>You already have an account? <a href="Login.php">Login</a></i> 
+                        <i><p>You already have an account? <a id="loginLink" href="#">Login</a></i> 
                      </div>
                  </div>
              </div>
@@ -173,5 +174,11 @@ if(isset($message)){
 }
 
 </script>
+<script>
+            document.getElementById("loginLink").addEventListener("click", function(event) {
+                event.preventDefault(); // Prevent default link behavior (i.e., navigating to href)
+                window.location.href = 'Login.php'; // Redirect to register.php
+            });
+          </script>
 
 </html>

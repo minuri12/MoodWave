@@ -10,14 +10,25 @@ $user_id = $_SESSION['user_id'];
 
 
 if(!isset($user_id)){
-   header('location:login.php');
+   //header('location:Login.php');
+   echo "<script> window.location.href='Login.php'</script>";
 };
+
+if(isset($_POST['logout'])){
+
+  session_unset();
+  session_destroy();
+
+  //header('location:index.php');
+  echo "<script> window.location.href='index.php'</script>";
+}
 
 
 if(isset($_POST['search'])){
     $search_value = $_POST['job_name'];
     
-    header("location:job_search_page.php?searching=$search_value");
+    //header("location:job_search_page.php?searching=$search_value");
+    echo "<script> window.location.href='job_search_page.php?searching=$search_value'</script>";
  }
 
 
@@ -77,17 +88,9 @@ if(isset($message)){
       <section class="navigation_section">
         <nav class="Navigation_Bar">
           <ul>
-            <li>
-              <a href="index.php"
-                ><img src="images/Logo.png" alt="MoodWave_logo"
-              /></a>
-            </li>
-            <li class="features"><a href="Need_Help.php">HELP</a></li>
-            <li>
-              <a href="Withdraw.php" class="ABOUT transition-fade"
-                >WITHDRAW</a
-              >
-            </li>
+            <li><a id="index" href="#"><img src="images/Logo.png" alt="MoodWave_logo"/></a></li>
+            <li class="features"><a id="Need_Help" href="#">HELP</a></li>
+            <li><a id="Withdraw" href="#" class="ABOUT transition-fade">WITHDRAW</a></li>
             <li>
               <button name="logout">Logout</button>
             </li>
@@ -148,7 +151,7 @@ if(isset($message)){
                       <table>
                         
                           <?php if ($remaning!=0): ?>
-                          <tr style="border: none" onclick="window.location.href='job_complete.php?id=<?php echo $id ?>';">
+                          <tr style="border: none" onclick="window.location.href='Job_complete.php?id=<?php echo $id ?>';">
                           <?php else: ?>
                           <tr style="border: none"> <?php endif; ?>
                         
@@ -213,6 +216,20 @@ if(isset($message)){
     <script src="https://unpkg.com/swup@4"></script>
     <script>
       const swup = new Swup();
+    </script>
+        <script>
+      document.getElementById("Withdraw").addEventListener("click", function(event) {
+      event.preventDefault(); 
+      window.location.href = 'Withdraw.php';
+      });
+      document.getElementById("Need_Help").addEventListener("click", function(event) {
+      event.preventDefault(); 
+      window.location.href = 'Need_Help.php';
+      });
+      document.getElementById("index").addEventListener("click", function(event) {
+      event.preventDefault(); 
+      window.location.href = 'index.php';
+      });
     </script>
   </body>
 </html>

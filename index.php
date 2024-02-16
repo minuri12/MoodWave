@@ -1,7 +1,7 @@
-
 <?php
 if(isset($_POST['register'])){
-  header('location:register.php'); 
+  //header('location:register.php'); 
+  echo "<script> window.location.href='register.php'</script>";
 }
 ?>
 <!DOCTYPE html>
@@ -44,7 +44,7 @@ if(isset($_POST['register'])){
           <ul>
             <li><a href="index.php"><img src="images/Logo.png" alt="MoodWave_logo" /></a></li>
             <li class="features"><a href="#test">FEATURES</a></li>
-            <li><a href="About_us.php" class="ABOUT transition-fade" >ABOUT US</a></li>
+            <li><a id="About_us" href="#" class="ABOUT transition-fade" >ABOUT US</a></li>
             <li><button name="register">Join</button></li>
           </ul>
         </nav>
@@ -169,6 +169,14 @@ if(isset($_POST['register'])){
 <script>
   const swup = new Swup();
 </script>
+<script>
+  document.getElementById("About_us").addEventListener("click", function(event) {
+event.preventDefault(); 
+window.location.href = 'About_us.php';
+});
+</script>
+
+
 
       </section>
     </center>

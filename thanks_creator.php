@@ -7,14 +7,16 @@ session_start();
 $user_id = $_SESSION['user_id'];
 
 if(!isset($user_id)){
-   header('location:login.php');
+   //header('location:Login.php');
+   echo "<script> window.location.href='Login.php'</script>";
 };
 if(isset($_POST['logout'])){
 
   session_unset();
   session_destroy();
 
-  header('location:index.php');
+  //header('location:index.php');
+  echo "<script> window.location.href='index.php'</script>";
 }
 
 ?>
@@ -45,17 +47,9 @@ if(isset($_POST['logout'])){
       <section class="navigation_section">
         <nav class="Navigation_Bar">
           <ul>
-            <li>
-              <a href="index.php"
-                ><img src="images/Logo.png" alt="MoodWave_logo"
-              /></a>
-            </li>
-            <li class="features"><a href="Need_Help.php">HELP</a></li>
-            <li>
-              <a href="Withdraw.php" class="ABOUT transition-fade"
-                >WITHDRAW</a
-              >
-            </li>
+          <li><a id="index" href="#"><img src="images/Logo.png" alt="MoodWave_logo"/></a></li>
+            <li class="features"><a id="Need_Help" href="#">HELP</a></li>
+            <li><a id="About_us" href="#" class="ABOUT transition-fade" >ABOUT US</a></li>
             <li>
               <button name="logout">Logout</button>
             </li>
@@ -81,6 +75,20 @@ if(isset($_POST['logout'])){
 </section>
 <script src="JS/vanilla-tilt.min.js"></script>
         <script src="JS/Script.js"></script>
+        <script>
+      document.getElementById("About_us").addEventListener("click", function(event) {
+      event.preventDefault(); 
+      window.location.href = 'About_us.php';
+      });
+      document.getElementById("Need_Help").addEventListener("click", function(event) {
+      event.preventDefault(); 
+      window.location.href = 'Need_Help.php';
+      });
+      document.getElementById("index").addEventListener("click", function(event) {
+      event.preventDefault(); 
+      window.location.href = 'index.php';
+      });
+    </script>
 
 </body>
 </html>

@@ -1,4 +1,3 @@
-
 <?php
 
 @include 'config.php';
@@ -10,7 +9,8 @@ $creator_id = $_SESSION['user_id'];
 
 
 if(!isset($creator_id)){
-   header('location:login.php');
+   //header('location:Login.php');
+   echo "<script> window.location.href='Login.php'</script>";
 };
 
 if(isset($_POST['logout'])){
@@ -18,7 +18,8 @@ if(isset($_POST['logout'])){
     session_unset();
     session_destroy();
 
-    header('location:index.php');
+    //header('location:index.php');
+    echo "<script> window.location.href='index.php'</script>";
 }
 
 
@@ -37,8 +38,8 @@ if(isset($_POST['next'])){
         $workers_need =$_POST['workers_need'];
         $workers_earn =$_POST['workers_earn'];
         
-        header("location:Payment.php?music=$new_audio_name&song_name=$song_name&song_writter=$song_writter&singers=$singers&workers_need=$workers_need&workers_earn=$workers_earn");
-            
+        //header("location:Payment.php?music=$new_audio_name&song_name=$song_name&song_writter=$song_writter&singers=$singers&workers_need=$workers_need&workers_earn=$workers_earn");
+        echo "<script> window.location.href='Payment.php?music=$new_audio_name&song_name=$song_name&song_writter=$song_writter&singers=$singers&workers_need=$workers_need&workers_earn=$workers_earn'</script>";    
         
     }   
 }
@@ -91,15 +92,9 @@ if(isset($message)){
       <section class="navigation_section">
         <nav class="Navigation_Bar">
           <ul>
-            <li>
-              <a href="index.php"
-                ><img src="images/Logo.png" alt="MoodWave_logo"
-              /></a>
-            </li>
-            <li class="features"><a href="Need_Help.php">HELP</a></li>
-            <li>
-              <a href="About_us.php" class="ABOUT transition-fade">ABOUT US</a>
-            </li>
+            <li><a id="index" href="#"><img src="images/Logo.png" alt="MoodWave_logo"/></a></li>
+            <li class="features"><a id="Need_Help" href="#">HELP</a></li>
+            <li><a id="About_us" href="#" class="ABOUT transition-fade" >ABOUT US</a></li>
             <li>
               <button name="logout">Logout</button>
             </li>
@@ -268,5 +263,19 @@ dec.addEventListener("click", () => {
 <script>
   const swup = new Swup();
 </script>
+<script>
+      document.getElementById("About_us").addEventListener("click", function(event) {
+      event.preventDefault(); 
+      window.location.href = 'About_us.php';
+      });
+      document.getElementById("Need_Help").addEventListener("click", function(event) {
+      event.preventDefault(); 
+      window.location.href = 'Need_Help.php';
+      });
+      document.getElementById("index").addEventListener("click", function(event) {
+      event.preventDefault(); 
+      window.location.href = 'index.php';
+      });
+    </script>
 
 </html>
