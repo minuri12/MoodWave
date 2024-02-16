@@ -134,3 +134,70 @@
   left: 1100px;
   opacity: 50%;
 }
+
+@media(max-width:991px){
+  html{
+      font-size:80%;
+  }
+  .container_card {
+    display: flex;
+    flex-direction: column;
+  }
+  .card_What_Mood {
+    width: 90%;
+    margin-bottom: 20px;
+  }
+  #card_image_about {
+    position: absolute;
+    width: 90vw;
+    height: 90vh;
+    top: 0;
+    left: 0;
+  }
+
+  
+}
+@media(max-width:768px){
+  html{
+    font-size:70%;
+}
+.container_card {
+  display: flex;
+  flex-direction: column;
+}
+.card_What_Mood {
+  width: 90%;
+  margin-bottom: 20px;
+}
+#card_image_about {
+  position: absolute;
+  width: 90vw;
+  height: 90vh;
+  top: 0;
+  left: 0;
+}
+  
+}
+@media(max-width:450px){
+  html{
+      font-size: 60%;
+  }
+  .container_card {
+    display: flex;
+    flex-direction: column;
+  }
+  .card_What_Mood {
+    width: 90%;
+    margin-bottom: 20px;
+  }
+  #card_image_about {
+    position: absolute;
+    width: 90vw;
+    height: 90vh;
+    top: 0;
+    left: 0;
+  }
+
+}
+
+
