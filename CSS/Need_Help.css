@@ -156,3 +156,58 @@
   padding: 20px;
   padding-left: 0;
 }
+
+@media(max-width:991px){
+  html{
+      font-size:65%;
+  }
+  .container_card {
+    width: 90%;
+  
+  }
+  #card_image {
+    position: absolute;
+    top:0;
+    left:0;
+    width: 90vw;
+    height: 90vh;
+  }
+
+  
+}
+@media(max-width:768px){
+  html{
+    font-size:63%;
+}
+.container_card {
+  width: 90%;
+
+}
+#card_image {
+  position: absolute;
+  top:0;
+  left:0;
+  width: 90vw;
+  height: 90vh;
+}
+  
+}
+@media(max-width:450px){
+  html{
+      font-size: 60%;
+  }
+  .container_card {
+    width: 90%;
+
+  }
+  #card_image {
+    position: absolute;
+    top:0;
+    left:0;
+    width: 90vw;
+    height: 90vh;
+  }
+
+}
+
+
