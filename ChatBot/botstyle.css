@@ -110,7 +110,10 @@ body{
     border-radius: 10px 10px 0 10px;
     background: #026EEE;
 }
-
+.chatbox .chat p.error{
+    color:#721c24;
+    background: #f8d7da;
+}
 .chatbox .incoming p {
     color: #000;
     background: #f2f2f2;
