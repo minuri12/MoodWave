@@ -1,8 +1,12 @@
 const chatInput = document.querySelector('.chat-input textarea');
 const sendChatBtn = document.querySelector('.chat-input span');
+const chatbox = document.querySelector('.chatbox');
+
 
 
 let userMessage;
+const API_KEY = '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';
+
 
 const createChatLi = (message, className) => {
     const chatLi = document.createElement ('li');
@@ -11,6 +15,29 @@ const createChatLi = (message, className) => {
     chatLi.innerHTML = chatContent;
     chatLi.querySelector('p').textContent = message;
     return chatLi;
+}
+
+const generateResponse = (incomingChatLi) => {
+    const API_URL = 'https://api.openai.com/v1/chat/completions';
+    const messageElement = incomingChatLi.querySelector('p');
+
+    const requestOptions = {
+        method:'POST',
+        headers: {
+            'Content-Type' : 'application/json',
+            'Authorization':'Bearer ${API_KEY}'
+        },
+        body: JSON.stringify({
+            model:'gpt-3.5-turbo',
+            messages:[{role:'user',content:userMessage}]
+        })
+    }
+    fetch(API_URL, requestOptions).then(res => res.json()).then(data => {
+        messageElement.textContent = data.choices[0].message.content;
+    }).catch((error) => {
+        messageElement.classList.add('error');
+        messageElement.textContent = 'OOps! Somthing went wrong. Please try again';
+    })
 }
 
 const handleChat = () => {
