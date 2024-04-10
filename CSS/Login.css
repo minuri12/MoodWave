@@ -19,23 +19,22 @@
 }
 
 .container_card_Login {
-  min-height: 80vh;
   width: 100%;
   display: flex;
   align-items: center;
-  position: relative;
+
   overflow: hidden;
-  height: 100%;
+
+  padding: 0%;
 }
 
 .Login_card {
   width: 50%;
-  height: 598px;
-  padding: 40px;
+
   padding-left: 150px;
 
   /*New part*/
-  max-height: 598px;
+
   max-width: 50%;
   color: white;
   align-items: center;
@@ -56,6 +55,8 @@
 
   margin-left: 5px;
   margin-right: 5px;
+  margin-bottom: 0%;
+  overflow-x: hidden;
 }
 
 .Login_card::after {
@@ -86,10 +87,11 @@
 
 .Mood_text {
   opacity: 4%;
-  width: 390px;
+  width: 440px;
   z-index: -1;
   align-items: flex-start;
-  padding-bottom: 50px;
+  padding-bottom: 0px;
+  padding-top: 0px;
   align-items: center;
   margin-left: 100px;
 }
@@ -193,9 +195,9 @@
   font-weight: 700;
 }
 
-@media(max-width:991px){
-  html{
-      font-size:65%;
+@media (max-width: 991px) {
+  html {
+    font-size: 65%;
   }
   .Mood_text {
     opacity: 4%;
@@ -205,41 +207,38 @@
   .input_text {
     width: 320px;
   }
-
-  
 }
-@media(max-width:768px){
-  html{
+@media (max-width: 768px) {
+  html {
     font-size: 90%;
-}
-.Login_card{
-  display: none;
-}
-#card_image1{
-  width: 100%;
-}
-#card_image2{
-  width: 100%;
-}
-.registerform_login {
-  margin-left: 20%;
-}
-.input_text {
-  width: 300px;
-}
-  
-}
-@media(max-width:450px){
-  html{
-      font-size: 80%;
   }
-  .Login_card{
+  .Login_card {
     display: none;
   }
-  #card_image1{
+  #card_image1 {
     width: 100%;
   }
-  #card_image2{
+  #card_image2 {
+    width: 100%;
+  }
+  .registerform_login {
+    margin-left: 20%;
+  }
+  .input_text {
+    width: 300px;
+  }
+}
+@media (max-width: 450px) {
+  html {
+    font-size: 80%;
+  }
+  .Login_card {
+    display: none;
+  }
+  #card_image1 {
+    width: 100%;
+  }
+  #card_image2 {
     width: 100%;
   }
   .registerform_login {
@@ -248,8 +247,4 @@
   .input_text {
     width: 300px;
   }
-  
-
 }
-
-

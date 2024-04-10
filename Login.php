@@ -71,7 +71,7 @@ if(isset($_POST['login'])){
     <link rel="icon" href="images/icon.ico" type="image/x-icon" />
     <title>MoodWave</title>
   </head>
-  <body id="swup" class="transition-fade">
+  <body id="swup" class="transition-fade" style="overflow-x: hidden;">
 
   <?php
 
