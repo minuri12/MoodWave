@@ -6,7 +6,7 @@ const chatbotCloseBtn = document.querySelector('.close-btn');
 
 let userMessage;
 const API_KEY = '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';
-
+const inputIntHeight = chatInput.scrollHeight;
 
 const createChatLi = (message, className) => {
     const chatLi = document.createElement ('li');
@@ -45,6 +45,7 @@ const handleChat = () => {
     if(!userMessage) return;
 
     chatInput.value = '';
+    chatInput.computedStyleMap.height = '${inputInitHeight}px';
     chatbox.appendChild(createChatLi(userMessage, 'outgoing'));
 
     setTimeout(() => {
@@ -53,6 +54,18 @@ const handleChat = () => {
         generateResponse(incomingChatLi);
     }, 600);
 }
+
+chatInput.addEventListener('input', () => {
+    chatInput.computedStyleMap.height = '${inputIntHeight}px';
+    chatInput.computedStyleMap.height = '${chatInput.scrollHeight}px';
+})
+
+chatInput.addEventListener('keydown', (e) => {
+    if(e.key === 'Enter' && !e.shiftKey && window.innerWidth > 800) {
+        e.preventDefault();
+        handleChat();
+    }
+})
 
 sendChatBtn.addEventListener('click',handleChat);
 chatbotCloseBtn.addEventListener('click', () => {document.body.classList.remove('show-chatbot')});
