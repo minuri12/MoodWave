@@ -60,16 +60,27 @@ if(isset($_POST['logout'])){
 
     <!--Navigation bar end-->
 
-<section class="thanks">
+    <section class="thanks" >
         <div class="image">
-            <img src="images/thanks-cover.png">
             
-            <div class="text">
-                <h1>Thank you for placing an</h1>
-                <h1>Withdraw......</h1>
-                <h2>The money will be transferred to you shortly after your details are verified.</h2>
-                <a href="Job.php">Jobs</a>
+          <div class="container_card" >
+            <div class="card_What_Mood"  >
+              <img src="Images/Complete1.png" alt="" style="width: 60px;">
+           <br><br>
+              <p class="subtitle" style="text-align: center;">
+                <h1>Thank you for placing an Withdraw !</h1><br>
+                Your money will be taken out of your account as soon as your information are confirmed.
+                
+                <div ><br>
+                  <button class="Side_button_register" name="login"><a href="creator_main.php">Home</a></button>
+                  
             </div>
+                
+            <img  src="images/Shadow.png" alt="" id="card_image_about2" >
+                
+              </p>
+            </div>
+            
         
     </div>
 </section>
