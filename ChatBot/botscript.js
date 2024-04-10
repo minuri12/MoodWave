@@ -19,6 +19,11 @@ const handleChat = () => {
 
     chatbox.appendChild(createChatLi(userMessage, 'outgoing'));
 
+    setTimeout(() => {
+        const incomingChatLi = createChatLi('Thinking...', 'incoming')
+        chatbox.appendChild(incomingChatLi);
+        generateResponse(incomingChatLi);
+    }, 600);
 }
 
 sendChatBtn.addEventListener('click',handleChat);
