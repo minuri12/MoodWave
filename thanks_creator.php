@@ -72,7 +72,9 @@ if(isset($_POST['logout'])){
                 Your money will be taken out of your account as soon as your information are confirmed.
                 
                 <div ><br>
-                  <button class="Side_button_register" name="login"><a href="creator_main.php">Home</a></button>
+                 
+                  <button class="Side_button_register"><a href="creator_main.php">Home</a></button>
+
                   
             </div>
                 
