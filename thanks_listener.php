@@ -73,7 +73,8 @@ if(isset($_POST['logout'])){
                 
                 <div ><br>
  
-                  <button class="Side_button_register"><a href="job.php">Home</a></button>
+
+                  <button class="Side_button_register" onclick="window.location.href = 'job.php';">Home</button>
                   
             </div>
                 
