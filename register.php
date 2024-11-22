@@ -19,6 +19,10 @@ if(isset($_POST['register'])){
         $username = $_POST['username'];
         $email = $_POST['email'];
         $password = $_POST['password'];
+        // $filter_pass = filter_var($_POST['password'], FILTER_SANITIZE_STRING);
+        // $password = mysqli_real_escape_string($conn, md5($filter_pass));
+
+
         $placed_on = date('d-M-Y');
 
 
@@ -59,6 +63,9 @@ if(isset($_POST['register'])){
     <link rel="stylesheet" href="css/Common.css" />
     <link rel="stylesheet" href="css/footer.css" />
     <link rel="stylesheet" href="css/register.css" />
+    <link rel="stylesheet" href="ChatBot/botstyle.css">
+    <script src="ChatBot/botscript.js" defer></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 
    
     
@@ -151,6 +158,28 @@ if(isset($message)){
                 
             </form>
         </div>
+
+        <button class="chatbot-toggler">
+        <span class="material-symbols-outlined">mode_comment</span>
+        <span class="material-symbols-outlined">close</span>
+    </button>
+    <div class="chatbot">
+        <header>
+            <h2>Moody</h2>
+            <span class="close-btn material-symbols-outlined">close</span>
+        </header>
+        <ul class="chatbox">
+            <li class="chat incoming">
+                <span class="material-symbols-outlined">smart_toy</span>
+                <p>Hi there 🖐️ <br> How can I help you today?</p>
+            </li>
+            
+        </ul>
+        <div class="chat-input">
+            <textarea name="" id="" cols="20" rows="2" placeholder='Enter a message...'></textarea>
+            <span id="send-btn" class="material-symbols-outlined">send</span>
+        </div>
+    </div>
 
 
 <script src="https://unpkg.com/swup@4"></script>

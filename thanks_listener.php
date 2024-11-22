@@ -85,6 +85,9 @@ if(isset($_POST['logout'])){
             
         
     </div>
+    <!-- <button class="Side_button_register" onclick="window.location.href = 'job.php';"><a href="job.php">Back to Home</a></button> -->
+
+    <a href="job.php" style="color:black;">Back to Home</a>
 </section>
 <script src="JS/vanilla-tilt.min.js"></script>
         <script src="JS/Script.js"></script>

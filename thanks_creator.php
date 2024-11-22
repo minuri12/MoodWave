@@ -86,6 +86,7 @@ if(isset($_POST['logout'])){
             
         
     </div>
+    <a href="creator_main.php">Back to Home</a>
 </section>
 
 <script src="JS/vanilla-tilt.min.js"></script>
