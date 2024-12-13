@@ -60,19 +60,35 @@ if(isset($_POST['logout'])){
 
     <!--Navigation bar end-->
 
-<section class="thanks">
+    <section class="thanks" >
         <div class="image">
-            <img src="images/thanks-cover.png">
             
-            <div class="text">
-                <h1>Thank you for placing an</h1>
-                <h1>Job......</h1>
-                <h2>Your money will be taken out of your account as soon as your information are confirmed.</h2>
-                <a href="creator_main.php">Creator Home</a>
+          <div class="container_card" >
+            <div class="card_What_Mood"  >
+              <img src="Images/Complete1.png" alt="" style="width: 60px;">
+           <br><br>
+              <p class="subtitle" style="text-align: center;">
+                <h1>Thank you for placing an Job !</h1><br>
+                Your money will be taken out of your account as soon as your information are confirmed.
+                
+                <div ><br>
+                 
+                <button class="Side_button_register" onclick="window.location.href = 'creator_main.php';">Back to Home</button>
+
+
+                  
             </div>
+                
+            <img  src="images/Shadow.png" alt="" id="card_image_about2" >
+                
+              </p>
+            </div>
+            
         
     </div>
+    <a href="creator_main.php">Back to Home</a>
 </section>
+
 <script src="JS/vanilla-tilt.min.js"></script>
         <script src="JS/Script.js"></script>
         <script>

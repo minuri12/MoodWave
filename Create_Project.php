@@ -72,6 +72,9 @@ if(isset($_POST['dynamic_start'])){
     <link rel="stylesheet" href="css/Common.css" />
     <link rel="stylesheet" href="css/footer.css" />
     <link rel="stylesheet" href="css/Create_Project.css" />
+    <link rel="stylesheet" href="ChatBot/botstyle.css">
+    <script src="ChatBot/botscript.js" defer></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 
     <link rel="icon" href="images/icon.ico" type="image/x-icon" />
     <title>MoodWave</title>
@@ -147,6 +150,27 @@ if(isset($message)){
         </div>
       </div>
       
+      <button class="chatbot-toggler">
+        <span class="material-symbols-outlined">mode_comment</span>
+        <span class="material-symbols-outlined">close</span>
+    </button>
+    <div class="chatbot">
+        <header>
+            <h2>Moody</h2>
+            <span class="close-btn material-symbols-outlined">close</span>
+        </header>
+        <ul class="chatbox">
+            <li class="chat incoming">
+                <span class="material-symbols-outlined">smart_toy</span>
+                <p>Hi there 🖐️ <br> How can I help you today?</p>
+            </li>
+            
+        </ul>
+        <div class="chat-input">
+            <textarea name="" id="" cols="20" rows="2" placeholder='Enter a message...'></textarea>
+            <span id="send-btn" class="material-symbols-outlined">send</span>
+        </div>
+    </div>
 
         <script src="JS/vanilla-tilt.min.js"></script>
     <script src="JS/Script.js"></script>
